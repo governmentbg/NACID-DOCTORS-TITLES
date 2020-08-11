@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webconfig>
+	<handler2group>
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApplicationAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApplicationFinalizationHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.ProfInstitutionValidityHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApplicationExaminationHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.DocflowApplicationStatusHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.ApplicationStatusHandler" groupid="2" />
+		<group handler="com.nacid.regprof.web.handlers.impl.ProfessionalInstitutionHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApplicationHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApostilleServiceHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.nomenclatures.SecondarySpecialityHandler" groupid="2" />
+		<group handler="com.nacid.regprof.web.handlers.impl.nomenclatures.SecondaryProfessionalQualificationHandler" groupid="2" />
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.DocExamAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.RegprofProfessionExperienceAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.DocumentDocFlowHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.PersonsHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.CompanyHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.ajax.FlatNomenclatureAjaxHandler" groupid="2"/>
+		<group handler="com.nacid.regprof.web.handlers.impl.nomenclatures.RegprofArticleDirectiveHandler" groupid="2"/>
+		<group handler="com.nacid.regprof.web.handlers.impl.ajax.RegprofArticleItemsAjaxHandler" groupid="3"/>
+		<group handler="com.nacid.regprof.web.handlers.impl.inquires.CommonInquireHandler" groupid="4"/>
+		<group handler="com.nacid.regprof.web.handlers.impl.inquires.ApplicantInquireHandler" groupid="4"/>
+		<group handler="com.nacid.regprof.web.handlers.impl.inquires.RegprofPublicRegisterCsvHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.CountryHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.commonvars.CommonVariablesHandler" groupid="1" />
+		<group handler="com.nacid.regprof.web.handlers.impl.nomenclatures.ServiceTypeHandler" groupid="2" />		
+		<group handler="com.nacid.regprof.web.handlers.impl.nomenclatures.PorfessionExperienceDocumentTypeHandler" groupid="2" />
+		<group handler="com.nacid.regprof.web.handlers.impl.ajax.ServiceTypeAjaxHandler" groupid="3"/>
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.RegprofEApplyingHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.RegprofEApplyingFinalizationHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.nomenclatures.SecondaryProfessionGroupHandler" groupid="2"/>
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicantReportAttachmentsHandler" groupid="3" />
+		<group handler="com.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationCommentHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.DocumentTypeHandler" groupid="2" />
+		<group handler="com.nacid.regprof.web.handlers.impl.ajax.SecondaryProfessionalQualificationAjaxHandler" groupid="2" />
+		<group handler="com.nacid.regprof.web.handlers.impl.ajax.SecondarySpecialityAjaxHandler" groupid="2" />
+		
+	</handler2group>
+	<request2handler>
+		<mapping url="/home" handler="com.nacid.regprof.web.handlers.impl.HomePageHandler" />
+		<mapping url="/login" handler="com.nacid.regprof.web.handlers.impl.LoginHandler" />
+		<mapping url="/professionalinstitution" handler="com.nacid.regprof.web.handlers.impl.ProfessionalInstitutionHandler" />
+		<mapping url="/regprofapplication" handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApplicationHandler" />
+		<mapping url="/regprof_apostille_service" handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApostilleServiceHandler" />
+		<!-- <mapping url="/regprofapplication_examination" handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApplicationExaminationHandler" /> -->
+		<mapping url="/nom_qualificationdegree" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_secondarycaliber" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_secondaryprofessiongroup" handler="com.nacid.regprof.web.handlers.impl.nomenclatures.SecondaryProfessionGroupHandler" />
+		<mapping url="/nom_secondaryprofqualification" handler="com.nacid.regprof.web.handlers.impl.nomenclatures.SecondaryProfessionalQualificationHandler"/>
+		<mapping url="/trainingcoursesuggestion" handler="com.nacid.regprof.web.handlers.impl.suggestions.RegprofTrainingCourseSuggestionHandler" />
+		<mapping url="/professionalinstitutionsuggest" handler="com.nacid.regprof.web.handlers.impl.suggestions.RegprofProfessionalInstitutionSuggestionHandler" />
+		<mapping url="/flatnomenclaturesuggest" handler="com.nacid.web.handlers.impl.suggestions.FlatNomenclatureSuggestHandler"/>
+		<mapping url="/nom_profession" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler"/>
+		<mapping url="/regulated_validity_ajax" handler="com.nacid.regprof.web.handlers.impl.ajax.RegulatedProfessionValidityAjaxHandler"/>
+		<mapping url="/pivalidity_ajax" handler="com.nacid.regprof.web.handlers.impl.ajax.ProfessionalInstitutionValidationAjaxHandler"/>
+		<mapping url="/doc_exam_attachment" handler="com.nacid.regprof.web.handlers.impl.applications.DocExamAttachmentHandler"/>
+		<mapping url="/profession_experience_attachment" handler="com.nacid.regprof.web.handlers.impl.applications.RegprofProfessionExperienceAttachmentHandler"/>
+		<mapping url="/person" handler="com.nacid.web.handlers.impl.applications.PersonsHandler" />
+		<mapping url="/company" handler="com.nacid.web.handlers.impl.applications.CompanyHandler" />
+		<mapping url="/nom_higher_prof_qualification" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_higher_speciality" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_regprofappstatus" handler="com.nacid.web.handlers.impl.nomenclatures.ApplicationStatusHandler" />
+		<mapping url="/nom_regprof_docflow_status" handler="com.nacid.web.handlers.impl.nomenclatures.DocflowApplicationStatusHandler" />
+		<mapping url="/nom_professionalinstitutiontype" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_education_document_type" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_secondary_speciality" handler="com.nacid.regprof.web.handlers.impl.nomenclatures.SecondarySpecialityHandler" />
+		<mapping url="/nom_education_type" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" /> 
+		<mapping url="/nom_profession_experience" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_payment_type" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_profession_experience_document_type" handler="com.nacid.regprof.web.handlers.impl.nomenclatures.PorfessionExperienceDocumentTypeHandler" />
+		<mapping url="/nom_article_directive" handler="com.nacid.regprof.web.handlers.impl.nomenclatures.RegprofArticleDirectiveHandler"/>
+		<mapping url="/article_item_ajax" handler="com.nacid.regprof.web.handlers.impl.ajax.RegprofArticleItemsAjaxHandler" />
+		<mapping url="/service_type_ajax" handler="com.nacid.regprof.web.handlers.impl.ajax.ServiceTypeAjaxHandler" />
+		<mapping url="/nom_servicetype" handler="com.nacid.regprof.web.handlers.impl.nomenclatures.ServiceTypeHandler" />
+		<mapping url="/nom_certificate_prof_qualification" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_copytype" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_educationlevel" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_civilidtype" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_country" handler="com.nacid.web.handlers.impl.nomenclatures.CountryHandler" />
+		<mapping url="/nom_doctype" handler="com.nacid.web.handlers.impl.nomenclatures.DocumentTypeHandler" />
+        <mapping url="/nom_grade" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+        <mapping url="/nom_age_range" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+        <mapping url="/nom_school_type" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+        <mapping url="/nom_personaliddoctype" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+
+
+
+        <mapping url="/commonvariables" handler="com.nacid.web.handlers.impl.commonvars.CommonVariablesHandler" />
+		<mapping url="/e_applying" handler="com.nacid.regprof.web.handlers.impl.applications.RegprofEApplyingHandler" />
+		<mapping url="/e_applying_finalization" handler="com.nacid.regprof.web.handlers.impl.applications.RegprofEApplyingFinalizationHandler" />
+		<mapping url="/e_applying_attachments" handler="com.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicantReportAttachmentsHandler" />
+		<mapping url="/ext_regprof_application_comment" handler="com.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationCommentHandler"/>
+		
+		<mapping url="/civilidsuggestion" handler="com.nacid.web.handlers.impl.suggestions.CivilIdSuggestionHandler" />
+		<mapping url="/logout" handler="com.nacid.regprof.web.handlers.impl.LogoutHandler" />
+		<mapping url="/menu" handler="com.nacid.regprof.web.handlers.impl.ajax.MenuAjaxHandler" />
+		
+		<mapping url="/application_attachment" handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApplicationAttachmentHandler" />
+		<mapping url="/application_finalization" handler="com.nacid.regprof.web.handlers.impl.applications.RegprofApplicationFinalizationHandler" />
+		
+		<mapping url="/attachment_ajax" handler="com.nacid.regprof.web.handlers.impl.ajax.RegprofAttachmentAjaxHandler" />
+		<mapping url="/application_examination_ajax" handler="com.nacid.regprof.web.handlers.impl.ajax.RegprofApplicationExaminationAjaxHandler" />
+		<mapping url="/document_docflow" handler="com.nacid.web.handlers.impl.applications.DocumentDocFlowHandler"/>
+		<mapping url="/flat_nomenclature_ajax" handler="com.nacid.web.handlers.impl.ajax.FlatNomenclatureAjaxHandler"/>
+		
+		<mapping url="/common_inquire" handler="com.nacid.regprof.web.handlers.impl.inquires.CommonInquireHandler" />
+		<mapping url="/applicant_inquire" handler="com.nacid.regprof.web.handlers.impl.inquires.ApplicantInquireHandler" />
+		<mapping url="/public_register_csv" handler="com.nacid.regprof.web.handlers.impl.inquires.RegprofPublicRegisterCsvHandler" />
+
+		<mapping url="/sec_prof_qualification_ajax" handler="com.nacid.regprof.web.handlers.impl.ajax.SecondaryProfessionalQualificationAjaxHandler" />
+		<mapping url="/sec_speciality_ajax" handler="com.nacid.regprof.web.handlers.impl.ajax.SecondarySpecialityAjaxHandler" />
+		
+		<mapping url="/nom_clear" handler="com.nacid.web.handlers.impl.nomenclatures.ClearNomenclaturesHandler" />
+	</request2handler>
+	<screen2jsp>
+		<screen name="home" jspTemplate="/screens_regprof/home.jsp" />
+		<screen name="login" jspTemplate="/screens_regprof/login.jsp" />
+		<!-- RayaWritten -->
+		<screen name="professional_institution" jspTemplate="/screens_regprof/professional_institution_edit.jsp"/>
+		<screen name="professionalinstitution_list" jspTemplate="/screens_regprof/professionalinstitution_list.jsp"/>
+		<screen name="regprofapplication" jspTemplate="/screens_regprof/applications/application_base.jsp" />
+		<screen name="table_list" jspTemplate="/screens_regprof/table/list.jsp" />
+		<screen name="list_inner_table" jspTemplate="/screens_regprof/table/list_inner_table.jsp" />
+		<screen name="flat_nomenclature_edit" jspTemplate="/screens_regprof/nomenclatures/flat_nomenclature_edit.jsp" />
+		<screen name="secondary_speciality_edit" jspTemplate="/screens_regprof/nomenclatures/secondary_speciality_edit.jsp" />
+		<screen name="secondary_prof_qualification_edit" jspTemplate="/screens_regprof/nomenclatures/secondary_prof_qualification_edit.jsp" />
+		<screen name="secondary_prof_group_edit" jspTemplate="/screens_regprof/nomenclatures/secondary_prof_group_edit.jsp" />
+        <screen name="application_status_edit" jspTemplate="/screens_regprof/nomenclatures/application_status_edit.jsp" />
+
+		<screen name="doc_exam_attachment_edit" jspTemplate="/screens_regprof/applications/doc_exam_attachment_edit.jsp" />
+		<screen name="profession_experience_attachment_edit" jspTemplate="/screens_regprof/applications/profession_experience_attachment_edit.jsp" />
+		<screen name="loading" jspTemplate="/screens_regprof/loading.jsp" />
+		<screen name="person_edit" jspTemplate="/screens_regprof/applications/person_edit.jsp" />
+		<screen name="company_edit" jspTemplate="/screens_regprof/applications/company_edit.jsp" />
+		<screen name="article_directive_edit" jspTemplate="/screens_regprof/nomenclatures/article_directive_edit.jsp"/>
+		<screen name="article_item_ajax" jspTemplate="/screens_regprof/applications/article_item_ajax.jsp" />
+		<screen name="inquire_directive_item_ajax" jspTemplate="/screens_regprof/inquires/inquire_directive_item_ajax.jsp" />
+		<screen name="service_type_edit" jspTemplate="/screens_regprof/nomenclatures/service_type_edit.jsp" />
+		
+		<screen name="country_edit" jspTemplate="/screens_regprof/nomenclatures/country_edit.jsp" />
+		<screen name="common_vars_edit" jspTemplate="/screens_regprof/commonvars/edit.jsp" />
+		<!-- End of RayaWritten -->
+		
+		<screen name="application_edit" jspTemplate="/screens_regprof/applications/application_base.jsp" />
+		<screen name="application_attachment_edit" jspTemplate="/screens_regprof/applications/application_attachment_edit.jsp" />
+		<screen name="common_inquire" jspTemplate="/screens_regprof/inquires/common_inquire.jsp"/>
+
+		<screen name="applicant_inquire" jspTemplate="/screens_regprof/inquires/applicant_inquire.jsp"/>
+		<screen name="profession_experience_document_type_edit" jspTemplate="/screens_regprof/nomenclatures/profession_experience_document_type_edit.jsp" />
+		<screen name="ext_report_applicant" jspTemplate="/screens_regprof/applications/e_applying/ext_report_applicant.jsp" />
+		<screen name="ext_regprof_application_comment_view" jspTemplate="/screens_regprof/applications/e_applying/ext_regprof_application_comment_view.jsp"/>
+		<screen name="ext_regprof_application_comment_new" jspTemplate="/screens_regprof/applications/e_applying/ext_regprof_application_comment_new.jsp"/>
+		<screen name="mail_admin_edit" jspTemplate="/screens_regprof/mail/mail_admin_edit.jsp" />
+
+		<screen name="document_type_edit" jspTemplate="/screens_regprof/nomenclatures/document_type_edit.jsp" />
+        <screen name="inquires_screens" jspTemplate="/screens_regprof/inquires/inquires_screens.jsp"/>
+
+        <screen name="flat_nomenclature_combo" jspTemplate="/screens_regprof/nomenclatures/flat_nomenclature_combo.jsp" />
+	</screen2jsp>
+</webconfig>

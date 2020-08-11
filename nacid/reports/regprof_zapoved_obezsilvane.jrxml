@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pismo_zaiavitel_info" language="groovy" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" whenResourceMissingType="Error">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/WebContent/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nacidDirectorName" class="java.lang.String">
+		<parameterDescription><![CDATA[nacidDirectorName]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Ваня Грашкина"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nacidDirectorPosition" class="java.lang.String">
+		<parameterDescription><![CDATA[nacidDirectorPosition]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Изпълнителен директор"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="regulationPublications" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="applicantName" class="java.lang.String">
+		<fieldDescription><![CDATA[applicantName]]></fieldDescription>
+	</field>
+	<field name="certificateNumber" class="java.lang.String"/>
+	<field name="certificateDate" class="java.lang.String"/>
+	<field name="multipleDiplomaSpecialities" class="java.lang.Boolean"/>
+	<field name="highEduLevelId" class="java.lang.Integer"/>
+	<field name="educationTypeId" class="java.lang.Integer"/>
+	<field name="highEduLevel" class="java.lang.String"/>
+	<field name="recognizedQualificationLevel" class="java.lang.String"/>
+	<field name="applicantBirthCountry" class="java.lang.String"/>
+	<field name="diplomaSpecialityNames" class="java.lang.String"/>
+	<pageHeader>
+		<band height="160">
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="160"/>
+				<subreportParameter name="PARAM_DOC_FLOW_NUMBER">
+					<subreportParameterExpression><![CDATA["....."]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IMAGE_DIR">
+					<subreportParameterExpression><![CDATA[$P{IMAGE_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "nacid_BG_header.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="550" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="483" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br />З А П О В Е Д<br />№ …………./………20...... г.<br />"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="29" width="483" height="80"/>
+				<textElement textAlignment="Justified" lineSpacing="Double" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["	На основание чл. 23 от Правилника за устройството и дейността на Националния център за информация и документация /" + $P{regulationPublications} + "/ и решение на ..........................................................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="109" width="483" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br />ОБЕЗСИЛВАМ<br />"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="137" width="483" height="179"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["	Удостоверение № " + $F{certificateNumber} + " от " + $F{certificateDate} + " г. " +
+" за признаване на образователно- квалификационна степен с права на образователно-квалификационна степен " +
+(($F{educationTypeId} == 1 && $F{highEduLevelId} != 12) ? $F{highEduLevel} : "") +
+(($F{educationTypeId} == 1 && $F{highEduLevelId} == 12) ? $F{recognizedQualificationLevel} : "") +
+" по " + ($F{multipleDiplomaSpecialities} == true ? "" : "специалност ") + $F{diplomaSpecialityNames} +
+" на " + $F{applicantName} +
+" от " + $F{applicantBirthCountry} +
+" поради влязло в законна сила от ................ решение на ................................................ \n" +
+"	Информацията да бъде публикувана в електронната база данни на НАЦИД за " +
+"обезсилените удостоверения.  \n" +
+"	Настоящата заповед не подлежи на обжалване. \n"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="316" width="483" height="37"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br /><br /><b>" + $P{nacidDirectorName} +"</b><br />" +
+"<i>" + $P{nacidDirectorPosition} + "</i>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="20"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "nacid_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

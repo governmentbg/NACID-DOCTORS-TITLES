@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="predlojenie_udost_CPO" language="groovy" pageWidth="595" pageHeight="842" columnWidth="453" leftMargin="71" rightMargin="71" topMargin="71" bottomMargin="71">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1132"/>
+	<parameter name="nacidDirectorName" class="java.lang.String"/>
+	<parameter name="nacidDirectorLastName" class="java.lang.String"/>
+	<parameter name="bg_chiefDirectorateName" class="java.lang.String"/>
+	<parameter name="bg_chiefDirectoratePosition" class="java.lang.String"/>
+	<parameter name="bg_chiefOfficerName" class="java.lang.String"/>
+	<parameter name="bg_chiefOfficerPosition" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/rayawork/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<field name="responsibleUser" class="java.lang.String"/>
+	<field name="applicationNumber" class="java.lang.String"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="applicationCountry" class="java.lang.String"/>
+	<field name="applicantName" class="java.lang.String"/>
+	<field name="profQualification" class="java.lang.String"/>
+	<field name="sdkDocumentType" class="java.lang.String"/>
+	<field name="sdkDocumentNumber" class="java.lang.String"/>
+	<field name="sdkDocumentDate" class="java.lang.String"/>
+	<field name="sdkDocumentSeries" class="java.lang.String"/>
+	<field name="sdkDocumentRegNumber" class="java.lang.String"/>
+	<field name="multipleSdkDiplomaSpecialities" class="java.lang.Boolean"/>
+	<field name="sdkDiplomaSpecialityNames" class="java.lang.String"/>
+	<field name="secondaryCaliber" class="java.lang.String"/>
+	<field name="profInstitutionOrgName" class="java.lang.String"/>
+	<field name="sdkTrainingInstitutionName" class="java.lang.String"/>
+	<field name="secQualificationDegree" class="java.lang.String"/>
+	<field name="articleDirective" class="java.lang.String"/>
+	<field name="articleItem" class="java.lang.String"/>
+	<field name="articleItemQualificationLevelLabel" class="java.lang.String"/>
+	<field name="recognizedProfession" class="java.lang.String"/>
+	<field name="experiencePeriod" class="java.lang.String"/>
+	<field name="noQualificationExperienceStatus" class="java.lang.Boolean"/>
+	<field name="sdkProfInstitutionOrgName" class="java.lang.String"/>
+	<field name="documentType" class="java.lang.String"/>
+	<field name="documentNumber" class="java.lang.String"/>
+	<field name="documentDate" class="java.lang.String"/>
+	<field name="documentSeries" class="java.lang.String"/>
+	<field name="documentRegNumber" class="java.lang.String"/>
+	<field name="multipleDiplomaSpecialities" class="java.lang.Boolean"/>
+	<field name="diplomaSpecialityNames" class="java.lang.String"/>
+	<field name="trainingInstitutionName" class="java.lang.String"/>
+	<field name="highEduLevel" class="java.lang.String"/>
+	<field name="articleDirectiveId" class="java.lang.Integer"/>
+	<field name="sdkProfQualification" class="java.lang.String"/>
+	<field name="higherEducationWithoutLevel" class="java.lang.Boolean"/>
+	<field name="exprArticleItem" class="java.lang.String"/>
+	<field name="exprArticleDirective" class="java.lang.String"/>
+	<field name="exprArticleDirectiveId" class="java.lang.Integer"/>
+	<field name="documentsFromExperience" class="java.lang.String"/>
+	<field name="applicantDocumentName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="571" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="453" height="571"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="applicationCountry">
+					<subreportParameterExpression><![CDATA[$F{applicationCountry}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="nacidDirectorLastName">
+					<subreportParameterExpression><![CDATA[$P{nacidDirectorLastName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicationDate">
+					<subreportParameterExpression><![CDATA[$F{applicationDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicationNumber">
+					<subreportParameterExpression><![CDATA[$F{applicationNumber}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="responsibleUser">
+					<subreportParameterExpression><![CDATA[$F{responsibleUser}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="nacidDirectorName">
+					<subreportParameterExpression><![CDATA[$P{nacidDirectorName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantDocumentName">
+					<subreportParameterExpression><![CDATA[$F{applicantDocumentName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantName">
+					<subreportParameterExpression><![CDATA[$F{applicantName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="profQualification">
+					<subreportParameterExpression><![CDATA[$F{sdkProfQualification}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "predlojenie_udost_intro.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="700">
+			<break>
+				<reportElement x="0" y="0" width="453" height="1"/>
+			</break>
+			<textField>
+				<reportElement x="0" y="24" width="453" height="382"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<PRE>      Лицето притежава "+
+($F{sdkDocumentType} == "" ? "" : $F{sdkDocumentType} + ", ") +
+($F{sdkDocumentSeries} == "" ? "" : $F{sdkDocumentSeries} + ", ") +
+($F{sdkDocumentNumber} == "" ? "" : $F{sdkDocumentNumber} + ", ") +
+($F{sdkDocumentRegNumber} == "" ? "" : $F{sdkDocumentRegNumber} + ", ") +
+($F{sdkDocumentDate} == "" ? "" : $F{sdkDocumentDate} + ", ") +
+($F{multipleSdkDiplomaSpecialities} == false ? " по специалност ": " по ") +
+$F{sdkDiplomaSpecialityNames}+", издадено от "+$F{sdkProfInstitutionOrgName}+
+($F{sdkProfInstitutionOrgName}.equals("")? $F{sdkTrainingInstitutionName}: " (понастоящем"+$F{sdkTrainingInstitutionName}+")")+
+" на основание на "+$F{documentType} + " " +
+($F{documentSeries} == "" ? "" : $F{documentSeries} + ", ") +
+($F{documentNumber} == "" ? "" : $F{documentNumber} + ", ") +
+($F{documentRegNumber} == "" ? "" : $F{documentRegNumber} + ", ") +
+($F{documentDate} == "" ? "" : $F{documentDate} + ", ") +
+($F{multipleDiplomaSpecialities} == false ? " по специалност ": " по ") +
+$F{diplomaSpecialityNames}+
+($F{higherEducationWithoutLevel}==false? " на образователно-квалификационна степен „"+
+$F{highEduLevel}+ "”" : " с права на "+$F{highEduLevel})+
+" с придобита професионална квалификация „"+
+$F{profQualification}+"”, издадена от "+$F{profInstitutionOrgName}+
+($F{profInstitutionOrgName}.equals("") ? $F{trainingInstitutionName} : " (понастоящем "+$F{trainingInstitutionName}+")")+
+"."+ " Квалификацията съответства на " + ($F{articleItemQualificationLevelLabel} == null ? "" : $F{articleItemQualificationLevelLabel} + " ") + "квалификационно ниво "+
+$F{articleItem}+" съгласно " +$F{articleDirective}+" на Директива 2005/36/ЕО относно признаването на"+
+" професионални квалификации.<br/>"+
+($F{noQualificationExperienceStatus}==false ?
+    ($F{articleDirectiveId} == 1 &&$F{exprArticleDirectiveId} == 1 ?
+        "Притежателят на квалификацията е упражнявал професията повече от две години през"+
+        " последните десет години при пълно работно време в продължение на "+$F{experiencePeriod}+"."
+        :
+        ($F{exprArticleDirectiveId} == 2 || $F{exprArticleDirectiveId}==3 || $F{exprArticleDirectiveId} == 4 ?
+        "<PRE>     Лицето е удостоверилo професионалния си стаж като самоосигуряващо се /наето лице и/или"+
+        " ръководителе на предприятие с " + $F{documentsFromExperience}  +
+        ". Упражняваните дейности по професията са в качеството на"+
+        " самоосигуряващо се/наето лице и/или ръковозител на предприятие в продължение на "+
+        $F{experiencePeriod}+", което отговаря на изискванията на "+
+        $F{exprArticleDirective}+ " "+$F{exprArticleItem}+
+        " на Директива 2005/36/ЕО относно признаването на професионални квалификации.<PRE/>"
+        : "")
+    )
+    :
+    "<PRE>      Притежателят на квалификацията не е упражнявал професията през последните десет години.</PRE>"
+
+)+
+
+"<PRE>      Притежателят на квалификацията има право да упражнява"+
+" професията "+$F{recognizedProfession}+
+" на територията на Република България и декларира, че към момента на "+
+"удостоверението няма наложени административни наказания, свързани с правото да упражнява професията.</PRE>"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="0" y="406" width="453" height="159"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<PRE><br/>      Приложено Ви представям проект на удостоверение.</PRE>"+
+"<PRE><br/>      <b>Приложение:</b> съгласно текста.</PRE>"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="440" width="453" height="260"/>
+				<subreportParameter name="bg_chiefOfficerName">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefOfficerName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefOfficerPosition">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefOfficerPosition}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="responsibleUser">
+					<subreportParameterExpression><![CDATA[$F{responsibleUser}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefDirectorateName">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefDirectorateName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefDirectoratePosition">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefDirectoratePosition}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "predlojenie_udost_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

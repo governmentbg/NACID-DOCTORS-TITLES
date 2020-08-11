@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webconfig>
+	<handler2group>
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.admin.ApplicantChangePassHandler" groupid="1" />
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.mail.MailApplicantHandler" groupid="1" />
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationsHandler" groupid="1" />
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofTrainingCourseHandler" groupid="1" />
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationAttachmentHandler" groupid="1" />
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.RegprofApplicantReportExternalAttachmentsHandler" groupid="1" />
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.EpayPaymentHandler" groupid="1" />
+		<!--<group handler="com.ext.nacid.regprof.web.handlers.impl.epay.EpayGetDataHandler" groupid="1" />-->
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.epay.EpayRedirectPaymentHandler" groupid="1" />
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.GetLastEpayPaymentStatusHandler" groupid="1" />
+
+
+	</handler2group>
+	<request2handler>
+		<mapping url="/home" handler="com.ext.nacid.regprof.web.handlers.impl.HomePageHandler" />
+        <mapping url="/public_register" handler="com.ext.nacid.regprof.web.handlers.impl.RegprofPublicRegisterHandler" />
+		<mapping url="/change_pass_appl" handler="com.ext.nacid.regprof.web.handlers.impl.admin.ApplicantChangePassHandler"/>
+		<mapping url="/mail_appl" handler="com.ext.nacid.regprof.web.handlers.impl.mail.MailApplicantHandler"/>
+		<mapping url="/applications" handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationsHandler" />
+		<mapping url="/training_course" handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofTrainingCourseHandler" />
+		<mapping url="/application_attachment" handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationAttachmentHandler" />
+		<mapping url="/menu" handler="com.ext.nacid.web.handlers.impl.ajax.MenuAjaxHandler" />
+		<mapping url="/attachment_ajax" handler="com.ext.nacid.web.handlers.impl.ajax.ExtAttachmentAjaxHandler" />
+		<mapping url="/public_report" handler="com.ext.nacid.regprof.web.handlers.impl.RegprofPublicReportHandler" />
+		<mapping url="/applicantreportattachments_ext" handler="com.ext.nacid.regprof.web.handlers.impl.applications.RegprofApplicantReportExternalAttachmentsHandler" />
+		<mapping url="/epay" handler="com.ext.nacid.regprof.web.handlers.impl.applications.EpayPaymentHandler" />
+		<!--<mapping url="/getepaydata" handler="com.ext.nacid.regprof.web.handlers.impl.epay.EpayGetDataHandler" />-->
+		<mapping url="/epayredirect" handler="com.ext.nacid.regprof.web.handlers.impl.epay.EpayRedirectPaymentHandler" />
+		<mapping url="/epayresponse" handler="com.ext.nacid.regprof.web.handlers.impl.epay.EpayAsyncResponseHandler" />
+		<mapping url="/getepaylastpaymentstatus" handler="com.ext.nacid.regprof.web.handlers.impl.applications.GetLastEpayPaymentStatusHandler" />
+		<mapping url="/trainingcoursesuggestion" handler="com.nacid.regprof.web.handlers.impl.suggestions.RegprofTrainingCourseSuggestionHandler" />
+		<mapping url="/nom_clear" handler="com.nacid.web.handlers.impl.nomenclatures.ClearNomenclaturesHandler" />
+        <mapping url="/flatnomenclaturesuggest" handler="com.ext.nacid.web.handlers.impl.suggestions.ExtFlatNomenclatureSuggestHandler" />
+        <mapping url="/trainingcoursesuggestion" handler="com.nacid.regprof.web.handlers.impl.suggestions.RegprofTrainingCourseSuggestionHandler" />
+        <mapping url="/professionalinstitutionsuggest" handler="com.nacid.regprof.web.handlers.impl.suggestions.RegprofProfessionalInstitutionSuggestionHandler" />
+
+		<mapping url="/ext_person_ajax" handler="com.ext.nacid.web.handlers.impl.ajax.ExtPersonAjaxHandler" />
+	</request2handler>
+	<screen2jsp>
+		<screen name="home" jspTemplate="/screens_regprof_ext/home.jsp" />
+		<screen name="login" jspTemplate="/screens_regprof_ext/login.jsp" />
+		<screen name="registration" jspTemplate="/screens_regprof_ext/registration.jsp" />
+		<screen name="recover_pass" jspTemplate="/screens_regprof_ext/recover_pass.jsp" />
+		<screen name="public_register" jspTemplate="/screens_regprof_ext/public_register.jsp" />
+		<screen name="change_pass" jspTemplate="/screens_regprof_ext/admin/change_pass.jsp" />
+		<screen name="mail_edit" jspTemplate="/screens_regprof_ext/mail/mail_edit.jsp" />
+		<screen name="table_list" jspTemplate="/screens_regprof_ext/table/list.jsp" />
+		
+		<screen name="application_edit" jspTemplate="/screens_regprof_ext/applications/application_base.jsp" />
+		<screen name="application_attachment_edit" jspTemplate="/screens_regprof_ext/applications/application_attachment_edit.jsp" />
+		<screen name="loading" jspTemplate="/screens_regprof_ext/loading.jsp" />
+		<screen name="public_report" jspTemplate="/screens_regprof_ext/public_report.jsp" />
+		<screen name="epay_redirect" jspTemplate="/screens_regprof_ext/epay_redirect.jsp" />
+	</screen2jsp>
+</webconfig>

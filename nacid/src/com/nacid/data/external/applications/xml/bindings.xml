@@ -1,0 +1,12 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <globalBindings>
+    <javaType name="java.sql.Date" xmlType="xs:date"
+      parseMethod="com.nacid.data.DataConverter.parseSqlDate"
+      printMethod="com.nacid.data.DataConverter.formatSqlDate"
+    />
+    <javaType name="java.sql.Timestamp" xmlType="xs:dateTime"
+      parseMethod="com.nacid.data.DataConverter.parseTimestamp"
+      printMethod="com.nacid.data.DataConverter.formatTimestamp"
+    />
+  </globalBindings>
+</bindings>

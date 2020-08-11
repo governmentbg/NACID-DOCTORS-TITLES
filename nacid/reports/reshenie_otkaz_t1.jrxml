@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reshenie_otkaz" language="groovy" pageWidth="595" pageHeight="839" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" whenResourceMissingType="Error">
+	<property name="ireport.zoom" value="1.7715610000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/WebContent/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ministryRepresentativeName" class="java.lang.String">
+		<parameterDescription><![CDATA[ministryRepresentativeName]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Петя Евтимова "]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ministryRepresentativePosition" class="java.lang.String">
+		<parameterDescription><![CDATA[ministryRepresentativePosition]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Заместник-министър на образованието,  младежта и науката"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ownerName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerName]]></fieldDescription>
+	</field>
+	<field name="addressDetailsBulgaria" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetailsBulgaria]]></fieldDescription>
+	</field>
+	<field name="cityDetailsBulgaria" class="java.lang.String">
+		<fieldDescription><![CDATA[cityDetailsBulgaria]]></fieldDescription>
+	</field>
+	<field name="ownerLastName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerLastName]]></fieldDescription>
+	</field>
+	<field name="diplomaSpecialityNames" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaSpecialityNames]]></fieldDescription>
+	</field>
+	<field name="diplomaEducationLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaEducationLevel]]></fieldDescription>
+	</field>
+	<field name="allUniversitiesNamesAndLocations" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesNamesAndLocations]]></fieldDescription>
+	</field>
+	<field name="trainingCountriesAndLocations" class="java.lang.String">
+		<fieldDescription><![CDATA[trainingCountriesAndLocations]]></fieldDescription>
+	</field>
+	<field name="motives" class="java.lang.String">
+		<fieldDescription><![CDATA[motives]]></fieldDescription>
+	</field>
+	<field name="multipleDiplomaSpecialities" class="java.lang.Boolean"/>
+	<detail>
+		<band height="710" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="110"/>
+				<subreportParameter name="IMAGE_DIR">
+					<subreportParameterExpression><![CDATA[$P{IMAGE_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "ministry_header.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="110" width="193" height="56"/>
+				<textElement lineSpacing="Double">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["№……….………………….       "+
+"\n……………………. 2010 г."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="179" width="483" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Double" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br /><br/>РЕШЕНИЕ<br />"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="235" width="483" height="76"/>
+				<textElement textAlignment="Justified" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[    На основание чл. 12, ал. 1, т. 1 във връзка с чл. 11, ал. 2, т. 2, т. 3, т. 4, т. 5 и т. 6 от Наредбата за държавните изисквания за признаване на придобито висше образование и завършени периоди на обучение в чуждестранни висши училища ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="324" width="483" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Double" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/>ОТКАЗВАМ<br />"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="362" width="483" height="178"/>
+				<textElement textAlignment="Justified" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["    ПРИЗНАВАНЕ на висше образование на "+
+$F{ownerName} + " по " +
+($F{multipleDiplomaSpecialities} == true ? "" : "специалността ") +
+$F{diplomaSpecialityNames}+
+" на образователно-квалификационна степен "+
+$F{diplomaEducationLevel}+
+" от "+
+$F{allUniversitiesNamesAndLocations}+
+", придобита в " +
+$F{trainingCountriesAndLocations}+ ".\n" +
+"    След направената проверка на документите по реда на чл. 11, ал. 2, т. 3, т. 4, т. 5, т. 6 и т. 7 и в съответствие с чл. 2 от Наредбата за държавните изисквания за признаване на придобито висше образование и завършени периоди на обучение в чуждестранни висши училища, Комисията за признаване на придобито висше образование в чуждестранни висши училища установи съществени различия между данните от представените документи и установените изисквания за придобиване на висше образование по специалността " +
+$F{diplomaSpecialityNames}+
+" на образователно-квалификационна степен "+
+$F{diplomaEducationLevel}+" : " + $F{motives} +
+"\n    Придобитото образование не съответства на ...."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="540" width="483" height="45"/>
+				<textElement textAlignment="Justified" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["    Препоръчва се на лицето да се обърне към избрано от него акредитирано висше училище на територията на Република България за признаване на периоди на обучение по реда на чл. 15 от Наредбата за държавните изисквания за признаване на придобито висше образование и завършени периоди на обучение в чуждестранни висши училища." +
+"\n    Настоящото решение може да се обжалва в 14-дневен срок пред Административен съд София - град."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="585" width="483" height="83"/>
+				<textElement lineSpacing="Double" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/>"+
+"<b>"+$P{ministryRepresentativeName}+"</b><br/>"+
+"<i>"+$P{ministryRepresentativePosition}+"</i>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

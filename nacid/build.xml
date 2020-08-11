@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="nacid" default="build" basedir=".">
+    <property environment="env"/>
+
+    <!--  Main properties of NACID project-->
+    <target name="props" description="Main properties of NACID project">
+
+        <property file="local.properties"/>
+        <!-- Application server home directory-->
+        <property environment="env"/>
+        <property name="server.dir" value="${server.root.dir}"/>
+        <property name="server.deploy.dir" value="${server.deploy.dir}"/>
+        <property name="server.deployed.dir" value="${server.deploy.dir}/NACID"/>
+
+
+        <!--  Main properties -->
+        <property name="app-name"           value="nacid"/>
+        <property name="dir.src"            value="src"/>
+        <property name="dir.webcontent"     value="WebContent"/>
+        <property name="dir.build"          value="build"/>
+        <property name="dir.classes"        value="${dir.build}/classes"/>
+        <property name="dir.web-inf"        value="${dir.webcontent}/WEB-INF"/>
+        <property name="dir.lib"            value="${dir.web-inf}/lib"/>
+        <property name="dir.fonts"          value="${dir.webcontent}/fonts"/>
+        <property name="dir.report"         value="reports"/>
+        <property name="dir.extLib"         value="extLib"/>
+    	<property name="data_migration.lib.dir"         value="data_migration/WebContent/WEB-INF/lib"/>
+
+		
+        <path id="project.class.path">
+            <fileset dir="${dir.lib}" erroronmissingdir="false">
+              <include name="**/*.jar"/>
+              <include name="**/*.zip"/>
+            </fileset>
+            <fileset dir="${dir.extLib}" erroronmissingdir="false">
+              <include name="**/*.jar"/>
+              <include name="**/*.zip"/>
+            </fileset>
+            <pathelement location="${dir.classes}"/>
+        </path>
+
+    </target>
+
+
+
+    <!--  Deletes all previously compiled files and temporary files-->
+    <target name="clean" depends="props" description="Delete temporary directories">
+        <delete includeemptydirs="true">
+            <fileset dir="${dir.classes}" includes="**/*"/>
+        </delete>
+        <delete dir="${dir.build}/war"/>
+    </target>
+
+    <!--  Initialize project-->
+    <target name="init" depends="props" description="Initialize project">
+         <mkdir dir="${dir.build}/war"/>
+    </target>
+
+    <target name="compile-jasper" depends="props" description="Compile jasper xml files">
+        <mkdir dir="${dir.classes}/com/nacid/report/reportfiles"/>
+        <taskdef name="jrc" classname="net.sf.jasperreports.ant.JRAntCompileTask">
+                <classpath refid="project.class.path"/>
+        </taskdef>
+        <jrc destdir="${dir.classes}/com/nacid/report/reportfiles">
+            <src>
+                <fileset dir="${dir.report}">
+                    <include name="**/*.jrxml"/>
+                </fileset>
+            </src>
+            <classpath refid="project.class.path"/>
+        </jrc>
+        <!--<copy todir="${dir.classes}">
+            <fileset dir="${dir.fonts}" includes="**/*.ttf"/>
+        </copy>-->
+        <copy todir="${dir.classes}/com/nacid/report/reportfiles">
+            <fileset dir="${dir.report}/license" includes="**/*.lic"/>
+        </copy>
+    </target>
+
+    <!--  Compile java source files-->
+    <target name="compile" depends=" init" description="Compile java source files">
+        <javac debug="on" srcdir="${dir.src}" destdir="${dir.classes}" encoding="UTF-8" includes="**/*.java **/*.properties" deprecation="off">
+            <classpath refid="project.class.path"/>
+            <compilerarg value="-Xlint:none"/>
+        </javac>
+        <copy todir="${dir.classes}">
+            <fileset dir="${dir.src}" excludes="**/*.java"/>
+        </copy>
+    </target>
+
+    <!-- Build project -->
+    <target name="build" depends="compile, compile-jasper" description="Compile project">
+        <!--<copy file="${dir.webcontent}/WEB-INF/geronimo-web_int.xml" tofile="${dir.webcontent}/WEB-INF/geronimo-web.xml" overwrite="true"/>-->
+    	<copy file="${dir.webcontent}/WEB-INF/config_int.properties" tofile="${dir.webcontent}/WEB-INF/config.properties" overwrite="true"/>
+    	<copy file="resources/log4j.properties" tofile="${dir.web-inf}/classes/log4j.properties" overwrite="true"/>
+    	<replace file="${dir.web-inf}/classes/log4j.properties" value="nacid">
+    	  	    <replacetoken>@LOGNAME@</replacetoken>
+    	</replace>
+		<war destfile="${dir.build}/war/${app-name}.war" webxml="${dir.webcontent}/WEB-INF/web_int.xml">
+            <classes dir="${dir.classes}">
+                <include name="com/**/*"/>
+             </classes>
+            <fileset dir="${dir.webcontent}" includes="**/*.*" excludes="**/WEB-INF/web_*.xml **/WEB-INF/geronimo-web_*.xml **/WEB-INF/config_*.properties **/screens_ext/** **/screens_regprof/** **/screens_regprof_ext/**"/>
+        </war>
+		<delete file="${dir.webcontent}/WEB-INF/geronimo-web.xml" />
+    	<delete file="${dir.webcontent}/WEB-INF/config.properties" />
+    	
+    	<delete file="${dir.webcontent}/WEB-INF/classes/log4j.properties" />
+    </target>
+	
+	<target name="build_ext" depends="compile, compile-jasper" description="Compile project">
+		<copy file="${dir.webcontent}/WEB-INF/geronimo-web_ext.xml" tofile="${dir.webcontent}/WEB-INF/geronimo-web.xml" overwrite="true"/>
+		<copy file="${dir.webcontent}/WEB-INF/config_ext.properties" tofile="${dir.webcontent}/WEB-INF/config.properties" overwrite="true"/>
+		<copy file="resources/log4j.properties" tofile="${dir.web-inf}/classes/log4j.properties" overwrite="true"/>
+		<replace file="${dir.web-inf}/classes/log4j.properties" value="nacid_ext">
+		    <replacetoken>@LOGNAME@</replacetoken>
+		</replace>
+		<war destfile="${dir.build}/war/${app-name}_ext.war" webxml="${dir.webcontent}/WEB-INF/web_ext.xml">
+            <classes dir="${dir.classes}">
+                <include name="com/**/*"/>
+             </classes>
+            <fileset dir="${dir.webcontent}" includes="**/*.*" excludes="**/WEB-INF/web*.xml **/WEB-INF/geronimo-web_*.xml **/WEB-INF/config_*.properties **/screens/** **/screens_regprof/** **/screens_regprof_ext/**"/>
+        	
+        </war>
+		<delete file="${dir.webcontent}/WEB-INF/geronimo-web.xml" />
+		<delete file="${dir.webcontent}/WEB-INF/config.properties" />
+		<delete file="${dir.webcontent}/WEB-INF/classes/log4j.properties" />
+    </target>
+
+	
+	<!-- Build project -->
+	<target name="build_regprof" depends="compile, compile-jasper" description="Compile project">
+	        <copy file="${dir.webcontent}/WEB-INF/geronimo-web_regprof.xml" tofile="${dir.webcontent}/WEB-INF/geronimo-web.xml" overwrite="true"/>
+	    	<copy file="${dir.webcontent}/WEB-INF/config_regprof.properties" tofile="${dir.webcontent}/WEB-INF/config.properties" overwrite="true"/>
+
+	        <copy file="resources/log4j.properties" tofile="${dir.web-inf}/classes/log4j.properties" overwrite="true"/>
+	        <replace file="${dir.web-inf}/classes/log4j.properties" value="nacid_regprof">
+	                <replacetoken>@LOGNAME@</replacetoken>
+	        </replace>
+	        <war destfile="${dir.build}/war/${app-name}_regprof.war" webxml="${dir.webcontent}/WEB-INF/web_regprof.xml">
+	            <classes dir="${dir.classes}">
+	                <include name="com/**/*"/>
+	             </classes>
+	            <fileset dir="${dir.webcontent}" includes="**/*.*" excludes="**/WEB-INF/web_*.xml **/WEB-INF/geronimo-web_*.xml **/WEB-INF/config_*.properties **/screens_ext/** **/screens/** **/screens_regprof_ext/**"/>
+	        </war>
+	        <delete file="${dir.webcontent}/WEB-INF/geronimo-web.xml" />
+	        <delete file="${dir.webcontent}/WEB-INF/config.properties" />
+	        
+	        <delete file="${dir.webcontent}/WEB-INF/classes/log4j.properties" />
+	</target>
+    
+	<!-- Build project -->
+	<target name="build_regprof_ext" depends="compile, compile-jasper" description="Compile project">
+	        <copy file="${dir.webcontent}/WEB-INF/geronimo-web_regprof_ext.xml" tofile="${dir.webcontent}/WEB-INF/geronimo-web.xml" overwrite="true"/>
+	    	<copy file="${dir.webcontent}/WEB-INF/config_regprof_ext.properties" tofile="${dir.webcontent}/WEB-INF/config.properties" overwrite="true"/>
+
+	        <copy file="resources/log4j.properties" tofile="${dir.web-inf}/classes/log4j.properties" overwrite="true"/>
+	        <replace file="${dir.web-inf}/classes/log4j.properties" value="nacid_regprof">
+	                <replacetoken>@LOGNAME@</replacetoken>
+	        </replace>
+	        <war destfile="${dir.build}/war/${app-name}_regprof_ext.war" webxml="${dir.webcontent}/WEB-INF/web_regprof_ext.xml">
+	            <classes dir="${dir.classes}">
+	                <include name="com/**/*"/>
+	             </classes>
+	            <fileset dir="${dir.webcontent}" includes="**/*.*" excludes="**/WEB-INF/web_*.xml **/WEB-INF/geronimo-web_*.xml **/WEB-INF/config_*.properties **/screens_ext/** **/screens/** **/screens_regprof/**"/>
+	        </war>
+	        <delete file="${dir.webcontent}/WEB-INF/geronimo-web.xml" />
+	        <delete file="${dir.webcontent}/WEB-INF/config.properties" />
+	        
+	        <delete file="${dir.webcontent}/WEB-INF/classes/log4j.properties" />
+	</target>
+	
+	<!--  Deploy to application server-->
+    <target name="deploy" depends="build" description="Deploy to application server">
+      <echo message="Deploying ${app-name} to application server"/>
+      <copy file="${dir.build}/war/${app-name}.war" todir="${server.deploy.dir}" overwrite="true"/>
+    </target>
+	
+	<target name="deploy_ext" depends="build_ext" description="Deploy to application server">
+      <echo message="Deploying ${app-name}_ext to application server"/>
+      <copy file="${dir.build}/war/${app-name}_ext.war" todir="${server.deploy.dir}" overwrite="true"/>
+    </target>
+
+	<target name="deploy_regprof" depends="build_regprof" description="Deploy to application server">
+	      <echo message="Deploying ${app-name}_regprof to application server"/>
+	      <copy file="${dir.build}/war/${app-name}_regprof.war" todir="${server.deploy.dir}" overwrite="true"/>
+	</target>
+	<target name="deploy_regprof_ext" depends="build_regprof_ext" description="Deploy regprof_ext to application server">
+		      <echo message="Deploying ${app-name}_regprof to application server"/>
+		      <copy file="${dir.build}/war/${app-name}_regprof_ext.war" todir="${server.deploy.dir}" overwrite="true"/>
+	</target>
+	
+    <!--  Copy WEbContent files to application deploy dir-->
+    <target name="web" depends="props">
+        <copy todir="${server.deployed.dir}" overwrite="true">
+            <fileset dir="${dir.webcontent}">
+                <include    name="**/*"/>
+                <exclude    name="WEB-INF/"/>
+                <exclude    name="META-INF/"/>
+          </fileset>
+        </copy>
+    </target>
+    <target  name="make-jar" depends="compile" description="Makes jar file from sources">
+    	 <jar destfile="${dir.build}/war/${app-name}.jar"
+    	    basedir="${dir.classes}"
+    	    includes="com/**/*.*"/>
+
+    	    <copy file="${dir.build}/war/${app-name}.jar" todir="${data_migration.lib.dir}" overwrite="yes"/>
+    </target>
+</project>

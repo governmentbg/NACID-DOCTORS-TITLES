@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="protokol_sub_members" language="groovy" pageWidth="480" pageHeight="60" whenNoDataType="AllSectionsNoDetail" columnWidth="480" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<property name="ireport.zoom" value="1.9487171000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PARAM_TITLE" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[PARAM_TITLE]]></parameterDescription>
+		<defaultValueExpression><![CDATA["TEST"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="commissionPosition" class="java.lang.String">
+		<fieldDescription><![CDATA[commissionPosition]]></fieldDescription>
+	</field>
+	<field name="degreeAndName" class="java.lang.String">
+		<fieldDescription><![CDATA[degreeAndName]]></fieldDescription>
+	</field>
+	<field name="institutionAndPosition" class="java.lang.String">
+		<fieldDescription><![CDATA[institutionAndPosition]]></fieldDescription>
+	</field>
+	<field name="institutionAndPositionForProtocol" class="java.lang.String"/>
+	<title>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="480" height="40" isRemoveLineWhenBlank="true"/>
+				<textElement lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\n    "+$P{PARAM_TITLE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="0" y="0" width="480" height="25"/>
+				<textElement lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["    "+$F{degreeAndName} + " - " + $F{institutionAndPositionForProtocol}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

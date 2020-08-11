@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+			<mvc:annotation-driven/>
+            <context:component-scan base-package="com.nacid.web.filters" />
+			<context:component-scan base-package="com.nacid.webspring" />
+			<context:component-scan base-package="com.nacid.bl" scope-resolver="com.nacid.webspring.RequestParameterInterfaceScopeResolver" name-generator="com.nacid.webspring.BeansNameGenerator">
+				<context:include-filter type="assignable" expression="com.nacid.bl.RequestParameterInterface"/>
+			</context:component-scan>
+			<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+				<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+				<property name="prefix" value="/screens/"/>
+				<property name="suffix" value=".jsp"/>
+			</bean>
+			<!-- okaza se che toq bean se generira sam ot spring frameworka - nqma nujda az da go opisvam!
+			<bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" name="formattingConversionServiceFactory"/>
+			 -->
+			<bean class="com.nacid.web.filters.GenerateRequestAttribute" name="generateRequestAttribute" autowire="byName"/>
+
+			
+</beans>

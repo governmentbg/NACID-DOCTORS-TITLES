@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="predlojenie_udost_CPO" language="groovy" pageWidth="595" pageHeight="410" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="bg_chiefDirectorateName" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Костадин Тонев"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="bg_chiefDirectoratePosition" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Директор на дирекция АКАДЕМИЧНО ПРИЗНАВАНЕ И РЕГУЛИРАНИ ПРОФЕСИИ"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="bg_chiefOfficerName" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Вержиния Цанкова"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="bg_chiefOfficerPosition" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Главен секретар"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="responsibleUser" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="260">
+			<textField>
+				<reportElement x="0" y="0" width="453" height="260"/>
+				<textElement textAlignment="Left" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/><br/><b>С уважение,</b><br/><b>" +
+$P{responsibleUser} +
+"</b><br/><i>Главен експерт</i><br/><br/><br/>" +
+"Съгласувал:<br/>" +"<b>"+
+$P{bg_chiefDirectorateName} + "</b> - " +
+$P{bg_chiefDirectoratePosition} + "<br/><br/><b>" +
+$P{bg_chiefOfficerName} + "</b> - " +
+$P{bg_chiefOfficerPosition}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

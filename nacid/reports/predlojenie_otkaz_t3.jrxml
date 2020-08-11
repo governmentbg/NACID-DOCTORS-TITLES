@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="predlojenie_otkaz_t1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="455" leftMargin="70" rightMargin="70" topMargin="70" bottomMargin="70">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\rayawork\\NACID\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="bg_chiefOfficerPosition" class="java.lang.String"/>
+	<parameter name="bg_chiefOfficerName" class="java.lang.String"/>
+	<parameter name="bg_chiefDirectorateName" class="java.lang.String"/>
+	<parameter name="bg_chiefDirectoratePosition" class="java.lang.String"/>
+	<parameter name="nacidDirectorLastName" class="java.lang.String"/>
+	<parameter name="nacidDirectorName" class="java.lang.String"/>
+	<field name="responsibleUser" class="java.lang.String"/>
+	<field name="applicationNumber" class="java.lang.String"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="applicationCountry" class="java.lang.String"/>
+	<field name="applicantName" class="java.lang.String"/>
+	<field name="profQualification" class="java.lang.String"/>
+	<field name="certificateProfQualification" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="599" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="453" height="571"/>
+				<subreportParameter name="applicationCountry">
+					<subreportParameterExpression><![CDATA[$F{applicationCountry}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="point">
+					<subreportParameterExpression><![CDATA["3"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="nacidDirectorLastName">
+					<subreportParameterExpression><![CDATA[$P{nacidDirectorLastName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicationDate">
+					<subreportParameterExpression><![CDATA[$F{applicationDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicationNumber">
+					<subreportParameterExpression><![CDATA[$F{applicationNumber}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="responsibleUser">
+					<subreportParameterExpression><![CDATA[$F{responsibleUser}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="nacidDirectorName">
+					<subreportParameterExpression><![CDATA[$P{nacidDirectorName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantName">
+					<subreportParameterExpression><![CDATA[$F{applicantName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "predlojenie_otkaz_intro.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="588" width="455" height="1"/>
+			</break>
+		</band>
+		<band height="419">
+			<textField>
+				<reportElement x="0" y="0" width="455" height="159"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<PRE>      Представените документи от заявителя за придобита"+
+" професионална квалификация са неистински."+
+" С писмо вх. № от ............................... се"+
+" удостоверява, че .........................  ."+
+"<br/><br/></PRE>"+
+"<PRE>      Приложено Ви представям проект на решение за отказ.<br/></PRE>"+
+"<PRE>      <b>Приложение:</b> съгласно текста.</PRE>"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="2" y="148" width="453" height="260"/>
+				<subreportParameter name="bg_chiefOfficerName">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefOfficerName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefOfficerPosition">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefOfficerPosition}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="responsibleUser">
+					<subreportParameterExpression><![CDATA[$F{responsibleUser}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefDirectoratePosition">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefDirectoratePosition}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefDirectorateName">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefDirectorateName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "predlojenie_udost_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

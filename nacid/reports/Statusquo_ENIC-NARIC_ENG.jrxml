@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Authenticity_ENIC-NARIC_ENG" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56">
+	<property name="ireport.zoom" value="1.6500000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="en_chiefDirectorateName" class="java.lang.String">
+		<parameterDescription><![CDATA[ru_chiefDirectorateName]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Костадин Тонев"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="en_chiefDirectoratePosition" class="java.lang.String">
+		<parameterDescription><![CDATA[ru_chiefDirectoratePosition]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Начальник отдела „Академическое признание и Регулированные профессии” \n Дирекция „Информационные деятельности”"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/WebContent/images/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="addressDetailsBulgaria" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetailsBulgaria]]></fieldDescription>
+	</field>
+	<field name="allUniversitiesNames" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesNames]]></fieldDescription>
+	</field>
+	<field name="allUniversitiesNamesAndLocations" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesNamesAndLocations]]></fieldDescription>
+	</field>
+	<field name="allUniversitiesCountries" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesNamesAndLocationsForCertificate]]></fieldDescription>
+	</field>
+	<field name="ownerAddressDetails" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerAddressDetails]]></fieldDescription>
+	</field>
+	<field name="ownerDiplomaName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerDiplomaName]]></fieldDescription>
+	</field>
+	<field name="ownerLastName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerLastName]]></fieldDescription>
+	</field>
+	<field name="ownerName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerName]]></fieldDescription>
+	</field>
+	<field name="applicationNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[applicationNumber]]></fieldDescription>
+	</field>
+	<field name="applicationStatus" class="java.lang.String">
+		<fieldDescription><![CDATA[applicationStatus]]></fieldDescription>
+	</field>
+	<field name="ownerBirthCountry" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerBirthCountry]]></fieldDescription>
+	</field>
+	<field name="ownerBirthDate" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerBirthDate]]></fieldDescription>
+	</field>
+	<field name="ownerBirthPlace" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerBirthPlace]]></fieldDescription>
+	</field>
+	<field name="ownerCitizenship" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerCitizenship]]></fieldDescription>
+	</field>
+	<field name="cityDetailsBulgaria" class="java.lang.String">
+		<fieldDescription><![CDATA[cityDetailsBulgaria]]></fieldDescription>
+	</field>
+	<field name="ownerCivilId" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerCivilId]]></fieldDescription>
+	</field>
+	<field name="commissionCalendars" class="java.lang.String">
+		<fieldDescription><![CDATA[commissionCalendars]]></fieldDescription>
+	</field>
+	<field name="commissionSessionDate" class="java.lang.String">
+		<fieldDescription><![CDATA[commissionSessionDate]]></fieldDescription>
+	</field>
+	<field name="commissionStatuses" class="java.lang.String">
+		<fieldDescription><![CDATA[commissionStatuses]]></fieldDescription>
+	</field>
+	<field name="countryPublishedDiploma" class="java.lang.String">
+		<fieldDescription><![CDATA[countryPublishedDiploma]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="diplomaDate" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaDate]]></fieldDescription>
+	</field>
+	<field name="diplomaEducationLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaEducationLevel]]></fieldDescription>
+	</field>
+	<field name="diplomaNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaNumber]]></fieldDescription>
+	</field>
+	<field name="diplomaSpecialityNames" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaSpecialityNames]]></fieldDescription>
+	</field>
+	<field name="docFlowNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[docFlowNumber]]></fieldDescription>
+	</field>
+	<field name="jointDegree" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[jointDegree]]></fieldDescription>
+	</field>
+	<field name="motives" class="java.lang.String">
+		<fieldDescription><![CDATA[motives]]></fieldDescription>
+	</field>
+	<field name="originalUniversitiesNameCityCountry" class="java.lang.String">
+		<fieldDescription><![CDATA[originalUniversitiesNameCityCountry]]></fieldDescription>
+	</field>
+	<field name="previousEducation" class="java.lang.String">
+		<fieldDescription><![CDATA[previousEducation]]></fieldDescription>
+	</field>
+	<field name="recognizedEducationLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[recognizedEducationLevel]]></fieldDescription>
+	</field>
+	<field name="recognizedQualification" class="java.lang.String">
+		<fieldDescription><![CDATA[recognizedQualification]]></fieldDescription>
+	</field>
+	<field name="recognizedSpecialityName" class="java.lang.String">
+		<fieldDescription><![CDATA[recognizedSpecialityName]]></fieldDescription>
+	</field>
+	<field name="recognizedSpecialityNameForCertificate" class="java.lang.String">
+		<fieldDescription><![CDATA[recognizedSpecialityNameForCertificate]]></fieldDescription>
+	</field>
+	<field name="today" class="java.lang.String">
+		<fieldDescription><![CDATA[today]]></fieldDescription>
+	</field>
+	<field name="trainingCountries" class="java.lang.String">
+		<fieldDescription><![CDATA[trainingCountries]]></fieldDescription>
+	</field>
+	<field name="trainingCountriesAndLocations" class="java.lang.String">
+		<fieldDescription><![CDATA[trainingCountriesAndLocations]]></fieldDescription>
+	</field>
+	<field name="trainingCourseQualification" class="java.lang.String">
+		<fieldDescription><![CDATA[trainingCourseQualification]]></fieldDescription>
+	</field>
+	<field name="trainingDuration" class="java.lang.String">
+		<fieldDescription><![CDATA[trainingDuration]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="160">
+			<printWhenExpression><![CDATA[($V{PAGE_NUMBER} == 1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="160"/>
+				<subreportParameter name="PARAM_DOC_FLOW_NUMBER">
+					<subreportParameterExpression><![CDATA[$F{applicationNumber}+"/"+$F{today}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IMAGE_DIR">
+					<subreportParameterExpression><![CDATA[$P{IMAGE_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "nacid_EN_header.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="550" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="483" height="395"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="false" pdfEncoding="Identity-V" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>TO<br/>"+
+"...<br/>" +
+"...<br/>" +
+"...<br/>" +
+"...<br/>" +
+"<br/<br/><u>SUBJECT:</u></b>"+
+"Request for the accreditation status of the "+
+$F{allUniversitiesNames}+" in " + $F{countryPublishedDiploma} +
+"<br/><br/><br/>"+
+"<b>DEAR ... ,</b><br/><br/>"+
+"&nbsp;&nbsp;&nbsp;&nbsp;In connection to an academic recognition procedure we would be very pleased if you can assist us in providing information about the accreditation status of an extension of the " +
+"<b>"+$F{allUniversitiesNames}+ "</b> in " + $F{allUniversitiesCountries} + ". " +
+"Is it a part of the national higher education system in " + $F{allUniversitiesCountries} + "." +
+"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Is this institution entitled to deliver national … diplomas of higher education which are recognized by the … in … or only awards the degrees relevant to the …. education system?"+
+"<br/>&nbsp;&nbsp;&nbsp;&nbsp;In addition we would like you to inform us about the educational level of the attached document, issued by this institution in terms of the European Qualification Framework. Is it equivalent to a Bachelor’s or Master’s degree in the context of the Bologna process?"+
+"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Thank you in advance."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement positionType="Float" x="0" y="409" width="259" height="125" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="false" pdfEncoding="Identity-V" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>Best regards,</b><br/><br/>"+
+"<b>"+$P{en_chiefDirectorateName}+"</b><br/>"+
+"<i>"+$P{en_chiefDirectoratePosition}+"</i>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="20"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "nacid_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

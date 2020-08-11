@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="predlojenie_udost_staj" language="groovy" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="453" leftMargin="71" rightMargin="71" topMargin="71" bottomMargin="71">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="384"/>
+	<parameter name="nacidDirectorName" class="java.lang.String"/>
+	<parameter name="nacidDirectorLastName" class="java.lang.String"/>
+	<parameter name="bg_chiefDirectorateName" class="java.lang.String"/>
+	<parameter name="bg_chiefDirectoratePosition" class="java.lang.String"/>
+	<parameter name="bg_chiefOfficerName" class="java.lang.String"/>
+	<parameter name="bg_chiefOfficerPosition" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\rayawork\\NACID\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nacidDirectorPosition" class="java.lang.String"/>
+	<parameter name="nacidDirectorHonorific" class="java.lang.String"/>
+	<field name="responsibleUser" class="java.lang.String"/>
+	<field name="applicationNumber" class="java.lang.String"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="applicationCountry" class="java.lang.String"/>
+	<field name="applicantName" class="java.lang.String"/>
+	<field name="professionExperience" class="java.lang.String"/>
+	<field name="documentType" class="java.lang.String"/>
+	<field name="documentNumber" class="java.lang.String"/>
+	<field name="documentDate" class="java.lang.String"/>
+	<field name="documentSeries" class="java.lang.String"/>
+	<field name="documentRegNumber" class="java.lang.String"/>
+	<field name="multipleDiplomaSpecialities" class="java.lang.String"/>
+	<field name="diplomaSpecialityNames" class="java.lang.String"/>
+	<field name="profInstitutionOrgName" class="java.lang.String"/>
+	<field name="trainingInstitutionName" class="java.lang.String"/>
+	<field name="secQualificationDegree" class="java.lang.String"/>
+	<field name="articleDirective" class="java.lang.String"/>
+	<field name="articleItem" class="java.lang.String"/>
+	<field name="recognizedProfession" class="java.lang.String"/>
+	<field name="experiencePeriod" class="java.lang.String"/>
+	<field name="noQualificationExperienceStatus" class="java.lang.Boolean"/>
+	<field name="professionExperienceDocuments" class="java.lang.String"/>
+	<field name="applicantDocumentName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="571" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="2" width="453" height="30"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["НАЦИОНАЛЕН ЦЕНТЪР ЗА ИНФОРМАЦИЯ И ДОКУМЕНТАЦИЯ"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="236" y="32" width="217" height="97"/>
+				<textElement textAlignment="Left" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/><br/><br/>ДО<br/>"+
+$P{nacidDirectorName}+"<br/>"+
+"ИЗПЪЛНИТЕЛЕН ДИРЕКТОР<br/><br/><br/>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="129" width="453" height="24"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>П Р Е Д Л О Ж Е Н И Е</b>"+"<br/><br/>от "+$F{responsibleUser}+"<br/>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="166" width="453" height="405"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Главен експерт, дирекция „АПРП” и длъжностно"+
+" лице по чл. 8, ал. 1 от Наредбата за условията и реда"+
+" за издаване на удостоверения, свързани с придобита" +
+" професионална квалификация на територията на Република"+
+" България, необходими за достъп или за упражняване на"+
+" регулирана професия на територията на друга държава членка"+
+" (обн., ДВ, бр. 28 от 5 април 2011 г., посл.. изм. и доп., ДВ, бр.28 от 2019 г) съгласно заповед"+
+" РД- 19-16/09.03.2020 г.<br/><br/><br/>"+
+"<b><u>Относно:</u></b> Заявление с Вх. № "+
+$F{applicationNumber}+"/"+$F{applicationDate}+
+" за издаване на удостоверение.<br/><br/><br/>"+
+"<b>УВАЖАЕМА ГОСПОЖО "+$P{nacidDirectorLastName}+",</b><br/>"+
+"<PRE>      Във връзка с постъпило заявление с Вх. № "+
+$F{applicationNumber}+"/"+$F{applicationDate}+
+" за издаване на удостоверение, свързано с придобита"+
+" професионална квалификация на територията на Република"+
+" България, необходимо за достъп или за упражняване на"+
+" регулирана професия на територията на "+
+$F{applicationCountry}+" на основание чл. 8, ал. 2 от Наредбата"+
+" предлагам да се издаде удостоверение на <b>"+($F{applicantDocumentName}.equals("") ? $F{applicantName} : $F{applicantDocumentName})+
+"</b> за придобита професионална квалификация „"+$F{professionExperience}+"” въз основа на следната информация:</PRE>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="700">
+			<break>
+				<reportElement x="0" y="0" width="453" height="1"/>
+			</break>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="453" height="309"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<PRE>      Лицето е удостоверилo професионалния си стаж като наето/самоосигуряващо се лице и/или ръководител на предприятие с " + $F{professionExperienceDocuments} +
+"Упражняваните дейности по професията са в качеството на наето/самоосигуряващо се лице и/или ръководител на предприятие в продължение на " + $F{experiencePeriod}+
+", което отговаря на " + $F{articleDirective} + " " + $F{articleItem} + " на Директива 2005/36/ЕО относно признаването на професионални квалификации. </PRE>" +
+"<PRE>      Притежателят на квалификацията има право да упражнява \""+ $F{professionExperience} +
+"\" на територията на Република България и декларира, че към момента на издаване на удостоверението няма наложени административни наказания, свързани с правото да упражнява професията. </PRE><br /><br />"+
+"<PRE>      Приложено Ви представям проект на удостоверение.</PRE><br/>" +
+"<PRE>      <b>Приложение:</b> съгласно текста.</PRE>"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="440" width="453" height="260"/>
+				<subreportParameter name="bg_chiefOfficerName">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefOfficerName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefOfficerPosition">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefOfficerPosition}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="responsibleUser">
+					<subreportParameterExpression><![CDATA[$F{responsibleUser}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefDirectoratePosition">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefDirectoratePosition}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="bg_chiefDirectorateName">
+					<subreportParameterExpression><![CDATA[$P{bg_chiefDirectorateName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "predlojenie_udost_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

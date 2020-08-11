@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="slujebna_belejka_priznato.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" whenResourceMissingType="Error">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="336"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/WebContent/images/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="docFlowNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[docFlowNumber]]></fieldDescription>
+	</field>
+	<field name="ownerName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerName]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="730" splitType="Stretch">
+			<staticText>
+				<reportElement key="T_TITLE" x="0" y="18" width="483" height="24"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[РЕГИСТРАЦИЯ]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="F_CONTENT" x="0" y="42" width="483" height="290" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" lineSpacing="Double" markup="none">
+					<font fontName="Times New Roman" size="14" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["С вх. № "+
+$F{docFlowNumber}+
+"  в Националния център за информация и документация са представени документи за извършване на процедура по признаване на придобито висше образование в чуждестранно висше училище на \n"+
+$F{ownerName}+
+"."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

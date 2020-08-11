@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webconfig>
+	<handler2group>
+		<group handler="com.ext.nacid.web.handlers.impl.applications.ExtApplicationsHandler" groupid="1" />
+		<group handler="com.ext.nacid.web.handlers.impl.applications.ExtApplicationAttachmentHandler" groupid="1" />
+		
+		<group handler="com.ext.nacid.web.handlers.impl.applications.ApplicantReportHandler" groupid="1" />
+		<group handler="com.ext.nacid.web.handlers.impl.applications.ApplicantReportInternalAttachmentsHandler" groupid="1" />
+		<group handler="com.ext.nacid.web.handlers.impl.applications.ApplicantReportExternalAttachmentsHandler" groupid="1" />
+		
+		<group handler="com.ext.nacid.web.handlers.impl.admin.ExpertChangePassHandler" groupid="2" />
+		<group handler="com.ext.nacid.web.handlers.impl.admin.ApplicantChangePassHandler" groupid="1" />
+		
+		<group handler="com.ext.nacid.web.handlers.impl.expert.ExpertApplicationHandler" groupid="2" />
+		<group handler="com.ext.nacid.web.handlers.impl.expert.ExpertStatementsHandler" groupid="2" />
+		<group handler="com.ext.nacid.web.handlers.impl.expert.ExpertApplicationViewHandler" groupid="2" />
+		
+		<group handler="com.ext.nacid.web.handlers.impl.applications.ExpertReportAttachmentsHandler" groupid="2" />
+		
+		
+		<group handler="com.ext.nacid.web.handlers.impl.mail.MailExpertHandler" groupid="2" />
+		<group handler="com.ext.nacid.web.handlers.impl.mail.MailApplicantHandler" groupid="1" />
+		
+		<group handler="com.ext.nacid.web.handlers.impl.applications.ESignApplicationHandler" groupid="1" />
+		
+		<group handler="com.ext.nacid.web.handlers.impl.inquires.CommissionInquireHandler" groupid="2" />
+		
+	</handler2group>
+	<request2handler>
+		<mapping url="/home" handler="com.ext.nacid.web.handlers.impl.HomePageHandler" />
+		<!--<mapping url="/registration" handler="com.ext.nacid.web.handlers.impl.RegistrationHandler" />-->
+		<mapping url="/public_register" handler="com.ext.nacid.web.handlers.impl.PublicRegisterHandler" />
+		<mapping url="/public_report" handler="com.ext.nacid.web.handlers.impl.PublicReportHandler" />
+		<mapping url="/public_report_att" handler="com.ext.nacid.web.handlers.impl.PublicReportAttHandler" />
+        <mapping url="/login" handler="com.ext.nacid.web.handlers.impl.HomePageHandler" />
+        <!--<mapping url="/recover_pass" handler="com.ext.nacid.web.handlers.impl.PasswordRecoveryHandler" />
+
+        <mapping url="/logout" handler="com.ext.nacid.web.handlers.impl.LogoutHandler" />-->
+		<mapping url="/application" handler="com.ext.nacid.web.handlers.impl.applications.ExtApplicationsHandler" />
+		<mapping url="/menu" handler="com.ext.nacid.web.handlers.impl.ajax.MenuAjaxHandler" />
+		<mapping url="/application_attachment" handler="com.ext.nacid.web.handlers.impl.applications.ExtApplicationAttachmentHandler" />
+		<mapping url="/attachment_ajax" handler="com.ext.nacid.web.handlers.impl.ajax.ExtAttachmentAjaxHandler" />
+		<mapping url="/universitysuggest" handler="com.ext.nacid.web.handlers.impl.applications.ExtUniversitySuggestHandler" />
+		<mapping url="/universityfacultysuggest" handler="com.nacid.web.handlers.impl.suggestions.UniversityFacultySuggestHandler" />
+		<mapping url="/specialitysuggest" handler="com.ext.nacid.web.handlers.impl.suggestions.ExtSpecialitySuggestHandler" />
+        <mapping url="/flatnomenclaturesuggest" handler="com.ext.nacid.web.handlers.impl.suggestions.ExtFlatNomenclatureSuggestHandler" />
+        
+		<mapping url="/applicantreport" handler="com.ext.nacid.web.handlers.impl.applications.ApplicantReportHandler" />
+		<mapping url="/expertreport" handler="com.ext.nacid.web.handlers.impl.expert.ExpertApplicationViewHandler" />
+
+		<mapping url="/applicantreportattachments" handler="com.ext.nacid.web.handlers.impl.applications.ApplicantReportInternalAttachmentsHandler" />
+		<mapping url="/applicantreportattachments_ext" handler="com.ext.nacid.web.handlers.impl.applications.ApplicantReportExternalAttachmentsHandler" />
+		<mapping url="/expertreportattachments" handler="com.ext.nacid.web.handlers.impl.applications.ExpertReportAttachmentsHandler" />
+		
+		<mapping url="/expert_application" handler="com.ext.nacid.web.handlers.impl.expert.ExpertApplicationHandler" />
+		<mapping url="/expert_statement" handler="com.ext.nacid.web.handlers.impl.expert.ExpertStatementsHandler" />
+		
+		<mapping url="/change_pass_exp" handler="com.ext.nacid.web.handlers.impl.admin.ExpertChangePassHandler"/>
+		<mapping url="/change_pass_appl" handler="com.ext.nacid.web.handlers.impl.admin.ApplicantChangePassHandler"/>
+		
+		<mapping url="/mail_exp" handler="com.ext.nacid.web.handlers.impl.mail.MailExpertHandler"/>
+		<mapping url="/mail_appl" handler="com.ext.nacid.web.handlers.impl.mail.MailApplicantHandler"/>
+		
+		<mapping url="/esignapplication" handler="com.ext.nacid.web.handlers.impl.applications.ESignApplicationHandler"/>
+		<mapping url="/commission_inquire" handler="com.ext.nacid.web.handlers.impl.inquires.CommissionInquireHandler"/>
+		<mapping url="/public_register_bguniversity" handler="com.ext.nacid.web.handlers.impl.PublicRegisterBGUniversityAcademicRecognitionHandler"/>
+		<mapping url="/nom_clear" handler="com.nacid.web.handlers.impl.nomenclatures.ClearNomenclaturesHandler" />
+
+        <mapping url="/legal_reason_ajax" handler="com.nacid.web.handlers.impl.ajax.LegalReasonAjaxHandler" />
+
+		<mapping url="/ext_person_ajax" handler="com.ext.nacid.web.handlers.impl.ajax.ExtPersonAjaxHandler" />
+	</request2handler>
+	<screen2jsp>
+		<screen name="home" jspTemplate="/screens_ext/home.jsp" />
+		<!--<screen name="registration" jspTemplate="/screens_ext/registration.jsp" />-->
+		<!--<screen name="recover_pass" jspTemplate="/screens_ext/recover_pass.jsp" />-->
+		<screen name="public_register" jspTemplate="/screens_ext/public_register.jsp" />
+		<screen name="public_report" jspTemplate="/screens_ext/public_report.jsp" />
+		<screen name="login" jspTemplate="/screens_ext/login.jsp" />
+		<screen name="loading" jspTemplate="/screens_ext/loading.jsp" />
+		<screen name="application_edit" jspTemplate="/screens_ext/applications/application_base.jsp" />
+		<screen name="application_attachment_edit" jspTemplate="/screens_ext/applications/application_attachment_edit.jsp" />
+		<screen name="table_list" jspTemplate="/screens_ext/table/list.jsp" />
+		<screen name="report_applicant" jspTemplate="/screens_ext/applications/report_applicant.jsp" />
+		<!-- <screen name="report_expert" jspTemplate="/screens_ext/applications/report_expert.jsp" />  -->
+		<screen name="application_expert_edit" jspTemplate="/screens_ext/expert/application_expert_edit.jsp" />
+		<screen name="expert_application_view" jspTemplate="/screens_ext/expert/expert_application_view.jsp" />
+		<screen name="expert_statement_edit" jspTemplate="/screens_ext/expert/expert_statement_edit.jsp" />
+		<screen name="change_pass" jspTemplate="/screens_ext/admin/change_pass.jsp" />
+		<screen name="mail_edit" jspTemplate="/screens_ext/mail/mail_edit.jsp" />
+		<screen name="commission_inquire" jspTemplate="/screens_ext/inquires/commission_inquire.jsp" />
+		<screen name="inquire_list" jspTemplate="/screens_ext/inquires/inquire_list.jsp"/>
+        <screen name="inquires_screens" jspTemplate="/screens_ext/inquires/inquires_screens.jsp"/>
+        <screen name="public_register_bg_academic_recognition" jspTemplate="/screens_ext/public_register_bg_academic_recognition.jsp"/>
+        <screen name="commission_inquire_legal_reason_ajax" jspTemplate="/screens_ext/inquires/commission_inquire_legal_reason_ajax.jsp" />
+		
+	</screen2jsp>
+</webconfig>

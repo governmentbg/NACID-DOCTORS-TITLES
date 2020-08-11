@@ -1,0 +1,108 @@
+@import "default.css";
+@import "forms.css";
+
+/*
+      what is "noMenubase" ???
+*/
+/*------------------------------------------- styles for LOGIN-page */
+form#login,form#search {
+  margin:0 auto;padding:0;width:90%;}
+form#login hr {
+  display:inline;width:60%;text-align:right;
+  height:1px;line-height:1px;}
+.hr {height:20px;
+  background:transparent url("../img/hr.gif") bottom right no-repeat;}
+
+div.searchBase,div.loginBase,div.login,div.search,.noMenubase {
+  width:500px;/*height:400px;*/
+  margin:0;padding:0;text-align:center;}
+
+div.searchBase,div.loginBase{
+  float:left;overflow:hidden;position:relative;
+  margin:10px 0 10px 0px;padding:0 0 0 66px;}
+div.login {
+  background: transparent url("../img/www_bkgr_alert.png") top left no-repeat;
+  height:320px;}
+div.search {
+  background: transparent url("../img/www_bkgr_search.png") top left no-repeat;
+  height:320px;}
+
+div.titleLogin {
+  margin:0;padding:0;height:75px;line-height:75px;
+  font-size:1em;font-weight:bold;letter-spacing:1px;color:#00f;}
+div.rowLogin {
+  margin:0;padding:0;height:45px;line-height:33px;text-align:right;}
+div.rowOR {
+  margin:0 220px 5px 0;padding:0;
+  height:1em;line-height:1em;text-align:right;}
+div.rowLoginBtn {
+  margin:10px 0 0 0;padding:0;text-align: right;}
+input.login {
+  width:190px;height:33px;line-height:33px;
+  margin:0;padding:0 0 0 20px;
+  font-size:1em;font-weight:bold;color:#585858;
+  background:transparent url("../img/www_input.png") center right no-repeat;
+  border:none;vertical-align:middle;}
+label.login_lbl {
+  margin-right:5px;font-size:1em;letter-spacing:.6px;}
+input.loginBtn {
+  width:130px;height:36px;line-height:26px;
+  margin:0;padding:0;font-size:.9em;font-weight:bold;color:#059;
+  letter-spacing:3px;text-transform:uppercase;text-decoration:none;
+  background: transparent url("../img/www_btn.png") top right no-repeat;
+  border:none;cursor:pointer;}
+
+form#login ul{
+  list-style-type:none;margin:0;padding:0;line-height:1.6em;
+  margin-left:50%;text-align:left;
+  font-size:1.2em;color:#00f;}
+form#login li{margin:0;padding:0;}
+form#login li a {
+  background:transparent url("../img/arrows_21x21.png") bottom left no-repeat;
+  padding:0 0 5px 30px;color:#059;}
+
+/*------------------------------------------------------- 16.8.2010 */
+div.RegisterBase input.loginBtn {margin:0 20px;}
+div.RegisterBase{
+  width:700px;margin:0 auto;padding:0;text-align:center;}
+div.RegisterBase .single_column {
+  float:none;width:550px;padding:0;margin:0 auto;}
+div.RegisterBase form {}
+div.RegisterBase div.titleLogin {
+  margin:0;padding:0;
+  height:50px;font-size:1em;font-weight:bold;
+  background: transparent url("../img/reg_top.png") top left no-repeat;
+  letter-spacing:1px;color: #00f;}
+div.RegisterBaseMdl {
+  text-align:center;
+  background: transparent url("../img/reg_mdl.png") top left repeat-y;}
+div.RegisterBaseBtm {
+  background: transparent url("../img/reg_btm.png") bottom left no-repeat;}
+div.RegisterBase input.brd,
+div.RegisterBase textarea.brd,
+div.RegisterBase select.brd {
+  background: #fff;}
+
+/*------------------------------------------------------- 18.8.2010 */
+div.topLinks,div.topAbout,div.Links,div.About{
+  width:500px;height:200px;
+  float:left;overflow:hidden;position:relative;
+  margin:10px 0;padding:0 0 0 66px;}
+div.Links {
+  background: transparent url("../img/www_bkgr_links.png") top left no-repeat;
+  margin:0;padding:0 0 0 60px;}
+div.About {
+  background: transparent url("../img/www_bkgr_blank.png") top left no-repeat;
+  margin:0;padding:0 30px;}
+div.About p{width:90%;margin:0;padding:0;}
+div.Links h2, div.About h2{
+  width:90%;margin:0;padding:30px 0 20px 0;text-align:center;
+  font-size:1.2em;font-weight:bold;letter-spacing:1px;color:#00f;}
+div.Links h2 {text-align:left;padding-left:90px;}
+div.Links ul{
+  list-style-type:none;margin:0;padding:10px 0 0 160px;line-height:1.6em;
+  font-size:1em;letter-spacing:0px;color:#00f;}
+div.Links li{margin:0;padding:0;}
+div.Links li a {
+  background:transparent url("../img/arrows_21x21.png") top left no-repeat;
+  padding:0 0 5px 30px;color:#585858;}

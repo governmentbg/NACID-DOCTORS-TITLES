@@ -1,0 +1,95 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                  http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<profiles>
+        <profile>
+            <id>init</id>
+            <properties>
+                <security.role.admin>hasAnyRole('ROLE_TMEFILING_APPLICATION')</security.role.admin>
+                <security.role.user>hasAnyRole('ROLE_TMEFILING_APPLICATION')</security.role.user>
+                <security.role.expert>hasAnyRole('APPLICATION_MANAGEMENT')</security.role.expert>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+			<id>int</id>
+			<properties>
+		        <webxml.location>WebContent\WEB-INF\web_int.xml</webxml.location>
+				<custom.resources.folder>resources/internal</custom.resources.folder>
+				<jsp.screens.folder>screens</jsp.screens.folder>
+                <app.name>nacid</app.name>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+        <profile>
+			<id>ext</id>
+			<properties>
+				<webxml.location>WebContent\WEB-INF\web_ext.xml</webxml.location>
+				<custom.resources.folder>resources/external</custom.resources.folder>
+				<jsp.screens.folder>screens_ext</jsp.screens.folder>
+                <app.name>nacid_ext</app.name>
+			</properties>
+		</profile>
+        <profile>
+            <id>regprof</id>
+            <properties>
+                <webxml.location>WebContent\WEB-INF\web_regprof.xml</webxml.location>
+                <custom.resources.folder>resources/regprof</custom.resources.folder>
+                <jsp.screens.folder>screens_regprof</jsp.screens.folder>
+                <app.name>nacid_regprof</app.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>regprofext</id>
+            <properties>
+                <webxml.location>WebContent\WEB-INF\web_regprof_ext.xml</webxml.location>
+                <custom.resources.folder>resources/regprof_ext</custom.resources.folder>
+                <jsp.screens.folder>screens_regprof_ext</jsp.screens.folder>
+                <app.name>nacid_regprof_ext</app.name>
+            </properties>
+        </profile>
+		<profile>
+			<id>local</id>
+			<properties>
+                <server.root.dir>D:/Servers/apache-tomcat-7.0.55</server.root.dir>
+                <tomcat.server.url>http://localhost:8080/manager/text</tomcat.server.url>
+				<tomcat.server.credentials>mytomcatserver</tomcat.server.credentials>
+				
+				
+				
+				<cas.login.url>https://nacidportal.int</cas.login.url>
+                <cas.server>https://nacidportal.int/cas</cas.server>
+                <cas.logout.url>https://nacidportal.int/cas/logout</cas.logout.url>
+                <cas.application.logout.page>https://nacidportal.int/c/portal/logout</cas.application.logout.page>
+
+                <cas.service.url>http://localhost:8080/${app.name}/j_spring_cas_security_check</cas.service.url>
+
+                <liferay.remote.user.name>joebloggs</liferay.remote.user.name>
+                <liferay.remote.user.password>test</liferay.remote.user.password>
+                <liferay.virtual.host>liferay.com</liferay.virtual.host>
+                <liferay.jsonws.service.url>https://nacidportal.int/api/jsonws/</liferay.jsonws.service.url>
+				<docflow.enabled>false</docflow.enabled>
+                <antiResourceLocking>false</antiResourceLocking>
+
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+        
+
+
+	</profiles>
+	<servers>
+		<server>
+			<id>mytomcatserver</id>
+			<username>tomcat</username>
+			<password>s3cret</password>
+		</server>
+	</servers>
+</settings>

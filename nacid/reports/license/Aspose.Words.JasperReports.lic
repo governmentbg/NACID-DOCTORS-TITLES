@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Gravis</LicensedTo>
+    <LicenseType>Developer Enterprise Subscription</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>100708074641</OrderID>
+    <OEM>This is not a non-redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Words for JasperReports</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>c13ee81c-a93c-4d61-b2a4-67edb2dec0ac</SerialNumber>
+    <SubscriptionExpiry>20110708</SubscriptionExpiry>
+    <LicenseExpiry>20100807</LicenseExpiry>
+    <ExpiryNote>This is a temporary license for non-commercial use only and it will expire on 2010-08-07.</ExpiryNote>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>P6Zd0RSQOb2WhotAOZ7bxApmAyQdMwigHJ7GnFQGJbUUE1NguVvospV/kuFvw41Fd0XrPUPsPV5MzytHjIW7Y8vgPLFb3afOsPmR5W4KekxGAN3GwqaASQWn587N4XWztV8EFBbEI3iHGzbWJpLzjZO3TUxEqy8O8aNxhu0qVYs=</Signature>
+</License>

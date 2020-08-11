@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="config">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dataObject" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dataObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="element" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="dataobjectattributes" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="element">
+    <xs:complexType>
+      <xs:attribute name="variable" type="xs:string"/>
+      <xs:attribute name="columnName" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:attributeGroup name="dataobjectattributes">
+    <xs:attribute name="className" type="xs:string"/>
+    <xs:attribute name="table" type="xs:string"/>
+  </xs:attributeGroup>
+
+</xs:schema>

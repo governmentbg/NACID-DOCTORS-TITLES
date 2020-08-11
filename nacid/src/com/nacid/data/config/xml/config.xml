@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <!-- start of UserRecords -->
+  	<dataObject className="com.nacid.data.users.UserRecord" table="users">
+		<element variable="userId" columnName="id" />
+		<element variable="fullName" columnName="fullname" />
+		<element variable="shortName" columnName="shortname" />
+		<element variable="userName" columnName="username" />
+		<element variable="userPass" columnName="userpass" />
+		<element variable="status" columnName="status" />
+		<element variable="email" columnName="email" />
+		<element variable="telephone" columnName="tel" />
+	</dataObject>
+	<!-- <dataObject className="com.nacid.data.external.users.ExtUserRecord" table="ext_users" /> -->
+	
+	<dataObject className="com.nacid.data.users.UserGroupMembershipRecord" table="users_group_membership">
+		<element variable="recordId" columnName="record_id" />
+		<element variable="userId" columnName="user_id" />
+		<element variable="groupId" columnName="group_id" />
+		<element variable="operations" columnName="operations" />
+		<element variable="webApplication" columnName="web_application" />
+	</dataObject>
+<!-- 	<dataObject className="com.nacid.data.external.users.ExtUserGroupMembershipRecord" table="ext_users_group_membership" /> -->
+	
+	<dataObject className="com.nacid.data.users.UserAddressRecord" table="user_addr">
+		<element variable="recordId" columnName="id" />
+		<element variable="userId" columnName="user_id" />
+		<element variable="ipAddress" columnName="ip_address" />
+		<element variable="addressType" columnName="addr_type" />
+		<element variable="active" columnName="active" />
+	</dataObject>
+	
+	<dataObject className="com.nacid.data.users.UserSysLogRecord" table="users_sys_log">
+		<element variable="recordId" columnName="record_id" />
+		<element variable="userId" columnName="user_id" />
+		<element variable="sessionId" columnName="session_id" />
+		<element variable="remoteAddress" columnName="remote_addr" />
+		<element variable="remoteHost" columnName="remote_host" />
+		<element variable="timeLogin" columnName="time_login" />
+		<element variable="timeLogout" columnName="time_logout" />
+		<element variable="webApplicationId" columnName="web_app" />
+	</dataObject>
+	<dataObject className="com.nacid.data.external.users.ExtUserSysLogRecord" table="ext_users_sys_log" />
+	
+	<dataObject className="com.nacid.data.users.UserSysLogOperationRecord" table="users_sys_log_operations">
+		<element variable="recordId" columnName="record_id" />
+		<element variable="userSysLogRecordId" columnName="syslog_record_id" />
+		<element variable="groupName" columnName="group_name" />
+		<element variable="operationName" columnName="operation_name" />
+		<element variable="queryString" columnName="query_string" />
+		<element variable="dateCreated" columnName="date_created" />
+	</dataObject>
+	<dataObject className="com.nacid.data.external.users.ExtUserSysLogOperationRecord" table="ext_users_sys_log_operations" />
+  <!-- end of UserRecords -->
+  
+  <!-- start of menuRecords -->
+  	<dataObject className="com.nacid.data.menu.MenuRecord" table="menu">
+		<element variable="id" columnName="id" />
+		<element variable="parentId" columnName="parent_id" />
+		<element variable="ordNum" columnName="ord_num" />
+		<element variable="url" columnName="url" />
+		<element variable="name" columnName="name" />
+		<element variable="longName" columnName="long_name" />
+		<element variable="active" columnName="active" />
+	</dataObject>
+<!--	<dataObject className="com.nacid.data.external.menu.ExtMenuRecord" table="ext_menu" /> -->
+  <!-- end of menuRecords -->
+  
+  
+  <!-- start of NomenclatureRecords -->
+	<dataObject className="com.nacid.data.nomenclatures.FlatNomenclatureRecord" table="">
+		<element variable="id" columnName="id" />
+		<element variable="name" columnName="name" />
+		<element variable="dateFrom" columnName="date_from" />
+		<element variable="dateTo" columnName="date_to" />
+	</dataObject>
+	<dataObject className="com.nacid.data.nomenclatures.EducationAreaRecord" table="nomenclatures.edu_area" />
+	<dataObject className="com.nacid.data.nomenclatures.DocCategoryRecord" table="nomenclatures.doc_category" />
+	<dataObject className="com.nacid.data.nomenclatures.EducationLevelRecord" table="nomenclatures.edu_level" />
+	<dataObject className="com.nacid.data.nomenclatures.CopyTypeRecord" table="nomenclatures.copy_types" />
+	
+	
+	<!-- start of regprof nomenclature records -->
+	<dataObject className="com.nacid.data.nomenclatures.regprof.HigherProfessionalQualificationRecord" table="nomenclatures.higher_prof_qualification" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.HigherSpecialityRecord" table="nomenclatures.higher_speciality" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.EducationDocumentTypeRecord" table="nomenclatures.education_document_type" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.ProfessionalInstitutionTypeRecord" table="nomenclatures.professional_institution_type" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.QualificationDegreeRecord" table="nomenclatures.secondary_qualification_degree" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.SecondaryCaliberRecord" table="nomenclatures.secondary_caliber" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.SecondaryProfessionGroupRecord" table="nomenclatures.secondary_profession_group" >
+		<element variable="code" columnName="code" />
+	</dataObject>
+	<dataObject className="com.nacid.data.nomenclatures.regprof.CertificateProfessionalQualificationRecord" table="nomenclatures.certificate_prof_qualification" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.PaymentTypeRecord" table="nomenclatures.payment_type" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.SecondaryProfessionalQualificationRecord" table="nomenclatures.secondary_prof_qualification" >
+		<element variable="professionGroupId" columnName="profession_group_id" />
+		<element variable="code" columnName="code" />
+	</dataObject>
+	<dataObject className="com.nacid.data.nomenclatures.regprof.SecondarySpecialityRecord" table="nomenclatures.secondary_speciality">
+    	<element variable="profQualificationId" columnName="prof_qualification_id" />
+    	<element variable="qualificationDegreeId" columnName="qualification_degree_id" />
+    	<element variable="code" columnName="code" />
+    </dataObject>
+    <dataObject className="com.nacid.data.nomenclatures.regprof.ProfessionRecord" table="nomenclatures.profession" />
+    <dataObject className="com.nacid.data.nomenclatures.regprof.EducationTypeRecord" table="nomenclatures.education_type" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.ProfessionExperienceRecord" table="nomenclatures.profession_experience" />
+	<dataObject className="com.nacid.data.nomenclatures.regprof.RegprofArticleItemRecord" table="nomenclatures.article_item">
+		<element variable="articleDirectiveId" columnName="article_directive_id" />
+		<element variable="qualificationLevelLabel" columnName="qualification_level_label" />
+	</dataObject>
+	<dataObject className="com.nacid.data.nomenclatures.regprof.ServiceTypeRecord" table="nomenclatures.service_type">
+		<element variable="executionDays" columnName="execution_days" />
+		<element variable="servicePrice" columnName="service_price" />
+	</dataObject>
+	<!-- end of regprof nomenclature records -->
+	
+	<dataObject className="com.nacid.data.nomenclatures.ProfessionGroupRecord" table="nomenclatures.prof_group">
+		<element variable="educationAreaId" columnName="edu_area_id" />
+	</dataObject>
+    <dataObject className="com.nacid.data.nomenclatures.OriginalEducationLevelRecord" table="nomenclatures.original_edu_level">
+        <element variable="eduLevelId" columnName="edu_level_id" />
+        <element variable="countryId" columnName="country_id" />
+        <element variable="nameTranslated" columnName="name_translated" />
+    </dataObject>
+
+	<dataObject className="com.nacid.data.nomenclatures.SpecialityRecord" table="nomenclatures.speciality">
+		<element variable="professionGroupId" columnName="prof_group_id" />
+	</dataObject>
+	<dataObject className="com.nacid.data.nomenclatures.ProfessionalSchoolRecord" table="nomenclatures.professional_school">
+		<element variable="city" columnName="city" />
+		<element variable="address" columnName="address" />
+		<element variable="phone" columnName="phone" />
+	</dataObject>
+	<dataObject className="com.nacid.data.nomenclatures.CountryRecord" table="nomenclatures.country">
+		<element variable="iso3166Code" columnName="iso3166_code" />
+		<element variable="officialName" columnName="official_name" />
+	</dataObject>
+	<dataObject className="com.nacid.data.nomenclatures.DocumentTypeRecord" table="nomenclatures.doc_types">
+		<element variable="isIncoming" columnName="in_out" />
+		<element variable="hasDocflowId" columnName="has_docflow_id" />
+		<element variable="documentTemplate" columnName="doc_template" />
+	</dataObject>
+	<dataObject className="com.nacid.data.nomenclatures.LegalReasonRecord" table="nomenclatures.legal_reason">
+       <element variable="applicationStatusId" columnName="app_status_id"></element>
+       <element variable="ordinanceArticle" columnName="ordinance_article"></element>
+       <element variable="regulationArticle" columnName="regulation_article"></element>
+       <element variable="regulationText" columnName="regulation_text"></element>
+    </dataObject>
+    <dataObject className="com.nacid.data.nomenclatures.QualificationInBulgariaRecord" table="nomenclatures.qualification_bulgaria"> <!-- Rostislav -->
+    	<element variable="isRegulatedInBulgaria" columnName="is_regulated" />
+    </dataObject>
+    
+	<dataObject className="com.nacid.data.nomenclatures.EventStatusRecord" table="nomenclatures.event_status" />
+	<dataObject className="com.nacid.data.nomenclatures.CommissionPositionRecord" table="nomenclatures.commission_position" />
+	<!-- RayaWritten -->
+
+	<!-- End of RayaWritten -->
+	<dataObject className="com.nacid.data.nomenclatures.QualificationRecord" table="nomenclatures.qualification" />
+	<dataObject className="com.nacid.data.nomenclatures.OriginalQualificationRecord" table="nomenclatures.original_qualification" />
+	<dataObject className="com.nacid.data.nomenclatures.RecognitionPurposeRecord" table="nomenclatures.purpose_of_recognition" />
+	<dataObject className="com.nacid.data.nomenclatures.TrainingFormRecord" table="nomenclatures.training_form" />
+	<dataObject className="com.nacid.data.nomenclatures.GraduationWayRecord" table="nomenclatures.way_of_graduation" />
+	<dataObject className="com.nacid.data.nomenclatures.CivilIdTypeRecord" table="nomenclatures.civil_id_type" />
+	<dataObject className="com.nacid.data.nomenclatures.DurationUnitRecord" table="nomenclatures.duration_unit" />
+	<dataObject className="com.nacid.data.nomenclatures.ApplicationStatusRecord" table="nomenclatures.app_status" />
+	<dataObject className="com.nacid.data.nomenclatures.ApplicationDocflowStatusRecord" table="nomenclatures.app_status_docflow" />
+	<dataObject className="com.nacid.data.nomenclatures.ApplicationSessionStatusRecord" table="nomenclatures.app_session_status" />
+	<dataObject className="com.nacid.data.nomenclatures.TrainingLocationRecord" table="nomenclatures.training_location" />
+	<dataObject className="com.nacid.data.nomenclatures.SessionStatusRecord" table="nomenclatures.session_status" />
+	<dataObject className="com.nacid.data.nomenclatures.OriginalSpecialityRecord" table="nomenclatures.original_speciality" />
+	<dataObject className="com.nacid.data.nomenclatures.BolognaCycleRecord" table="nomenclatures.bologna_cycle" />
+	<dataObject className="com.nacid.data.nomenclatures.EuropeanQualificationsFrameworkRecord" table="nomenclatures.european_qualifications_framework" />
+	<dataObject className="com.nacid.data.nomenclatures.GraduationDocumentTypeRecord" table="nomenclatures.graduation_document_type" />
+	<dataObject className="com.nacid.data.nomenclatures.NationalQualificationsFrameworkRecord" table="nomenclatures.national_qualifications_framework">
+	    <element variable="countryId" columnName="country_id" />
+    </dataObject>
+    <dataObject className="com.nacid.data.nomenclatures.ExpertPositionRecord" table="nomenclatures.expert_position">
+        <element variable="relatedAppStatusId" columnName="related_app_status_id" />
+    </dataObject>
+    <dataObject className="com.nacid.data.nomenclatures.GradeRecord" table="nomenclatures.grade" />
+    <dataObject className="com.nacid.data.nomenclatures.SchoolTypeRecord" table="nomenclatures.school_type" />
+    <dataObject className="com.nacid.data.nomenclatures.AgeRangeRecord" table="nomenclatures.age_range" />
+    <dataObject className="com.nacid.data.nomenclatures.PersonalIdDocumentTypeRecord" table="nomenclatures.personal_id_document_type" />
+    <dataObject className="com.nacid.data.nomenclatures.DocumentReceiveMethodRecord" table="nomenclatures.document_receive_method">
+		<element variable="hasDocumentRecipient" columnName="has_document_recipient" />
+		<element variable="eservicesRequirePaymentReceipt" columnName="eservices_require_payment_receipt" />
+	</dataObject>
+    <dataObject className="com.nacid.data.nomenclatures.UniversityGenericNameRecord" table="nomenclatures.university_generic_name" />
+  <!-- End of NomenclatureRecords -->
+	<dataObject className="com.nacid.data.comission.ComissionMemberRecord" table="comission_member">
+		<element variable="id" columnName="id" />
+		<element variable="fname" columnName="fname" />
+		<element variable="sname" columnName="sname" />
+		<element variable="lname" columnName="lname" />
+		<element variable="degree" columnName="degree" />
+		<element variable="institution" columnName="institution" />
+		<element variable="division" columnName="division" />
+		<element variable="title" columnName="title" />
+		<element variable="egn" columnName="egn" />
+		<element variable="homeCity" columnName="home_city" />
+		<element variable="homePcode" columnName="home_pcode" />
+		<element variable="homeAddress" columnName="home_address" />
+		<element variable="phone" columnName="phone" />
+		<element variable="email" columnName="email" />
+		<element variable="gsm" columnName="gsm" />
+		<element variable="iban" columnName="iban" />
+		<element variable="bic" columnName="bic" />
+		<element variable="dateFrom" columnName="date_from" />
+		<element variable="dateTo" columnName="date_to" />
+		<element variable="comissionPos" columnName="comission_pos" />
+		<element variable="profGroupId" columnName="prof_group_id" />
+		<element variable="userId" columnName="user_id" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.ApplicationRecord" table="application">
+		<element variable="id" columnName="id" />
+		<element variable="applicationNumber" columnName="app_num" />
+		<element variable="applicationDate" columnName="app_date" />
+		<element variable="applicantId" columnName="applicant_id" />
+        <element variable="applicantCompanyId" columnName="applicant_company_id"/>
+		<element variable="representativeId" columnName="representative_id" />
+		<element variable="trainingCourseId" columnName="training_course_id" />
+		<element variable="email" columnName="email" />
+		<element variable="officialEmailCommunication" columnName="official_email_comm" />
+		<element variable="homeCountryId" columnName="home_country_id" />
+		<element variable="homeCity" columnName="home_city" />
+		<element variable="homePostCode" columnName="home_pcode" />
+		<element variable="homeAddressDetails" columnName="home_addr_details" />
+		<element variable="homeIsBg" columnName="home_is_bg" />
+		<element variable="bgCity" columnName="bg_city" />
+		<element variable="bgPostCode" columnName="bg_pcode" />
+		<element variable="bgAddressDetails" columnName="bg_addr_details" />
+		<element variable="bgAddressOwner" columnName="bg_addr_owner" />
+		<element variable="createdByUserId" columnName="created_by_user_id" />
+		<element variable="timeOfCreation" columnName="time_of_creation" />
+		<element variable="applicationStatusId" columnName="app_status_id" />
+		<element variable="companyId" columnName="company_id" />
+		<element variable="differentDiplomaNames" columnName="diff_diploma_names" />
+		
+		<element variable="homePhone" columnName="home_contact_phone" />
+		<element variable="bgPhone" columnName="bg_contact_phone" />
+		<element variable="reprCountryId" columnName="repr_country_id" />
+		<element variable="reprCity" columnName="repr_city" />
+		<element variable="reprPcode" columnName="repr_pcode" />
+		<element variable="reprAddressDetails" columnName="repr_addr_details" />
+		<element variable="reprPhone" columnName="repr_contact_phone" />
+		<element variable="summary" columnName="summary" />
+		<element variable="archiveNumber" columnName="archive_num" />
+		<element variable="personalDataUsage" columnName="personal_data_usage" />
+		
+		<element variable="dataAuthentic" columnName="is_data_authentic"/>
+		<element variable="representativeAuthorized" columnName="is_representative_authorized"/>
+		<element variable="notes" columnName="notes"/>
+		<element variable="submittedDocs" columnName="submitted_docs"/>
+		<element variable="applicantInfo" columnName="applicant_info"/>
+		<element variable="responsibleUser" columnName="responsible_user"/>
+        <element variable="docflowStatusId" columnName="docflow_status_id"/>
+        <element variable="finalStatusHistoryId" columnName="final_status_history_id"/>
+
+        <element variable="representativeType" columnName="representative_type"/>
+        <element variable="typePayment" columnName="type_payment"/>
+        <element variable="deliveryType" columnName="delivery_type"/>
+        <element variable="declaration" columnName="declaration"/>
+        <element variable="courierNameAddress" columnName="courier_name_address"/>
+        <element variable="outgoingNumber" columnName="outgoing_number"/>
+        <element variable="internalNumber" columnName="internal_number"/>
+        <element variable="isExpress" columnName="is_express"/>
+        <element variable="applicantType" columnName="applicant_type"/>
+        <element variable="applicationType" columnName="application_type"/>
+		<element variable="documentReceiveMethodId" columnName="document_receive_method_id"/>
+		<element variable="applicantPersonalIdDocumentType" columnName="applicant_personal_id_document_type"/>
+
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.AttachedDocumentRecord" table="attached_docs">
+		<element variable="id" columnName="id" />
+		<element variable="applicationId" columnName="application_id" />
+		<element variable="documentDescription" columnName="doc_descr" />
+		<element variable="documentTypeId" columnName="doc_type_id" />
+		<element variable="contentType" columnName="content_type" />
+		<element variable="documentContent" columnName="doc_content" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.PersonRecord" table="person">
+		<element variable="id" columnName="id" />
+		<element variable="fName" columnName="fname" />
+		<element variable="sName" columnName="sname" />
+		<element variable="lName" columnName="lname" />
+		<element variable="civilId" columnName="civil_id" />
+		<element variable="civilIdType" columnName="civil_id_type" />
+		<element variable="birthCountryId" columnName="birth_country_id" />
+		<element variable="birthCity" columnName="birth_city" />
+		<element variable="birthDate" columnName="birth_date" />
+		<element variable="citizenshipId" columnName="citizenship_id" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.UniversityRecord" table="university">
+		<element variable="id" columnName="id" />
+		<element variable="countryId" columnName="country_id" />
+		<element variable="bgName" columnName="bg_name" />
+		<element variable="orgName" columnName="org_name" />
+		<element variable="city" columnName="city" />
+		<element variable="addrDetails" columnName="addr_details" />
+		<element variable="phone" columnName="phone" />
+		<element variable="fax" columnName="fax" />
+		<element variable="email" columnName="email" />
+		<element variable="webSite" columnName="web_site" />
+		<element variable="urlDiplomaRegister" columnName="url_diploma_register" />
+		<element variable="dateFrom" columnName="date_from" />
+		<element variable="dateTo" columnName="date_to" />
+		<element variable="universityGenericNameId" columnName="university_generic_name_id" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.DiplomaTypeRecord" table="diploma_type">
+		<element variable="id" columnName="id" />
+		<element variable="visualElementsDescr" columnName="visual_elements_descr" />
+		<element variable="protectionElementsDescr" columnName="protection_elements_descr" />
+		<element variable="numberFormatDescr" columnName="number_format_descr" />
+		<element variable="notes" columnName="notes" />
+		<element variable="dateFrom" columnName="date_from" />
+		<element variable="dateTo" columnName="date_to" />
+		<element variable="title" columnName="title" />
+		<element variable="eduLevelId" columnName="edu_level_id" />
+		<element variable="originalEduLevelId" columnName="original_edu_level_id" />
+		<element variable="isJointDegree" columnName="is_joint_degree" />
+		<element variable="bolognaCycleId" columnName="bologna_cycle_id" />
+		<element variable="nationalQualificationsFrameworkId" columnName="nqf_id" />
+		<element variable="europeanQualificationsFrameworkId" columnName="eqf_id" />
+		<element variable="bolognaCycleAccessId" columnName="acc_bologna_cycle_id" />
+		<element variable="nationalQualificationsFrameworkAccessId" columnName="acc_nqf_id" />
+		<element variable="europeanQualificationsFrameworkAccessId" columnName="acc_eqf_id" />
+		<element variable="type" columnName="type" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.TrainingCourseRecord" table="training_course">
+		<element variable="id" columnName="id" />
+		<element variable="diplomaSeries" columnName="diploma_series" />
+		<element variable="diplomaNumber" columnName="diploma_num" />
+		<element variable="diplomaRegistrationNumber" columnName="diploma_registration_number" />
+		<element variable="diplomaDate" columnName="diploma_date" />
+		<element variable="diplomaTypeId" columnName="diploma_type_id" />
+		<element variable="firstName" columnName="fname" />
+		<element variable="surName" columnName="sname" />
+		<element variable="lastName" columnName="lname" />
+		<element variable="isJointDegree" columnName="is_joint_degree" />
+		<!-- <element variable="trainingLocationCountryId" columnName="training_location_country_id" />
+		<element variable="trainingLocationCity" columnName="training_location_city" /> -->
+		<element variable="trainingStart" columnName="training_start" />
+		<element variable="trainingEnd" columnName="training_end" />
+		<element variable="trainingDuration" columnName="training_duration" />
+		<element variable="durationUnitId" columnName="duration_unit_id" />
+		<element variable="credits" columnName="credits" />
+		<!-- 
+		<element variable="specialityId" columnName="speciality_id" />
+		 -->
+		<element variable="educationLevelId" columnName="edu_level_id" />
+		<element variable="qualificationId" columnName="qualification_id" />
+		<element variable="originalQualificationId" columnName="original_qualification_id" />
+		<element variable="recognized" columnName="is_recognized" />
+		
+		<element variable="schoolCountryId" columnName="school_country" />
+    	<element variable="schoolCity" columnName="school_city" />
+    	<element variable="schoolName" columnName="school_name" />
+    	<element variable="schoolGraduationDate" columnName="school_graduation_date" />
+    	<element variable="schoolNotes" columnName="school_notes" />
+    	<element variable="prevDiplUniversityId" columnName="prev_diploma_university_id" />
+    	<element variable="prevDiplEduLevelId" columnName="prev_diploma_edu_level_id" />
+    	<element variable="prevDiplGraduationDate" columnName="prev_diploma_graduation_date" />
+    	<element variable="prevDiplNotes" columnName="prev_diploma_notes" />
+    	<element variable="prevDiplSpecialityId" columnName="prev_diploma_speciality_id" />
+    	<element variable="recognizedEduLevel" columnName="recognized_edu_level_id" />
+    	<element variable="recognizedQualification" columnName="recognized_qualification_id" />
+    	<element variable="graduationDocumentTypeId" columnName="graduation_document_type_id" />
+    	<element variable="creditHours" columnName="credit_hours" />
+    	<element variable="ectsCredits" columnName="ects_credits" />
+    	<element variable="ownerId" columnName="owner_id" />
+    	<element variable="thesisTopic" columnName="thesis_topic" />
+    	<element variable="thesisTopicEn" columnName="thesis_topic_en" />
+		<element variable="thesisAnnotation" columnName="thesis_annotation" />
+		<element variable="thesisAnnotationEn" columnName="thesis_annotation_en" />
+		<element variable="thesisDefenceDate" columnName="thesis_defence_date" />
+		<element variable="thesisVolume" columnName="thesis_volume" />
+		<element variable="thesisLanguageId" columnName="thesis_language_id" />
+		<element variable="thesisBibliography" columnName="thesis_bibliography" />
+    	<element variable="profGroupId" columnName="prof_group_id" />
+    	<element variable="recognizedProfGroupId" columnName="recognized_prof_group_id" />
+
+
+    	<!-- <element variable="trainingInstId" columnName="training_inst_id" /> -->
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.DiplomaIssuerRecord" table="diploma_issuer">
+		<element variable="id" columnName="id" />
+		<element variable="diplomaId" columnName="diploma_id" />
+		<element variable="universityId" columnName="university_id" />
+		<element variable="facultyId" columnName="faculty_id" />
+		<element variable="orderNumber" columnName="ord_num" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.ApplicationRecognitionPurposeRecord" table="purpose_of_recognition">
+		<element variable="id" columnName="id" />
+		<element variable="applicationId" columnName="application_id" />
+		<element variable="recognitionPurposeId" columnName="purpose_of_recognition_id" />
+		<element variable="notes" columnName="notes" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.TrainingCourseTrainingFormRecord" table="training_form">
+		<element variable="id" columnName="id" />
+		<element variable="trainingCourseId" columnName="training_course_id" />
+		<element variable="trainingFormId" columnName="training_form_id" />
+		<element variable="notes" columnName="notes" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.TrainingCourseGraduationWayRecord" table="way_of_graduation">
+		<element variable="id" columnName="id" />
+		<element variable="trainingCourseId" columnName="training_course_id" />
+		<element variable="graduationWayId" columnName="way_of_graduation_id" />
+		<element variable="notes" columnName="notes" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.CompetentInstitutionRecord" table="competent_institution">
+		<element variable="id" columnName="id" />
+		<element variable="countryId" columnName="country_id" />
+		<element variable="name" columnName="name" />
+		<element variable="originalName" columnName="org_name" />
+		<element variable="phone" columnName="phone" />
+		<element variable="fax" columnName="fax" />
+		<element variable="email" columnName="email" />
+		<element variable="addressDetails" columnName="addr_details" />
+		<element variable="url" columnName="url" />
+		<element variable="notes" columnName="notes" />
+		<element variable="dateFrom" columnName="date_from" />
+		<element variable="dateTo" columnName="date_to" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.UniversityValidityRecord" table="university_validity">
+		<element variable="id" columnName="id" />
+		<element variable="universityId" columnName="university_id" />
+		<element variable="userId" columnName="user_id" />
+		<element variable="examinationDate" columnName="examination_date" />
+		<element variable="isComunicated" columnName="is_communicated" />
+		<element variable="isRecognized" columnName="is_recognized" />
+		<element variable="notes" columnName="notes" />
+		<element variable="trainingLocationId" columnName="training_location_id" />
+		<element variable="hasJoinedDegrees" columnName="has_joint_degrees" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.SourceOfInformationRecord" table="sources_of_information">
+		<element variable="id" columnName="id" />
+		<element variable="universityValidityId" columnName="university_validity_id" />
+		<element variable="competentInstitutionId" columnName="competent_institution_id" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.AvailableTrainingFormsRecord" table="available_training_forms">
+		<element variable="id" columnName="id" />
+		<element variable="universityValidityId" columnName="university_validity_id" />
+		<element variable="trainingFormId" columnName="training_form_id" />
+		<element variable="notes" columnName="notes" />
+	</dataObject>
+	<dataObject className="com.nacid.data.applications.UniversityExaminationRecord" table="university_examination">
+		<element variable="id" columnName="id" />
+		<element variable="trainingCourseId" columnName="training_course_id" />
+		<element variable="universityValidityId" columnName="university_validity_id" />
+		<element variable="userId" columnName="user_id" />
+		<element variable="examinationDate" columnName="examination_date" />
+		<element variable="isRecognized" columnName="is_recognized" />
+		<element variable="notes" columnName="notes" />
+	</dataObject>
+	
+	<dataObject className="com.nacid.data.applications.DiplomaExaminationRecord" table="diploma_examination">
+    <element variable="id" columnName="id" />
+    <element variable="trainingCourseId" columnName="training_course_id" />
+    <element variable="userId" columnName="user_id" />
+    <element variable="sqlExaminationDate" columnName="examination_date" />
+    <element variable="notes" columnName="notes" />
+    <element variable="intIsRecognized" columnName="is_recognized" />
+    <element variable="competentInstitutionId" columnName="competent_institution_id" />
+    <element variable="intIsInstitutionCommunicated" columnName="is_institution_communicated" />
+    <element variable="intIsUniversityCommunicated" columnName="is_university_communicated" />
+    <element variable="intIsFoundInRegister" columnName="is_found_in_register" />
+  </dataObject>
+  
+  
+  <dataObject className="com.nacid.data.applications.ApplicationExpertRecord" table="application_expert">
+    <element variable="id" columnName="id" />
+    <element variable="applicationId" columnName="application_id" />
+    <element variable="expertId" columnName="expert_id" />
+    <element variable="notes" columnName="notes" />
+    <element variable="courseContent" columnName="course_content" />
+    <element variable="expertPosition" columnName="position" />
+    <element variable="eduLevelId" columnName="edu_level" />
+    <element variable="legalReasonId" columnName="legal_reason" />
+    <element variable="processStat" columnName="process_status" />
+
+    <element variable="qualificationId" columnName="qualification" />
+    <element variable="previousBoardDecisions" columnName="previous_board_decisions" />
+    <element variable="similarBulgarianPrograms" columnName="similar_bulgarian_programs" />
+  </dataObject>
+
+  <dataObject className="com.nacid.data.applications.ApplicationExpertSpecialityRecord" table="application_expert_specialities">
+      <element variable="id" columnName="id" />
+      <element variable="applicationId" columnName="application_id" />
+      <element variable="expertId" columnName="expert_id" />
+      <element variable="specialityId" columnName="speciality_id" />
+  </dataObject>
+  
+  <dataObject className="com.nacid.data.comission.CommissionCalendarRecord" table="comission_calendar">
+    <element variable="id" columnName="id" />
+    <element variable="timestamp" columnName="session_time" />
+    <element variable="notes" columnName="notes" />
+    <element variable="sessionStatusId" columnName="session_status_id" />
+    <element variable="sessionNumber" columnName="session_num" />
+  </dataObject>
+
+  
+  <dataObject className="com.nacid.data.comission.CommissionAgendaRecord" table="comission_agenda">
+    <element variable="id" columnName="id" />
+    <element variable="applicationId" columnName="application_id" />
+    <element variable="sessionId" columnName="session_id" />
+  </dataObject>
+  <dataObject className="com.nacid.data.comission.CommissionParticipationRecord" table="comission_participation">
+    <element variable="id" columnName="id" />
+    <element variable="expertId" columnName="expert_id" />
+    <element variable="sessionId" columnName="session_id" />
+    <element variable="intNotified" columnName="notified" />
+    <element variable="intParticipated" columnName="participated" />
+    <element variable="notes" columnName="notes" />
+  </dataObject>
+  
+  <dataObject className="com.nacid.data.applications.CompanyRecord" table="backoffice.company">
+    <element variable="id" columnName="id" />
+    <element variable="name" columnName="name" />
+    <element variable="countryId" columnName="country_id" />
+    <element variable="city" columnName="city" />
+    <element variable="pcode" columnName="pcode" />
+    <element variable="addressDetails" columnName="addr_details" />
+    <element variable="phone" columnName="contact_phone" />
+    <element variable="dateFrom" columnName="date_from" />
+    <element variable="dateTo" columnName="date_to" />
+    <element variable="cityId" columnName="settlement_id" />
+    <element variable="eik" columnName="eik" />
+  </dataObject>
+  <dataObject className="com.nacid.data.external.applications.ExtCompanyRecord" table="eservices.company" />
+  
+  <dataObject className="com.nacid.data.utils.CommonVariableRecord" table="common_vars">
+    <element variable="id" columnName="id" />
+    <element variable="variableName" columnName="var_name" />
+    <element variable="variableValue" columnName="var_value" />
+    <element variable="description" columnName="description" />
+  </dataObject>
+  <dataObject className="com.nacid.data.applications.TrainingInstitutionRecord" table="training_institution">
+    <element variable="id" columnName="id" />
+	<element variable="name" columnName="name" />
+	<element variable="countryId" columnName="country_id" />
+	<element variable="city" columnName="city" />
+	<element variable="pcode" columnName="pcode" />
+	<element variable="addrDetails" columnName="addr_details" />
+	<element variable="phone" columnName="phone" />
+	<element variable="dateFrom" columnName="date_from" />
+	<element variable="dateTo" columnName="date_to" />
+  </dataObject>
+  <dataObject className="com.nacid.data.applications.UniversityIdRecord" table="university_id">
+    <element variable="id" columnName="id" />
+	<element variable="universityId" columnName="university_id" />
+	<element variable="trainingInstId" columnName="training_inst_id" />
+  </dataObject>
+  <dataObject className="com.nacid.data.applications.AppStatusHistoryRecord" table="app_status_history">
+    <element variable="id" columnName="id" />
+	<element variable="applicationId" columnName="application_id" />
+	<element variable="statusId" columnName="status_id" />
+	<element variable="dateAssigned" columnName="date_assigned" />
+	<element variable="statLegalReasonId" columnName="stat_legal_reason_id"/>
+	<element variable="sessionId" columnName="session_id"/>
+	<element variable="userAssigned" columnName="user_assigned"/>
+  </dataObject>
+  <dataObject className="com.nacid.data.mail.MailRecord" table="email">
+    <element variable="id" columnName="id" />
+	<element variable="in_out" columnName="in_out" />
+	<element variable="processed" columnName="processed" />
+	<element variable="date" columnName="date" />
+	<element variable="sent_from" columnName="sent_from" />
+	<element variable="sent_to" columnName="sent_to" />
+	<element variable="reply_to" columnName="reply_to" />
+	<element variable="subject" columnName="subject" />
+	<element variable="body" columnName="body" />
+	<element variable="message_id" columnName="message_id" />
+  </dataObject>
+  
+  
+  <!-- external application records -->
+  <dataObject className="com.nacid.data.external.applications.ExtPersonRecord" table="eservices.person" >
+    <element variable="id" columnName="id"/>
+    <element variable="fname" columnName="fname"/>
+    <element variable="sname" columnName="sname"/>
+    <element variable="lname" columnName="lname"/>  
+    <element variable="civilId" columnName="civil_id"/>
+    <element variable="civilIdType" columnName="civil_id_type"/>
+    <element variable="birthCountryId" columnName="birth_country_id"/>
+    <element variable="birthCity" columnName="birth_city"/>
+    <element variable="birthDate" columnName="birth_date"/>
+    <element variable="citizenshipId" columnName="citizenship_id"/>
+    <element variable="email" columnName="email"/>
+    <element variable="hashCode" columnName="hash_code"/>
+    <element variable="userId" columnName="user_id"/>
+  </dataObject>
+  
+  <dataObject className="com.nacid.data.external.applications.ExtApplicationRecord" table="eservices.rudi_application" >
+        <element variable="id" columnName="id" />
+        <element variable="applicantId" columnName="applicant_id" />
+        <element variable="differentDiplomaNames" columnName="diff_diploma_names" />
+        <element variable="trainingCourseId" columnName="training_course_id" />
+        <element variable="homeCountryId" columnName="home_country_id" />
+        <element variable="homeCity" columnName="home_city" />
+        <element variable="homePostCode" columnName="home_pcode" />
+        <element variable="homeAddressDetails" columnName="home_addr_details" />
+        <element variable="homePhone" columnName="home_contact_phone" />
+        <element variable="homeIsBg" columnName="home_is_bg" />
+        <element variable="bgCity" columnName="bg_city" />
+        <element variable="bgPostCode" columnName="bg_pcode" />
+        <element variable="bgAddressDetails" columnName="bg_addr_details" />
+        <element variable="bgPhone" columnName="bg_contact_phone" />
+        <element variable="timeOfCreation" columnName="time_of_creation" />
+        <element variable="summary" columnName="summary" />
+        <element variable="applicationStatus" columnName="app_status" />
+        <element variable="applicationId" columnName="application_id" />
+        <element variable="personalDataUsage" columnName="personal_data_usage" />
+        <element variable="dataAuthentic" columnName="is_data_authentic"/>
+        <element variable="applicantType" columnName="applicant_type"/>
+        <element variable="companyId" columnName="company_id"/>
+        <element variable="deputy" columnName="deputy"/>
+        <element variable="representativeId" columnName="representative_id"/>
+        <element variable="representativeType" columnName="representative_type"/>
+        <element variable="contactDetailsId" columnName="contact_details_id"/>
+        <element variable="typePayment" columnName="type_payment"/>
+        <element variable="deliveryType" columnName="delivery_type"/>
+        <element variable="declaration" columnName="declaration"/>
+        <element variable="courierNameAddress" columnName="courier_name_address"/>
+        <element variable="outgoingNumber" columnName="outgoing_number"/>
+        <element variable="internalNumber" columnName="internal_number"/>
+        <element variable="isExpress" columnName="is_express"/>
+        <element variable="entryNum" columnName="entry_num"/>
+        <element variable="documentReceiveMethodId" columnName="document_receive_method_id"/>
+	    <element variable="applicantPersonalIdDocumentType" columnName="applicant_personal_id_document_type"/>
+  </dataObject>
+  
+  <dataObject className="com.nacid.data.external.applications.ExtTrainingCourseRecord" table="eservices.rudi_training_course" >
+        <element variable="id" columnName="id" />
+        <element variable="diplomaSeries" columnName="diploma_series" />
+        <element variable="diplomaNum" columnName="diploma_num" />
+        <element variable="diplomaRegistrationNumber" columnName="diploma_registration_number" />
+        <element variable="diplomaDate" columnName="diploma_date" />
+        <!-- <element variable="universityId" columnName="university_id" />
+        <element variable="universityTxt" columnName="university_txt" /> -->
+        <element variable="isJointDegree" columnName="is_joint_degree" />
+        <element variable="fname" columnName="fname" />
+        <element variable="sname" columnName="sname" />
+        <element variable="lname" columnName="lname" />
+        <!-- <element variable="trainingLocationCountryId" columnName="training_location_country_id" />
+        <element variable="trainingLocationCity" columnName="training_location_city" /> -->
+        <element variable="trainingStart" columnName="training_start" />
+        <element variable="trainingEnd" columnName="training_end" />
+        <element variable="trainingDuration" columnName="training_duration" />
+        <element variable="durationUnitId" columnName="duration_unit_id" />
+        <element variable="credits" columnName="credits" />
+        <!-- 
+        <element variable="specialityId" columnName="speciality_id" />
+        <element variable="specialityTxt" columnName="speciality_txt" />
+         -->
+        <element variable="eduLevelId" columnName="edu_level_id" />
+        <element variable="qualificationId" columnName="qualification_id" />
+        <element variable="qualificationTxt" columnName="qualification_txt" />
+        <element variable="schoolCountry" columnName="school_country" />
+        <element variable="schoolCity" columnName="school_city" />
+        <element variable="schoolName" columnName="school_name" />
+        <element variable="schoolGraduationDate" columnName="school_graduation_date" />
+        <element variable="schoolNotes" columnName="school_notes" />
+        <element variable="prevDiplomaCountry" columnName="prev_diploma_country" />
+        <element variable="prevDiplomaCity" columnName="prev_diploma_city" />
+        <element variable="prevDiplomaUniversityId" columnName="prev_diploma_university_id" />
+        <element variable="prevDiplomaUiniversityTxt" columnName="prev_diploma_uiniversity_txt" />
+        <element variable="prevDiplomaEduLevelId" columnName="prev_diploma_edu_level_id" />
+        <element variable="prevDiplomaGraduationDate" columnName="prev_diploma_graduation_date" />
+        <element variable="prevDiplomaNotes" columnName="prev_diploma_notes" />
+        <element variable="trainingInstId" columnName="training_inst_id" />
+        <element variable="trainingInstTxt" columnName="training_inst_txt" />
+        <element variable="prevDiplomaSpecialityId" columnName="prev_diploma_speciality_id" />
+        <element variable="prevDiplomaSpecialityTxt" columnName="prev_diploma_speciality_txt" />
+        <element variable="graduationDocumentTypeId" columnName="graduation_document_type_id" />
+        <element variable="creditHours" columnName="credit_hours" />
+        <element variable="ectsCredits" columnName="ects_credits" />
+        <element variable="ownerId" columnName="owner_id" />
+        <element variable="thesisTopic" columnName="thesis_topic" />
+        <element variable="thesisTopicEn" columnName="thesis_topic_en" />
+        <element variable="thesisAnnotation" columnName="thesis_annotation" />
+        <element variable="thesisAnnotationEn" columnName="thesis_annotation_en" />
+        <element variable="thesisDefenceDate" columnName="thesis_defence_date" />
+        <element variable="thesisVolume" columnName="thesis_volume" />
+        <element variable="thesisLanguageId" columnName="thesis_language_id" />
+        <element variable="thesisBibliography" columnName="thesis_bibliography" />
+        <element variable="profGroupId" columnName="prof_group_id" />
+  </dataObject>
+  <dataObject className="com.nacid.data.external.applications.ExtPurposeOfRecognitionRecord" table="eservices.rudi_purpose_of_recognition" >
+        <element variable="id" columnName="id" />
+        <element variable="applicationId" columnName="application_id" />
+        <element variable="purposeOfRecognitionId" columnName="purpose_of_recognition_id" />
+        <element variable="notes" columnName="notes" />
+  </dataObject>
+  <dataObject className="com.nacid.data.external.applications.ExtGraduationWayRecord" table="eservices.rudi_way_of_graduation" >
+        <element variable="id" columnName="id" />
+        <element variable="trainingCourseId" columnName="training_course_id" />
+        <element variable="graduationWayId" columnName="way_of_graduation_id" />
+        <element variable="notes" columnName="notes" />
+  </dataObject>
+  <dataObject className="com.nacid.data.external.applications.ExtTrainingFormRecord" table="eservices.rudi_training_form" >
+        <element variable="id" columnName="id" />
+        <element variable="trainingCourseId" columnName="training_course_id" />
+        <element variable="trainingFormId" columnName="training_form_id" />
+        <element variable="notes" columnName="notes" />
+  </dataObject>
+  <dataObject className="com.nacid.data.events.EventTypeRecord" table="nomenclatures.event_type" >
+        <element variable="id" columnName="id" />
+        <element variable="eventName" columnName="event_name" />
+        <element variable="reminderDays" columnName="reminder_days" />
+        <element variable="dueDays" columnName="due_days" />
+        <element variable="reminderText" columnName="reminder_text" />
+  </dataObject>
+  <dataObject className="com.nacid.data.events.EventRecord" table="event" >
+        <element variable="id" columnName="id" />
+        <element variable="eventTypeId" columnName="event_type_id" />
+        <element variable="applicationId" columnName="application_id" />
+        <element variable="docId" columnName="doc_id" />
+        <element variable="eventStatus" columnName="event_status" />
+        <element variable="reminderDate" columnName="reminder_date" />
+        <element variable="dueDate" columnName="due_date" />
+        <element variable="docCategoryId" columnName="doc_category_id" />
+        <element variable="docTypeId" columnName="doc_type_id" />
+  </dataObject>
+  
+  <dataObject className="com.nacid.data.external.applications.ExtESignedInformationRecord" table="eservices.rudi_signed_docs" >
+        <element variable="id" columnName="id" />
+        <element variable="userId" columnName="ext_user_id" />
+        <element variable="applicationId" columnName="ext_app_id" />
+        <element variable="signedXmlContent" columnName="signed_xml_content" />
+        <element variable="issuer" columnName="issuer" />
+        <element variable="name" columnName="name" />
+        <element variable="email" columnName="email" />
+        <element variable="civilId" columnName="civil_id" />
+        <element variable="unifiedIdCode" columnName="unified_id_code" />
+        <element variable="validityFrom" columnName="validity_from" />
+        <element variable="validityTo" columnName="validity_to" />
+  </dataObject>
+  <dataObject className="com.nacid.data.regprof.external.applications.ExtRegprofESignedInformationRecord" table="eservices.regprof_signed_docs" />
+  <dataObject className="com.nacid.data.applications.DiplomaTypeIssuerRecord" table="diploma_type_issuer" >
+        <element variable="id" columnName="id" />
+        <element variable="diplomaTypeId" columnName="diploma_type_id" />
+        <element variable="universityId" columnName="university_id" />
+        <element variable="facultyId" columnName="faculty_id" />
+        <element variable="ordNum" columnName="ord_num" />
+  </dataObject>
+  
+  <dataObject className="com.nacid.data.applications.TrainingCourseTrainingLocationRecord" table="training_location" >
+        <element variable="id" columnName="id" />
+        <element variable="trainingCourseId" columnName="training_course_id" />
+        <element variable="trainingCountryId" columnName="training_location_country_id" />
+        <element variable="trainingCity" columnName="training_location_city" />
+        <element variable="trainingInstitutionId" columnName="training_institution_id" />
+  </dataObject>
+  
+  <dataObject className="com.nacid.data.external.applications.ExtTrainingCourseTrainingLocationRecord" table="eservices.rudi_training_location" >
+        <element variable="id" columnName="id" />
+        <element variable="trainingCourseId" columnName="training_course_id" />
+        <element variable="trainingCountryId" columnName="training_location_country_id" />
+        <element variable="trainingCity" columnName="training_location_city" />
+  </dataObject>
+  <dataObject className="com.nacid.data.external.applications.ExtDiplomaIssuerRecord" table="eservices.rudi_diploma_issuer">
+        <element variable="id" columnName="id" />
+        <element variable="diplomaId" columnName="diploma_id" />
+        <element variable="universityId" columnName="university_id" />
+        <element variable="universityTxt" columnName="university_txt" />
+        <element variable="orderNumber" columnName="ord_num" />
+        <element variable="facultyId" columnName="faculty_id" />
+        <element variable="facultyTxt" columnName="faculty_txt" />
+    </dataObject>
+    
+    <dataObject className="com.nacid.data.applications.AppStatusDocTypeRecord" table="app_status_doc_type">
+        <element variable="id" columnName="id" />
+        <element variable="applicationStatusId" columnName="app_status_id" />
+        <element variable="documentTypeId" columnName="doc_type_id" />
+    </dataObject>
+    
+    <dataObject className="com.nacid.data.applications.CertificateNumberToAttachedDocRecord" table="cert_number_to_attached_doc">
+        <element variable="id" columnName="id" />
+        <element variable="certificateNumber" columnName="cert_number" />
+        <element variable="attachedDocId" columnName="attached_doc_id" />
+        <element variable="applicationId" columnName="application_id" />
+        <element variable="invalidated" columnName="invalidated" />
+        <element variable="uuid" columnName="uuid" />
+    </dataObject>
+    
+    <dataObject className="com.nacid.data.applications.RecognizedSpecsRecord" table="recognized_specs">
+        <element variable="id" columnName="id" />
+        <element variable="trainingCourseId" columnName="training_course_id" />
+        <element variable="specId" columnName="spec_id" />
+    </dataObject>
+    
+    <dataObject className="com.nacid.data.esoed.EsoedMessageRecord" table="esoed_messages">
+        <element variable="id" columnName="id" />
+        <element variable="inOut" columnName="in_out" />
+        <element variable="transport" columnName="transport" />
+        <element variable="envelopeVersion" columnName="envelope_version" />
+        <element variable="messageType" columnName="message_type" />
+        <element variable="senderUri" columnName="sender_uri" />
+        <element variable="documentUri" columnName="document_uri" />
+        <element variable="documentTypeUri" columnName="document_type_uri" />
+        <element variable="recipientUri" columnName="recipient_uri" />
+        <element variable="content" columnName="content" />
+        <element variable="esoedSessionId" columnName="esoed_session_id" />
+        <element variable="eserviceUri" columnName="eservice_uri" />
+        <element variable="esoedCorrelationId" columnName="esoed_correlation_id" />
+        <element variable="originatorExtraData" columnName="originator_extra_data" />
+        <element variable="sessionId" columnName="session_id" />
+        <element variable="correlationId" columnName="correlation_id" />
+        <element variable="receiveTime" columnName="receive_time" />
+        <element variable="errors" columnName="errors" />
+        <element variable="sendStatus" columnName="send_status" />
+        <element variable="sendDate" columnName="send_date" />
+        <element variable="receiptDate" columnName="receipt_date" />
+        <element variable="processStatus" columnName="process_status" />
+        <element variable="processDate" columnName="process_date" />
+    </dataObject>
+    
+    <dataObject className="com.nacid.utils.ApplicationId" table="">
+        <element variable="applicationId" columnName="application_id" />
+    </dataObject>
+    
+     <dataObject className="com.nacid.data.users._SysLogAndOperationRecord" table="">
+        <element variable="userId" columnName="user_id" />
+        <element variable="groupName" columnName="group_name" />
+        <element variable="operationName" columnName="operation_name" />
+        <element variable="queryString" columnName="query_string" />
+        <element variable="operationDate" columnName="operation_date" />
+        <element variable="sysLogRecordId" columnName="syslog_record_id" />
+    </dataObject>
+    
+    <dataObject className="com.nacid.data.users.ApplicationChangesHistoryRecord" table="application_changes_history">
+        <element variable="id" columnName="id" />
+        <element variable="applicationId" columnName="application_id" />
+        <element variable="userId" columnName="user_id" />
+        <element variable="date" columnName="date" />
+        <element variable="operationName" columnName="operation_name" />
+        <element variable="groupName" columnName="group_name" />
+    </dataObject>
+    
+    <!-- regprof application records -->
+    <dataObject className="com.nacid.data.regprof.applications.RegprofApplicationAttachmentRecord" table="regprof.regprof_attached_docs">
+    	<element variable="id" columnName="id" />
+    	<element variable="parentId" columnName="parent_id" />
+    	<element variable="docDescr" columnName="doc_descr" />
+    	<element variable="docTypeId" columnName="doc_type_id" />
+    	<element variable="contentType" columnName="content_type" />
+    	<element variable="fileName" columnName="file_name" />
+    	<element variable="contentStream" columnName="doc_content" />
+    	<element variable="copyTypeId" columnName="copy_type_id" />
+    	<element variable="docflowId" columnName="docflow_id" />
+    	<element variable="docflowDate" columnName="docflow_date" />
+    	<element variable="scannedContentType" columnName="scanned_content_type" />
+    	<element variable="scannedFileName" columnName="scanned_file_name" />
+    	<element variable="scannedContentStream" columnName="scanned_content" />
+    </dataObject>
+    <!-- end of regprof application record -->
+    
+    <dataObject className="com.nacid.data.regprof.RegprofProfessionExperienceRecord" table="regprof.profession_experience">
+    	<element variable="id" columnName="id" />
+    	<element variable="nomenclatureProfessionExperienceId" columnName="n_profession_experience_id" />
+    	<element variable="userId" columnName="user_id" />
+    	<element variable="dateCreated" columnName="date_created" />
+    	<element variable="years" columnName="years" />
+    	<element variable="months" columnName="months" />
+    	<element variable="days" columnName="days" />
+    	<element variable="trainingCourseId" columnName="training_course_id" />
+    </dataObject>
+    <dataObject className="com.nacid.data.regprof.external.ExtRegprofProfessionExperienceRecord" table="eservices.regprof_profession_experience">
+    	<element variable="professionExperienceTxt" columnName="profession_experience_txt" />
+    </dataObject>
+    
+    <dataObject className="com.nacid.data.regprof.applications.RegprofCertificateNumberToAttachedDocRecord" table="regprof.cert_number_to_attached_doc"> 
+    	<element variable="id" columnName="id" />
+        <element variable="certificateNumber" columnName="cert_number" />
+        <element variable="attachedDocId" columnName="attached_doc_id" />
+        <element variable="applicationId" columnName="application_id" />
+        <element variable="invalidated" columnName="invalidated" />
+		<element variable="uuid" columnName="uuid" />
+    </dataObject>
+    
+</config>
+

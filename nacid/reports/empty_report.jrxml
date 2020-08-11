@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="protokol_sub_members" language="groovy" pageWidth="576" pageHeight="60" whenNoDataType="AllSectionsNoDetail" columnWidth="576" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<property name="ireport.zoom" value="1.9487171000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PARAM_TITLE" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[PARAM_TITLE]]></parameterDescription>
+		<defaultValueExpression><![CDATA["TEST"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dateAssigned" class="java.lang.String">
+		<fieldDescription><![CDATA[dateAssigned]]></fieldDescription>
+	</field>
+	<field name="longApplicationStatusName" class="java.lang.String">
+		<fieldDescription><![CDATA[longApplicationStatusName]]></fieldDescription>
+	</field>
+	<title>
+		<band height="50">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="17" width="576" height="20" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Не са намерени данни с избраните критерии!"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

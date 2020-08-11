@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reshenie_otkaz" language="groovy" pageWidth="595" pageHeight="839" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" whenResourceMissingType="Error">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/WebContent/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ministryRepresentativeName" class="java.lang.String">
+		<parameterDescription><![CDATA[ministryRepresentativeName]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Петя Евтимова "]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ministryRepresentativePosition" class="java.lang.String">
+		<parameterDescription><![CDATA[ministryRepresentativePosition]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Заместник-министър на образованието,  младежта и науката"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="expertName" class="java.lang.String">
+		<defaultValueExpression><![CDATA["expertName"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ownerName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerName]]></fieldDescription>
+	</field>
+	<field name="addressDetailsBulgaria" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetailsBulgaria]]></fieldDescription>
+	</field>
+	<field name="cityDetailsBulgaria" class="java.lang.String">
+		<fieldDescription><![CDATA[cityDetailsBulgaria]]></fieldDescription>
+	</field>
+	<field name="ownerLastName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerLastName]]></fieldDescription>
+	</field>
+	<field name="diplomaSpecialityNames" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaSpecialityNames]]></fieldDescription>
+	</field>
+	<field name="diplomaEducationLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaEducationLevel]]></fieldDescription>
+	</field>
+	<field name="allUniversitiesNamesAndLocations" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesNamesAndLocations]]></fieldDescription>
+	</field>
+	<field name="trainingCountriesAndLocations" class="java.lang.String">
+		<fieldDescription><![CDATA[trainingCountriesAndLocations]]></fieldDescription>
+	</field>
+	<field name="motives" class="java.lang.String">
+		<fieldDescription><![CDATA[motives]]></fieldDescription>
+	</field>
+	<field name="docFlowNumber" class="java.lang.String"/>
+	<field name="multipleDiplomaSpecialities" class="java.lang.Boolean"/>
+	<detail>
+		<band height="600" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="483" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["С Т А Н О В И Щ Е"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="27" width="483" height="187"/>
+				<textElement verticalAlignment="Top" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ЗА ПРЕДСТАВЕНИТЕ ДОКУМЕНТИ ЗА ВИСШЕ ОБРАЗОВАНИЕ, ПРИДОБИТО В ЧУЖДЕСТРАННО ВИСШЕ УЧИЛИЩЕ\n"+
+"НА " + $F{ownerName} + "\n" + "деловоден № " + $F{docFlowNumber} + "\n" +
+$F{allUniversitiesNamesAndLocations} + "\n" +
+($F{multipleDiplomaSpecialities} == true ? "" : "СПЕЦИАЛНОСТ ") + $F{diplomaSpecialityNames} + ", ОКС " + $F{diplomaEducationLevel} + "\n" +
+"№ ПО РЕД В СПРАВКАТА ..................   № БАЗА ДАННИ ....................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="226" width="483" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\n\nМОТИВИ ЗА ПРИЗНАВАНЕ\n\n\n"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="253" width="483" height="83"/>
+				<textElement verticalAlignment="Top" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ИЗГОТВИЛ: " + $P{expertName} + "\n" +
+"ПОДПИС:\n" +
+"ДАТА:\n"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="368" width="483" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\n\nМОТИВИ ЗА ОТЛАГАНЕ ИЛИ ОТКАЗ\n\n\n"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="395" width="483" height="83"/>
+				<textElement verticalAlignment="Top" lineSpacing="Double">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ИЗГОТВИЛ: " + $P{expertName} + "\n" +
+"ПОДПИС:\n" +
+"ДАТА:\n"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

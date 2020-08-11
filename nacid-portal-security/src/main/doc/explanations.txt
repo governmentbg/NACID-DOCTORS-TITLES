@@ -1,0 +1,86 @@
+1. The application that wants to use application-security should have file spring-security.properties inside the WEB-INF/classes/ directory.
+The file shoud look like
+
+cas.service.url=http://localhost:8087/numgenerator/j_spring_cas_security_check
+cas.login.url=https://nacidportal.int:9443/coopfund
+cas.server=https://nacidportal.int:9443/cas
+cas.logout.url=https://nacidportal.int:9443/cas/logout
+cas.application.logout.page=https://nacidportal.int:9443/coopfund/delegate/session/logout
+liferay.remote.user.name=test
+liferay.remote.user.password=test
+liferay.virtual.host=localhost
+liferay.service.url=https://nacidportal.int:9443/coopfund/api/secure/axis/
+security.role=hasRole('APPLICATION_MANAGEMENT')
+
+2.1. A class that extends BaseApplicationSecurityConfiguration and implements the protected void configure(HttpSecurity http) method should be added in the application. The class should have the following annotations:
+@EnableWebSecurity
+@Configuration
+@Order(10)
+Example:
+
+package com.nacid.configuration.security.regprof.external;
+.....
+
+@EnableWebSecurity
+@Configuration
+@Order(10)
+public class RegprofExternalApplicationSecurityConfiguration extends BaseApplicationSecurityConfiguration {
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/control/**").access("isAuthenticated()")
+                .and().csrf().disable()
+                .httpBasic().authenticationEntryPoint(casAuthenticationEntryPoint())
+                .and()
+                .addFilterAt(singleSignOutFilter(), CsrfFilter.class)
+                .addFilterAt(logoutFilter(), LogoutFilter.class)
+                .addFilterAfter(casAuthenticationFilter(), SingleSignOutFilter.class)
+                .addFilterAfter(permissionFilter(), AnonymousAuthenticationFilter.class);
+    }
+    @Bean("permissionFilter")
+    public PermissionFilter permissionFilter() {
+        return new PermissionFilter();
+    }
+
+}
+
+
+
+2.2. These beans should be defined inside an xml (for an example: security.xml)
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+    <context:property-placeholder location="classpath*:spring-security.properties"/>
+    <context:component-scan base-package="com.nacid.configuration.security.rudi.external"/> <!-- this is the path with the extended BaseApplicationSecurityConfiguration class -->
+</beans>
+
+
+    
+The file with the beans should be loaded through web.xml
+<context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+              /WEB-INF/spring/security.xml
+        </param-value>
+    </context-param>
+3. Spring security should be enabled from web.xml
+<filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	
+	
+4. From version 1.1.0-SNAPSHOT on if a permissions.properties file is preset and it's added <util:properties id="permissionsProperties" location="classpath:permissions.properties" /> inside security.xml, all the roles are changed according to permissions.properties file. Example for permissions.properties
+APPLICATION_MANAGEMENT=View_Application,Admin_Viewer,Update_Application
+ROLE_TMEFILING_APPLICATION=View_Application
+ADMIN_VIEWER=View_Application,Admin_Viewer
+If such file exists and the loggedOn user has APPLICATION_MANAGEMENT role, It's roles will be changed with View_Application,Admin_Viewer,Update_Application

@@ -1,0 +1,33 @@
+/* ------------------------------ Fix MSIE 6 - styles for TABS-menu */
+.tabs li a b, .tabs li a:active b {
+  z-index:100;
+  background:expression('url('+this.currentStyle['backgroundImage'].split('\"')[1]+'")');
+  filter:expression('progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                     src='+this.currentStyle['backgroundImage'].split('\"')[1]+')');}
+
+.tabs li a b.p1, .tabs li a b.p2, .tabs li a b.p3, 
+.tabs li a:hover b.p1, .tabs li a:active b.p1,
+.tabs li a:hover b.p2, .tabs li a:active b.p2,
+.tabs li a:hover b.p3, .tabs li a:active b.p3 {height:29px;}
+
+.tabs li a b.p1 {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/normal_l.png', sizingMethod='scale');}
+.tabs li a b.p2 {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/normal_m.png', sizingMethod='scale');}
+.tabs li a b.p3 {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/normal_r.png', sizingMethod='scale');}
+
+.tabs li a:hover b.p1, .tabs li a:active b.p1 {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/hover_l.png', sizingMethod='scale');}
+.tabs li a:hover b.p2, .tabs li a:active b.p2 {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/hover_m.png', sizingMethod='scale');}
+.tabs li a:hover b.p3, .tabs li a:active b.p3 {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/hover_r.png', sizingMethod='scale');}
+
+.tabs li a.selected b.p1, .tabs li a:hover.selected b.p1, .tabs li a:active.selected b.p1,
+.tabs li a.selected b.p2, .tabs li a:hover.selected b.p2, .tabs li a:active.selected b.p2,
+.tabs li a.selected b.p3, .tabs li a:hover.selected b.p3, .tabs li a:active.selected b.p3 {height:29px; cursor:default;}
+
+.tabs li a.selected b.p1, .tabs li a:hover.selected b.p1, .tabs li a:active.selected b.p1 {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/select_l.png', sizingMethod='scale');}
+.tabs li a.selected b.p2, .tabs li a:hover.selected b.p2, .tabs li a:active.selected b.p2 {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/select_m.png', sizingMethod='scale');}
+.tabs li a.selected b.p3, .tabs li a:hover.selected b.p3, .tabs li a:active.selected b.p3 {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tabs/select_r.png', sizingMethod='scale');}

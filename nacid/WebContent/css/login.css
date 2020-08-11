@@ -1,0 +1,91 @@
+@import "default.css";
+
+@import "forms.css";
+
+/*------------------------------------------- styles for LOGIN-page */
+div.loginBase,div.login, .noMenubase {
+	width: 600px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+div.loginBase, .noMenuBase {
+	margin: 50px auto;
+	padding: 20px;
+	margin-bottom: 100px;
+}
+
+div.login {
+	background: transparent url("../img/login_bg2.png") top center no-repeat
+		;
+	height: 250px;
+}
+
+div.titleLogin {
+	margin: 0;
+	padding: 0;
+	height: 75px;
+	line-height: 75px;
+	font-size: 1em;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #555;
+}
+
+div.rowLogin {
+	margin: 0;
+	padding: 0;
+	height: 40px;
+	line-height: 22px;
+	text-align: right;
+}
+
+div.rowLoginBtn {
+	margin: 0;
+	padding: 0;
+	text-align: right;
+}
+
+form#login {
+	margin: 0 auto;
+	padding: 0;
+	width: 90%;
+}
+
+input.login {
+	width: 190px;
+	height: 22px;
+	line-height: 22px;
+	margin: 0;
+	padding: 0 0 0 20px;
+	font-size: 1em;
+	font-weight: bold;
+	color: #585858;
+	background: transparent url("../img/login_input2.png") center right
+		no-repeat;
+	border: none;
+}
+
+label.login_lbl {
+	margin-right: 5px;
+	font-size: 1em;
+	letter-spacing: 1px;
+}
+
+input.loginBtn {
+	width: 130px;
+	height: 36px;
+	line-height: 36px;
+	margin: 0;
+	padding: 0;
+	font-size: .9em;
+	font-weight: bold;
+	color: #555;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: transparent url("../img/login_btn2.png") center right
+		no-repeat;
+	border: none;
+}

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webconfig>
+	<handler2group>
+		<group handler="com.nacid.web.handlers.impl.users.UsersHandler" groupid="1" />
+		<group handler="com.nacid.web.handlers.impl.users.ExtUsersHandler" groupid="1" />
+		
+		<group handler="com.nacid.web.handlers.impl.comission.ComissionMemberHandler" groupid="1" />
+        <group handler="com.nacid.web.handlers.impl.commonvars.CommonVariablesHandler" groupid="1" />
+        <group handler="com.nacid.web.handlers.impl.nomenclatures.UniversityDetailsHandler" groupid="1" />
+        <group handler="com.nacid.web.handlers.impl.menu.MenuEditHandler" groupid="1" />
+        <group handler="com.nacid.web.handlers.impl.mail.MailAdminHandler" groupid="1" />
+		
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.ProfessionGroupHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.SpecialityHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.CountryHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.LanguageHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.GraduationWayHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.EducationLevelHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.ExpertPositionHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.DocumentReceiveMethodHandler" groupid="2" />
+
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.DocflowApplicationStatusHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.ApplicationStatusHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.DocumentTypeHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.LegalReasonHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.OriginalEducationLevelHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.nomenclatures.NationalQualificationsFrameworkHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.ajax.FlatNomenclatureAjaxHandler" groupid="2" />
+		<group handler="com.nacid.web.handlers.impl.ajax.NationalQualificationsFrameworkAjaxHandler" groupid="2" />
+
+        <group handler="com.nacid.web.handlers.impl.ajax.SpecialityAjaxHandler" groupid="2"/>
+        <group handler="com.nacid.web.handlers.impl.ajax.BGAcademicRecognitionAjaxHandler" groupid="2"/>
+		<group handler="com.nacid.web.handlers.impl.ajax.OriginalEducationLevelAjaxHandler" groupid="2"/>
+        <group handler="com.nacid.web.handlers.impl.ajax.OriginalSpecialityAjaxHandler" groupid="2"/>
+		<group handler="com.nacid.web.handlers.impl.ajax.DiplomaTypeAjaxHandler" groupid="3"/>
+		<group handler="com.nacid.web.handlers.impl.ajax.UniversityAjaxHandler" groupid="3"/>
+		<group handler="com.nacid.web.handlers.impl.applications.ApplicationsHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.RasServiceHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.DuplicateCertificateHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.ApplicationsByApplicantHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.ApplicationsStatusHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.ApplicationsExpertHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.PersonsHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.UniversityHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.ajax.UniversityFacultyAjaxHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.DiplomaTypeHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.DiplomaTypeAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.ApplicationAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.ApplicationFinalizationAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.CompetentInstitutionHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.ajax.CompetentInstitutionAjaxHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.UniversityValidityHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.UniExamAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.DiplExamAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.comission.ApplicationExpertHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.CompanyHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.ExpertStatementAttachmentHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.comission.CalendarSessionProtocolHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.TrainingInstitutionsHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.ajax.TrainingInstitutionAjaxHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.EApplyingHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.EApplyingFinalizationHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.ExtApplicantReportAttachmentsHandler" groupid="3" />
+		
+		<group handler="com.nacid.web.handlers.impl.comission.CommissionCalendarProcessHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.comission.CommissionCalendarPrintCertsHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.comission.CommissionCalendarPrintReportHandler" groupid="3" />
+		
+		<group handler="com.nacid.web.handlers.impl.comission.CommissionCalendarHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.comission.CommissionApplicationsHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.comission.CommissionMembersListHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.comission.CommissionMembersInformHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.comission.ApplicationMotivesHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.applications.ExtApplicationCommentHandler" groupid="3" />
+		
+		
+		
+		<group handler="com.nacid.web.handlers.impl.applications.DocumentDocFlowHandler" groupid="3"/>
+		
+		<group handler="com.nacid.web.handlers.impl.academicrecognition.BGAcademicRecognitionHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.academicrecognition.BGAcademicRecognitionUploadHandler" groupid="3" />
+		<group handler="com.nacid.web.handlers.impl.events.EventTypeHandler" groupid="2"/>
+		<group handler="com.nacid.web.handlers.impl.events.ApplicationEventsHandler" groupid="2"/>
+		<group handler="com.nacid.web.handlers.impl.events.CommingEventsHandler" groupid="2"/>
+		
+		<group handler="com.nacid.web.handlers.impl.inquires.CommissionInquireHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.inquires.CommonInquireHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.inquires.ApplicantInquireHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.inquires.InquiryInquireHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.inquires.EmployeeInquireHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.inquires.ExpertInquireHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.inquires.InquiresScreensHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.inquires.BgAcademicRecognitionInquiryHandler" groupid="4"/>
+		<group handler="com.nacid.web.handlers.impl.inquires.PublicRegisterCsvHandler" groupid="4"/>
+
+		
+	</handler2group>
+	<request2handler>
+		<mapping url="/home" handler="com.nacid.web.handlers.impl.HomePageHandler" />
+		<!--<mapping url="/login" handler="com.nacid.web.handlers.impl.LoginHandler" />-->
+		<!--<mapping url="/logout" handler="com.nacid.web.handlers.impl.LogoutHandler" />-->
+		<mapping url="/users" handler="com.nacid.web.handlers.impl.users.UsersHandler" />
+		<mapping url="/ext_users" handler="com.nacid.web.handlers.impl.users.ExtUsersHandler" />
+		
+		<mapping url="/menu" handler="com.nacid.web.handlers.impl.ajax.MenuAjaxHandler" />
+		<mapping url="/attachment_ajax" handler="com.nacid.web.handlers.impl.ajax.AttachmentAjaxHandler" />
+		<mapping url="/nom_professiongroup" handler="com.nacid.web.handlers.impl.nomenclatures.ProfessionGroupHandler" />
+		<!-- RayaWritten -->
+		<mapping url="/nom_clear" handler="com.nacid.web.handlers.impl.nomenclatures.ClearNomenclaturesHandler" />
+		<!-- End of RayaWritten -->
+		<mapping url="/nom_speciality" handler="com.nacid.web.handlers.impl.nomenclatures.SpecialityHandler" />
+		<mapping url="/nom_country" handler="com.nacid.web.handlers.impl.nomenclatures.CountryHandler" />
+		<mapping url="/nom_language" handler="com.nacid.web.handlers.impl.nomenclatures.LanguageHandler" />
+		<mapping url="/nom_doctype" handler="com.nacid.web.handlers.impl.nomenclatures.DocumentTypeHandler" />
+		<mapping url="/nom_civilidtype" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_commissionposition" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_durationunit" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_educationarea" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_educationlevel" handler="com.nacid.web.handlers.impl.nomenclatures.EducationLevelHandler" />
+		<mapping url="/nom_doc_category" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_graduationway" handler="com.nacid.web.handlers.impl.nomenclatures.GraduationWayHandler" />
+		<mapping url="/nom_eventstatus" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_qualification" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_original_qualification" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_recognitionpurpose" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_trainingform" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_copytype" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_appstatus" handler="com.nacid.web.handlers.impl.nomenclatures.ApplicationStatusHandler" />
+		<mapping url="/nom_appsessionstatus" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_traininglocation" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_sessionstatus" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_legalreason" handler="com.nacid.web.handlers.impl.nomenclatures.LegalReasonHandler" />
+        <mapping url="/nom_original_education_level" handler="com.nacid.web.handlers.impl.nomenclatures.OriginalEducationLevelHandler" />
+        <mapping url="/nom_original_speciality" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+        <mapping url="/nom_docflow_status" handler="com.nacid.web.handlers.impl.nomenclatures.DocflowApplicationStatusHandler" />
+        <mapping url="/nom_bologna_cycle" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+        <mapping url="/nom_european_qualifications_framework" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+        <mapping url="/nom_national_qualifications_framework" handler="com.nacid.web.handlers.impl.nomenclatures.NationalQualificationsFrameworkHandler" />
+        <mapping url="/nom_graduation_document_type" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+        <mapping url="/nom_expert_position" handler="com.nacid.web.handlers.impl.nomenclatures.ExpertPositionHandler" />
+		<mapping url="/nom_personaliddoctype" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_university_generic_name" handler="com.nacid.web.handlers.impl.nomenclatures.FlatNomenclatureHandler" />
+		<mapping url="/nom_document_receive_method" handler="com.nacid.web.handlers.impl.nomenclatures.DocumentReceiveMethodHandler" />
+        <mapping url="/civilidsuggestion" handler="com.nacid.web.handlers.impl.suggestions.CivilIdSuggestionHandler" />
+        <mapping url="/companysuggestion" handler="com.nacid.web.handlers.impl.suggestions.CompanySuggestionHandler" />
+		<mapping url="/commonvariables" handler="com.nacid.web.handlers.impl.commonvars.CommonVariablesHandler" />
+		<mapping url="/universitydetails" handler="com.nacid.web.handlers.impl.nomenclatures.UniversityDetailsHandler" />
+		<mapping url="/app_comission" handler="com.nacid.web.handlers.impl.comission.ComissionMemberHandler" />
+		<mapping url="/competent_institution" handler="com.nacid.web.handlers.impl.applications.CompetentInstitutionHandler" />
+		<mapping url="/competent_institution_ajax" handler="com.nacid.web.handlers.impl.ajax.CompetentInstitutionAjaxHandler" />
+		<mapping url="/applications" handler="com.nacid.web.handlers.impl.applications.ApplicationsHandler" />
+		<mapping url="/ras_service" handler="com.nacid.web.handlers.impl.applications.RasServiceHandler" />
+		<mapping url="/duplicate_certificate" handler="com.nacid.web.handlers.impl.applications.DuplicateCertificateHandler" />
+		<mapping url="/applications_by_applicant" handler="com.nacid.web.handlers.impl.applications.ApplicationsByApplicantHandler" />
+		<mapping url="/applications_status" handler="com.nacid.web.handlers.impl.applications.ApplicationsStatusHandler" />
+		<mapping url="/applications_expert" handler="com.nacid.web.handlers.impl.applications.ApplicationsExpertHandler" />
+		<mapping url="/expert_statement_attachment" handler="com.nacid.web.handlers.impl.applications.ExpertStatementAttachmentHandler" />
+		<mapping url="/e_applying" handler="com.nacid.web.handlers.impl.applications.EApplyingHandler" />
+		<mapping url="/e_applying_finalization" handler="com.nacid.web.handlers.impl.applications.EApplyingFinalizationHandler" />
+		<mapping url="/e_applying_attachments" handler="com.nacid.web.handlers.impl.applications.ExtApplicantReportAttachmentsHandler" />
+		
+		
+		<mapping url="/company" handler="com.nacid.web.handlers.impl.applications.CompanyHandler" />
+		<mapping url="/comission_member_prefill" handler="com.nacid.web.handlers.impl.ajax.comission.ComissionMemberPrefillHandler" />
+		<mapping url="/person" handler="com.nacid.web.handlers.impl.applications.PersonsHandler" />
+		<mapping url="/university" handler="com.nacid.web.handlers.impl.applications.UniversityHandler" />
+		<mapping url="/diploma_type" handler="com.nacid.web.handlers.impl.applications.DiplomaTypeHandler" />
+		<mapping url="/universitysuggest" handler="com.nacid.web.handlers.impl.suggestions.UniversitySuggestHandler" />
+		<mapping url="/institutionsuggest" handler="com.nacid.web.handlers.impl.suggestions.InstitutionSuggestHandler" />
+		<mapping url="/universityfacultysuggest" handler="com.nacid.web.handlers.impl.suggestions.UniversityFacultySuggestHandler" />
+		<mapping url="/specialitysuggest" handler="com.nacid.web.handlers.impl.suggestions.SpecialitySuggestHandler" />
+		<mapping url="/originalspecialitysuggest" handler="com.nacid.web.handlers.impl.suggestions.OriginalSpecialitySuggestHandler" />
+		<mapping url="/flatnomenclaturesuggest" handler="com.nacid.web.handlers.impl.suggestions.FlatNomenclatureSuggestHandler" />
+		<mapping url="/bgacademicrecognitionsuggest" handler="com.nacid.web.handlers.impl.academicrecognition.BgAcademicRecognitionSuggestionHandler" />
+
+		<mapping url="/diploma_type_attachment" handler="com.nacid.web.handlers.impl.applications.DiplomaTypeAttachmentHandler" />
+		<mapping url="/application_attachment" handler="com.nacid.web.handlers.impl.applications.ApplicationAttachmentHandler" />
+		<mapping url="/application_finalization" handler="com.nacid.web.handlers.impl.applications.ApplicationFinalizationAttachmentHandler" />
+		<mapping url="/administration_menu" handler="com.nacid.web.handlers.impl.menu.MenuEditHandler" />
+		<mapping url="/university_validity" handler="com.nacid.web.handlers.impl.applications.UniversityValidityHandler" />
+		<mapping url="/uni_exam_attachment" handler="com.nacid.web.handlers.impl.applications.UniExamAttachmentHandler" />
+		<mapping url="/dipl_exam_attachment" handler="com.nacid.web.handlers.impl.applications.DiplExamAttachmentHandler" />
+		<mapping url="/training_institution"  handler="com.nacid.web.handlers.impl.applications.TrainingInstitutionsHandler" />
+		<mapping url="/training_institution_ajax"  handler="com.nacid.web.handlers.impl.ajax.TrainingInstitutionAjaxHandler" />
+
+		<mapping url="/diploma_type_ajax" handler="com.nacid.web.handlers.impl.ajax.DiplomaTypeAjaxHandler" />
+		<mapping url="/university_ajax" handler="com.nacid.web.handlers.impl.ajax.UniversityAjaxHandler" />
+		<!-- RayaWritten -->
+		<mapping url="/speciality_ajax" handler="com.nacid.web.handlers.impl.ajax.SpecialityAjaxHandler" />
+		<mapping url="/bgacademicrecognitionupload_ajax" handler="com.nacid.web.handlers.impl.ajax.BGAcademicRecognitionAjaxHandler" />
+		<!-- End of RayaWritten -->
+        <mapping url="/original_speciality_ajax" handler="com.nacid.web.handlers.impl.ajax.OriginalSpecialityAjaxHandler" />
+		<mapping url="/training_course_diploma_type_universities_ajax" handler="com.nacid.web.handlers.impl.ajax.TrainingCourseDiplomaTypeUniversitiesAjaxHandler" />
+		<mapping url="/legal_reason_ajax" handler="com.nacid.web.handlers.impl.ajax.LegalReasonAjaxHandler" />
+		
+		<mapping url="/diploma_type_university" handler="com.nacid.web.handlers.impl.ajax.DiplomaTypeUniversityHandler" />
+		<mapping url="/diploma_type_university_faculty" handler="com.nacid.web.handlers.impl.ajax.DiplomaTypeUniversityFacultyHandler" />
+		<mapping url="/original_education_level" handler="com.nacid.web.handlers.impl.ajax.OriginalEducationLevelAjaxHandler" />
+
+		<mapping url="/application_expert" handler="com.nacid.web.handlers.impl.comission.ApplicationExpertHandler" />
+		
+		<mapping url="/comission_calendar_process" handler="com.nacid.web.handlers.impl.comission.CommissionCalendarProcessHandler" />
+		<mapping url="/commission_calendar" handler="com.nacid.web.handlers.impl.comission.CommissionCalendarHandler" />
+		<mapping url="/commission_applications" handler="com.nacid.web.handlers.impl.comission.CommissionApplicationsHandler" />
+		<mapping url="/commission_members_list" handler="com.nacid.web.handlers.impl.comission.CommissionMembersListHandler" />
+		<mapping url="/commission_members_inform" handler="com.nacid.web.handlers.impl.comission.CommissionMembersInformHandler" />
+		<mapping url="/application_motives" handler="com.nacid.web.handlers.impl.comission.ApplicationMotivesHandler" />
+		<mapping url="/calendar_session_protocol" handler="com.nacid.web.handlers.impl.comission.CalendarSessionProtocolHandler"/>
+		<mapping url="/comission_calendar_print_certs" handler="com.nacid.web.handlers.impl.comission.CommissionCalendarPrintCertsHandler" />
+		<mapping url="/comission_calendar_print_report" handler="com.nacid.web.handlers.impl.comission.CommissionCalendarPrintReportHandler" />
+		
+		<mapping url="/mail_admin" handler="com.nacid.web.handlers.impl.mail.MailAdminHandler"/>
+		<mapping url="/ext_application_comment" handler="com.nacid.web.handlers.impl.applications.ExtApplicationCommentHandler"/>
+
+		<mapping url="/document_docflow" handler="com.nacid.web.handlers.impl.applications.DocumentDocFlowHandler"/>
+		
+		<mapping url="/event_type" handler="com.nacid.web.handlers.impl.events.EventTypeHandler"/>
+		<mapping url="/application_event" handler="com.nacid.web.handlers.impl.events.ApplicationEventsHandler"/>
+		
+		<mapping url="/comming_event" handler="com.nacid.web.handlers.impl.events.CommingEventsHandler"/>
+		<mapping url="/commission_inquire" handler="com.nacid.web.handlers.impl.inquires.CommissionInquireHandler" />
+		<mapping url="/common_inquire" handler="com.nacid.web.handlers.impl.inquires.CommonInquireHandler" />
+		<mapping url="/applicant_inquire" handler="com.nacid.web.handlers.impl.inquires.ApplicantInquireHandler" />
+		<mapping url="/employee_inquire" handler="com.nacid.web.handlers.impl.inquires.EmployeeInquireHandler" />
+		<mapping url="/expert_inquire" handler="com.nacid.web.handlers.impl.inquires.ExpertInquireHandler" />
+		<mapping url="/inquiry_inquire" handler="com.nacid.web.handlers.impl.inquires.InquiryInquireHandler" />
+		<mapping url="/bg_academic_recognition_inquire" handler="com.nacid.web.handlers.impl.inquires.BgAcademicRecognitionInquiryHandler" />
+		<mapping url="/public_register_csv" handler="com.nacid.web.handlers.impl.inquires.PublicRegisterCsvHandler" />
+		<mapping url="/inquires_screens" handler="com.nacid.web.handlers.impl.inquires.InquiresScreensHandler" />
+		
+		
+		<mapping url="/esoedsender" handler="com.nacid.web.handlers.impl.esoed.EsoedServiceSenderHandler" />
+		<mapping url="/esoedreceiver" handler="com.nacid.web.handlers.impl.esoed.EsoedServiceReceiverHandler" />
+		
+		<mapping url="/printrequest" handler="com.nacid.web.handlers.impl.PrintRequestHandler" />
+		<mapping url="/bgacademicrecognition" handler="com.nacid.web.handlers.impl.academicrecognition.BGAcademicRecognitionHandler" />
+		<mapping url="/bgacademicrecognitionupload" handler="com.nacid.web.handlers.impl.academicrecognition.BGAcademicRecognitionUploadHandler" />
+		
+		<mapping url="/flat_nomenclature_ajax" handler="com.nacid.web.handlers.impl.ajax.FlatNomenclatureAjaxHandler"/>
+		<mapping url="/national_qualifications_framework_ajax" handler="com.nacid.web.handlers.impl.ajax.NationalQualificationsFrameworkAjaxHandler"/>
+
+		<mapping url="/university_faculty_ajax" handler="com.nacid.web.handlers.impl.ajax.UniversityFacultyAjaxHandler" />
+
+	</request2handler>
+	<screen2jsp>
+		<screen name="home" jspTemplate="/screens/home.jsp" />
+		<screen name="login" jspTemplate="/screens/login.jsp" />
+		<screen name="user_edit" jspTemplate="/screens/users/edit.jsp" />
+		<screen name="ext_user_edit" jspTemplate="/screens/users/ext_user_edit.jsp" />
+		
+		<screen name="table_list" jspTemplate="/screens/table/list.jsp" />
+		<screen name="list_inner_table" jspTemplate="/screens/table/list_inner_table.jsp" />
+		<screen name="testcombo" jspTemplate="/screens/tests/comboboxtest.jsp" />
+		<screen name="flat_nomenclature_edit" jspTemplate="/screens/nomenclatures/flat_nomenclature_edit.jsp" />
+		<screen name="document_receive_method_edit" jspTemplate="/screens/nomenclatures/document_receive_method_edit.jsp" />
+		<screen name="graduation_way_edit" jspTemplate="/screens/nomenclatures/graduation_way_edit.jsp" />
+		<screen name="education_level_edit" jspTemplate="/screens/nomenclatures/education_level_edit.jsp" />
+        <screen name="university_details_edit" jspTemplate="/screens/nomenclatures/university_details_edit.jsp" />
+		<screen name="application_status_edit" jspTemplate="/screens/nomenclatures/application_status_edit.jsp" />
+		<screen name="legal_reason_edit" jspTemplate="/screens/nomenclatures/legal_reason_edit.jsp" />
+		<screen name="expert_position_edit" jspTemplate="/screens/nomenclatures/expert_position_edit.jsp" />
+		<screen name="country_edit" jspTemplate="/screens/nomenclatures/country_edit.jsp" />
+		<screen name="language_edit" jspTemplate="/screens/nomenclatures/language_edit.jsp" />
+		<screen name="speciality_edit" jspTemplate="/screens/nomenclatures/speciality_edit.jsp" />
+		<screen name="profession_group_edit" jspTemplate="/screens/nomenclatures/profession_group_edit.jsp" />
+		<screen name="document_type_edit" jspTemplate="/screens/nomenclatures/document_type_edit.jsp" />
+		<screen name="original_edu_level_edit" jspTemplate="/screens/nomenclatures/original_education_level_edit.jsp" />
+		<screen name="national_qualifications_framework_edit" jspTemplate="/screens/nomenclatures/national_qualifications_framework_edit.jsp" />
+		<screen name="flat_nomenclature_combo" jspTemplate="/screens/nomenclatures/flat_nomenclature_combo.jsp" />
+
+        <screen name="comission_member_edit" jspTemplate="/screens/applications/comission_member_edit.jsp" />
+		<screen name="loading" jspTemplate="/screens/loading.jsp" />
+
+    
+    
+    <!-- applications screens -->
+    
+		<screen name="application_edit" jspTemplate="/screens/applications/application_base.jsp" />
+		<screen name="application" jspTemplate="/screens/applications/application_base.jsp" />
+		<screen name="expert_list_applications" jspTemplate="/screens/applications/expert_list_applications.jsp" />
+		<screen name="university" jspTemplate="/screens/applications/form4.jsp" />
+		<screen name="diploma" jspTemplate="/screens/applications/form5.jsp" />
+		<screen name="commissionlist" jspTemplate="/screens/applications/form6.jsp" />
+		<screen name="consultant" jspTemplate="/screens/applications/consultant_add.jsp" />
+		<screen name="sessionscalendar" jspTemplate="/screens/applications/sessions_calendar_archive.jsp" />
+		<screen name="registercertificates" jspTemplate="/screens/applications/public_register_certificates.jsp" />
+		<screen name="person_edit" jspTemplate="/screens/applications/person_edit.jsp" />
+		<screen name="university_edit" jspTemplate="/screens/applications/university_edit.jsp" />
+		<screen name="university_faculties_table" jspTemplate="/screens/applications/university_faculties_table.jsp" />
+		<screen name="diploma_type_edit" jspTemplate="/screens/applications/diploma_type_edit.jsp" />
+		<screen name="diploma_type_attachment_edit" jspTemplate="/screens/applications/diploma_type_attachment_edit.jsp" />
+		<screen name="application_attachment_edit" jspTemplate="/screens/applications/application_attachment_edit.jsp" />
+		<screen name="competent_institution_edit" jspTemplate="/screens/applications/competent_institution_edit.jsp" />
+		<screen name="university_validity_edit" jspTemplate="/screens/applications/university_validity_edit.jsp" />
+		<screen name="uni_exam_attachment_edit" jspTemplate="/screens/applications/uni_exam_attachment_edit.jsp" />
+		<screen name="dipl_exam_attachment_edit" jspTemplate="/screens/applications/dipl_exam_attachment_edit.jsp" />
+		<screen name="company_edit" jspTemplate="/screens/applications/company_edit.jsp" />
+		<screen name="training_institution_edit" jspTemplate="/screens/applications/training_institution_edit.jsp" />
+		
+		
+		<screen name="app_expert" jspTemplate="/screens/applications/app_form5.jsp" />
+		<screen name="ext_application_comment_new" jspTemplate="/screens/applications/e_applying/ext_application_comment_new.jsp"/>
+		<screen name="ext_application_comment_view" jspTemplate="/screens/applications/e_applying/ext_application_comment_view.jsp"/>
+
+		<screen name="diploma_type_ajax" jspTemplate="/screens/applications/diploma_type_ajax.jsp" />
+		<screen name="legal_reason_ajax" jspTemplate="/screens/applications/legal_reason_ajax.jsp" />
+		<screen name="training_course_diploma_type_universities" jspTemplate="/screens/applications/training_course_diploma_type_universities.jsp" />
+		<screen name="diploma_type_university" jspTemplate="/screens/applications/diploma_type_university.jsp" />
+		<screen name="diploma_type_university_faculty" jspTemplate="/screens/applications/diploma_type_university_faculty.jsp" />
+		<screen name="original_education_level_combo" jspTemplate="/screens/applications/original_education_level_combo.jsp" />
+		<!-- end of applications screens -->
+		
+		<screen name="administration_menu_list" jspTemplate="/screens/administration/menu_list.jsp" />
+		<screen name="administration_menu_edit" jspTemplate="/screens/administration/menu_edit.jsp" />
+		
+		<!-- start of commission screens -->
+		<screen name="application_motives_edit" jspTemplate="/screens/commission/application_motives_edit.jsp" />
+		<screen name="commission_calendar_process_edit" jspTemplate="/screens/commission/commission_calendar_process_edit.jsp" />
+		<screen name="commission_calendar_edit" jspTemplate="/screens/commission/commission_calendar_edit.jsp" />
+		<screen name="commission_applications" jspTemplate="/screens/commission/commission_applications.jsp" />
+		<screen name="commission_members_list" jspTemplate="/screens/commission/commission_members_list.jsp" />
+		<screen name="commission_members_inform" jspTemplate="/screens/commission/commission_members_inform.jsp" />
+		<!-- end of commission screens -->
+		
+		<screen name="common_vars_edit" jspTemplate="/screens/commonvars/edit.jsp" />
+
+
+		<screen name="ext_report_applicant" jspTemplate="/screens/applications/e_applying/ext_report_applicant.jsp" />
+		<screen name="expert_statement_edit" jspTemplate="/screens/applications/expert_statement_edit.jsp" />
+		
+		<screen name="mail_admin_edit" jspTemplate="/screens/mail/mail_admin_edit.jsp" />
+		
+		<screen name="mail_new" jspTemplate="/screens/mail/mail_new.jsp"/>
+
+		<screen name="event_type_edit" jspTemplate="/screens/events/event_type_edit.jsp"/>
+		<screen name="application_event_edit" jspTemplate="/screens/events/application_event_edit.jsp"/>
+		<screen name="comming_event_edit" jspTemplate="/screens/events/comming_event_edit.jsp"/>
+		
+        <screen name="common_inquire" jspTemplate="/screens/inquires/common_inquire.jsp"/>
+		<screen name="commission_inquire" jspTemplate="/screens/inquires/commission_inquire.jsp"/>
+		<screen name="applicant_inquire" jspTemplate="/screens/inquires/applicant_inquire.jsp"/>
+		<screen name="inquiry_inquire" jspTemplate="/screens/inquires/inquiry_inquire.jsp"/>
+		<screen name="employee_inquire" jspTemplate="/screens/inquires/employee_inquire.jsp"/>
+		<screen name="expert_inquire" jspTemplate="/screens/inquires/expert_inquire.jsp"/>
+		<screen name="bg_academic_recognition_inquire" jspTemplate="/screens/inquires/bg_academic_recognition_inquire.jsp"/>
+		<screen name="inquire_list" jspTemplate="/screens/inquires/inquire_list.jsp"/>
+		<screen name="inquires_screens" jspTemplate="/screens/inquires/inquires_screens.jsp"/>
+		<screen name="commission_inquire_legal_reason_ajax" jspTemplate="/screens/inquires/commission_inquire_legal_reason_ajax.jsp" />
+		<screen name="bgacademicrecognition" jspTemplate="/screens/academicrecognition/bgacademicrecognition_edit.jsp" />
+		<screen name="bgacademicrecognition_list" jspTemplate="/screens/academicrecognition/bgacademicrecognition_list.jsp" />
+		<screen name="bgacademicrecognition_upload" jspTemplate="/screens/academicrecognition/bgacademicrecognition_upload.jsp" />
+		<screen name="bgacademicrecognition_upload_list" jspTemplate="/screens/academicrecognition/bgacademicrecognition_upload_list.jsp" />
+		<screen name="bgacademicrecognition_upload_list_part" jspTemplate="/screens/academicrecognition/bgacademicrecognition_upload_list_part.jsp" />
+		<screen name="accessdenied" jspTemplate="/screens/accessdenied.jsp" />
+		<screen name="ajax_combo" jspTemplate="/screens/ajax_combo.jsp" />
+		<screen name="bgacademicrecognition_similar" jspTemplate="/screens/academicrecognition/bgacademicrecognition_similar.jsp" />
+
+		
+	</screen2jsp>
+</webconfig>

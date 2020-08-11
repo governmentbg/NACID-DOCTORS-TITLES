@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="webconfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="handler2group"/>
+        <xs:element ref="request2handler"/>
+        <xs:element ref="screen2jsp"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="request2handler">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mapping" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="mapping">
+    <xs:complexType>
+      <xs:attribute name="url" type="xs:string"/>
+      <xs:attribute name="handler" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="screen2jsp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="screen" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="screen">
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string"/>
+      <xs:attribute name="jspTemplate" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:element name="handler2group">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="group" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="group">
+    <xs:complexType>
+      <xs:attribute name="handler" type="xs:string"/>
+      <xs:attribute name="groupid" type="xs:int"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

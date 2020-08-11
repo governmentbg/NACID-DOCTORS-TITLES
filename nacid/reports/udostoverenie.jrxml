@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="udostoverenie" language="groovy" pageWidth="595" pageHeight="842" columnWidth="385" leftMargin="120" rightMargin="90" topMargin="162" bottomMargin="0" whenResourceMissingType="Error">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_DOC_TYPE_ID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="diplomaName" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaName]]></fieldDescription>
+	</field>
+	<field name="diplomaSpecialityNames" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaSpecialityNames]]></fieldDescription>
+	</field>
+	<field name="allUniversitiesNamesAndLocationsForCertificate" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesNamesAndLocationsForCertificate]]></fieldDescription>
+	</field>
+	<field name="trainingCountries" class="java.lang.String">
+		<fieldDescription><![CDATA[trainingCountries]]></fieldDescription>
+	</field>
+	<field name="recognizedQualification" class="java.lang.String">
+		<fieldDescription><![CDATA[recognizedQualification]]></fieldDescription>
+	</field>
+	<field name="commissionSessionDate" class="java.lang.String">
+		<fieldDescription><![CDATA[commissionSessionDate]]></fieldDescription>
+	</field>
+	<field name="recognizedEducationLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[recognizedEducationLevel]]></fieldDescription>
+	</field>
+	<field name="recognizedSpecialityNameForCertificate" class="java.lang.String">
+		<fieldDescription><![CDATA[recognizedSpecialityNameForCertificate]]></fieldDescription>
+	</field>
+	<field name="addressDetailsBulgaria" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetailsBulgaria]]></fieldDescription>
+	</field>
+	<field name="cityDetailsBulgaria" class="java.lang.String">
+		<fieldDescription><![CDATA[cityDetailsBulgaria]]></fieldDescription>
+	</field>
+	<field name="ownerLastName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerLastName]]></fieldDescription>
+	</field>
+	<field name="ownerCivilId" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerCivilId]]></fieldDescription>
+	</field>
+	<field name="ownerBirthCountry" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerBirthCountry]]></fieldDescription>
+	</field>
+	<field name="ownerCitizenship" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerCitizenship]]></fieldDescription>
+	</field>
+	<field name="diplomaEducationLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaEducationLevel]]></fieldDescription>
+	</field>
+	<field name="ownerBirthDate" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerBirthDate]]></fieldDescription>
+	</field>
+	<field name="multipleDiplomaSpecialities" class="java.lang.Boolean"/>
+	<field name="qrCode" class="java.io.InputStream"/>
+	<field name="certificateNumber" class="java.lang.String"/>
+	<detail>
+		<band height="652" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="500" width="385" height="25" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" lineSpacing="Double" markup="html">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["обучението проведено в "+ $F{trainingCountries}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="F_EXEC" x="0" y="537" width="385" height="55"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" lineSpacing="Single" markup="none">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\nИзпълнителен директор: .........................."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="31" width="385" height="39" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" lineSpacing="1_1_2" markup="none">
+					<font fontName="Times New Roman" size="9" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["   На основание чл. 14" + ($P{P_DOC_TYPE_ID} == 150  ? "а" : "") + ", ал 1 от Наредбата за държавните изисквания за признаване на придобито висше образование и завършени периоди на обучение в чуждестранни висши училища и " + ($P{P_DOC_TYPE_ID} == 150  ? "чл. 24" : "чл. 23, ал. 1") + " от Правилника за устройството и дейността на Националния център за информация и документация признавам висше образование на"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="80" width="385" height="26" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="1_1_2" markup="none">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{diplomaName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="153" width="385" height="14" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="1_1_2" markup="none">
+					<font fontName="Times New Roman" size="8" isBold="true" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(име, презиме, фамилия, ЕГН/личен или друг идентификационен номер \n"+
+"на чужденеца от документа за самоличност, дата и място на раждане, гражданство)"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement mode="Opaque" x="308" y="155" width="80" height="85">
+					<property name="net.sf.jasperreports.export.shape.type" value="3"/>
+					<property name="net.sf.jasperreports.export.y.relative.to.paragraph" value="1"/>
+				</reportElement>
+				<box topPadding="5"/>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{qrCode}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="167" width="385" height="34" isPrintInFirstWholeBand="true"/>
+				<textElement verticalAlignment="Bottom" lineSpacing="1_1_2" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\nна образователно-квалификационна степен "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="201" width="385" height="27" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Double" markup="none">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{recognizedEducationLevel}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="228" width="385" height="10" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Single" markup="none">
+					<font fontName="Times New Roman" size="8" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(професионален бакалавър, бакалавър, магистър)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="238" width="385" height="40" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Double" markup="html">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{recognizedSpecialityNameForCertificate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="278" width="385" height="10" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Single" markup="none">
+					<font fontName="Times New Roman" size="8" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(специалност)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="288" width="385" height="19" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom" lineSpacing="Double" markup="html">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["с професионална квалификация"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="335" width="385" height="30" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Bottom" lineSpacing="Double" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["завършил/завършила"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="365" width="385" height="40" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" lineSpacing="Double" markup="none">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{diplomaSpecialityNames}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="404" width="385" height="10" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Single" markup="none">
+					<font fontName="Times New Roman" size="8" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{multipleDiplomaSpecialities} == true ? "(специалности)" : "(специалност)")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="414" width="385" height="31" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" lineSpacing="Double" markup="none">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{diplomaEducationLevel}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="445" width="385" height="10" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Single" markup="none">
+					<font fontName="Times New Roman" size="8" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(степен на висшето образование)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="455" width="385" height="35" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" lineSpacing="Double" markup="html">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["в "+$F{allUniversitiesNamesAndLocationsForCertificate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="490" width="385" height="10" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Single" markup="none">
+					<font fontName="Times New Roman" size="8" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(наименование на чуждестранното висше училище)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" x="0" y="1" width="385" height="30" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Double" markup="none">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["№  "+$F{certificateNumber}+" г."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="525" width="385" height="10" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Single" markup="none">
+					<font fontName="Times New Roman" size="8" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(наименование на държавата, в която е завършено висшето образование)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" positionType="Float" mode="Transparent" x="0" y="106" width="385" height="47" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" lineSpacing="1_1_2" markup="none">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ownerCivilId} +
+(!"".equals($F{ownerBirthDate}) || !"".equals($F{ownerBirthCountry}) ? ", род." : " ") +
+("".equals($F{ownerBirthDate}) ? "" : " на "+ $F{ownerBirthDate} + " г.") +
+("".equals($F{ownerBirthCountry}) ? "" : " в "+ $F{ownerBirthCountry}) +
+("".equals($F{ownerCitizenship}) ? "" : ", "+ $F{ownerCitizenship})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="F_CONTENT" mode="Transparent" x="0" y="307" width="385" height="28" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" lineSpacing="Double" markup="html">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(!$F{recognizedQualification}.equals("") ? $F{recognizedQualification}:"")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ministry_header" language="groovy" pageWidth="483" pageHeight="130" whenNoDataType="AllSectionsNoDetail" columnWidth="483" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.732053821460287"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/WebContent/images/"]]></defaultValueExpression>
+	</parameter>
+	<pageHeader>
+		<band height="130" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="483" height="84"/>
+				<textField>
+					<reportElement x="0" y="0" width="202" height="84"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+				</textField>
+				<image scaleImage="RetainShape">
+					<reportElement x="202" y="0" width="106" height="84"/>
+					<imageExpression class="java.lang.String"><![CDATA[$P{IMAGE_DIR}+"national_emblem.jpg"]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="308" y="0" width="175" height="84"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="82" width="483" height="40"/>
+				<staticText>
+					<reportElement key="" x="0" y="0" width="483" height="40"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="14"/>
+					</textElement>
+					<text><![CDATA[РЕПУБЛИКА БЪЛГАРИЯ
+Заместник-министър на образованието, младежта и науката]]></text>
+				</staticText>
+			</frame>
+			<textField>
+				<reportElement x="0" y="126" width="483" height="4"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="122" width="483" height="4"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

@@ -1,0 +1,383 @@
+/*--- for Forms ---*/
+.fieldlabel,.fieldlabel2, .fieldlabel3, .fieldlabel4 {
+	display: block;
+	font-weight: normal;
+	float: left;
+	margin-right: 10px;
+	text-align: right;
+	width: 210px;
+}
+
+.fieldlabel2 {
+	width: 190px;
+}
+
+.fieldlabel3 {
+	width: 110px;
+}
+
+.fieldlabel4 {
+	width: 40px;
+}
+
+.datefield {
+	margin-left: 160px;
+}
+
+.datefield2 {
+	margin-left: 10px;
+}
+
+radio[focus="true"] {
+	border: 0px dotted transparent !important;
+	outline: 0px solid #1C5180 !important;
+}
+
+input[type=checkbox]:focus {
+	-moz-outline-offset: -1px !important;
+	outline: 0px solid #1C5180 !important;
+}
+
+input[type=radio]:focus {
+	-moz-outline-offset: -1px !important;
+	outline: 0px solid #1C5180 !important;
+}
+
+:disabled {
+	background: #ddd !important;
+}
+
+form {
+	font-size: 88.5%;
+	width: 96%;
+	margin: 0 auto;
+}
+
+form td {
+	font-size: 120%;
+}
+#applications_form td {
+	font-size: 100%;
+}
+tr.tdfontsize100 td {
+    font-size: 100%;
+}
+
+input,textarea,select {
+	font: 1em arial, helvetica, sans-serif;
+	font-weight: bold;
+	padding: 2px 3px;
+}
+
+select {
+	padding: 1px;
+}
+
+input.brd,textarea.brd,select.brd {
+	background: #f3f3f3;
+	border: #00f 1px solid;
+}
+.error_brd {
+  border: 1px red solid;
+}
+
+input.errorinput,textarea.errorinput,select.errorinput {
+	background: #f3f3f3;
+	border: #f00 1px solid;
+}
+
+.checkbox {
+	padding: 0 0 0 20px;
+}
+
+.inputFieldPadding {
+	padding: 0 0 0 220px;
+}
+
+.checkbox label {
+	padding: 0 20px 0 10px;
+}
+
+label {
+	color: black; /*#666;*/
+}
+
+.submit,.cancel {
+	padding: 0.3em 0.7em;
+	background: #fff;
+	font-size: 90%;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	border: 3px double #a7a7a7;
+	border-top-color: #d7d7d7;
+	border-left-color: #d7d7d7;
+	background-color: #f0f0f0;
+}
+
+.submit {
+	color: #1010DD;
+}
+
+.cancel {
+	color: red;
+}
+
+/* ------------------------------- styles for BACK, SAVE and PRINT buttons */
+input.save, input.back, input.print, input.generate,
+input.sign, input.docs,
+a.download {
+  height:30px;line-height:30px;
+  margin:0 20px;padding:0 0 0 33px !important;
+  color:#1010DD;font-size:90%;letter-spacing:0.1em;
+  background:transparent url("../img/buttons.png") left top no-repeat;
+  font-weight:bold;text-transform:uppercase;text-decoration:none;
+  cursor:pointer;
+  border:none;}
+input.save     {background-position:left  -62px;width:200px;}
+input.back     {background-position:left -124px;width: 90px;}
+input.print    {background-position:left  -93px;width: 90px;}
+input.generate {background-position:left  -93px;width:125px;}
+input.sign     {background-position:left  -31px;width:330px;}
+input.docs     {background-position:left    top;width:205px;}
+
+a.download {background-position:left -124px;width: 90px;}
+input.epay {
+  height:30px;line-height:30px;
+  margin:0 20px;padding:0 0 0 40px !important;
+  color:#1010DD;font-size:90%;letter-spacing:0.1em;
+  background:transparent url("../img/epay.jpg") left center no-repeat;
+  font-weight:bold;text-transform:uppercase;text-decoration:none;
+  cursor:pointer;
+  border:none;
+}
+a.download {
+  display:inline-block;
+  width:60px;
+}
+
+input.w80 { width:80px; }
+input.w90 { width:90px; }
+input.w110 { width:110px; }
+input.w124 { width:124px; }
+input.w140 { width:140px; }
+input.w160 { width:160px; }
+input.w180 { width:180px; }
+input.w220 { width:220px; }
+input.w240 { width:240px; }
+input.w250 { width:250px; }
+input.w270 { width:270px; }
+input.w280 { width:280px; }
+input.w290 { width:290px; }
+input.w310 { width:310px; }
+input.w800 { width:800px; } 
+
+
+
+/* ------------------------ end of styles for BACK, SAVE and PRINT buttons */
+
+fieldset {
+	margin: 0;
+	padding: 0 20px 10px 20px;
+	border: 1px #ccc solid;
+}
+
+form legend {
+	font-size: 1.2em;
+	padding: 0.5em 0.7em 0.7em 0.7em;
+	color: #1010DD;
+	font-weight: bold;
+	background: inherit;
+}
+
+legend.noForm {
+	font-size: 1em;
+	padding: 0.5em 0.7em 0.7em 0.7em;
+	color: #1010DD;
+	font-weight: bold;
+	background: inherit;
+}
+
+div.formClass {
+	width: 96%;
+	margin: 0 auto;
+}
+
+form p.fieldcontrol {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	line-height: 1em;
+}
+
+.sent {
+	color: #666;
+	padding: 40px 0 10px 0;
+	margin: 0;
+	font-weight: bold;
+}
+
+.sent p {
+	text-align: left;
+	border: none;
+	padding: 5px 20px;
+	margin: 5px 0;
+}
+.subwindow {
+	background-color: #D2CFFF;
+    border: 1pt solid #000000;
+    position: absolute;
+    text-align: left;
+    z-index: 15;
+    padding: 20px;
+}
+
+.subwindow2 {
+    background-color: #ddddd9;
+    border: 1pt solid #000000;
+    position: absolute;
+    text-align: left;
+    z-index: 15;
+    padding: 20px;
+}
+.subwindow3 {
+	background-color: #FAF0F0;
+	border: 1pt solid #000000;
+	position: absolute;
+	text-align: left;
+	z-index: 15;
+	padding: 20px;
+}
+fieldset.subwindow_f {
+	margin: 0;
+	padding: 0 20px 10px 20px;
+	border: 1pt solid #816FFF;
+}
+legend.subwindow_l {
+	font-size: 1.2em;
+	padding: 0.5em 0.7em 0.7em 0.7em;
+	color: #816FFF;
+	font-weight: bold;
+	background: inherit;	
+}
+
+div.darkBg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 997;
+	opacity: 0.70;
+	filter: alpha(opacity = 70); /* ie */
+	-moz-opacity: 0.7; /* mozilla */
+	background: #000;
+}
+
+div.loadingContainer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 300px;
+	height: 90px;
+	margin-left: -150px;
+	margin-top: -45px;
+	z-index: 998;
+	background: #FFFFCC;
+	text-align: center;
+}
+
+div.uploadBar {  
+	border:1px solid #c2c2c2;  
+	height:2px;  
+	text-align:left;  
+	line-height:0;  
+	margin:0;  
+	padding:0;  
+	overflow:hidden; /*fix for IE 6*/  
+}
+
+div.uploadProgressBar {  
+	height:2px;  
+	line-height:0;  
+	margin:0;  
+	padding:0;  
+	background:#b3f83d;  
+	width:0%;  
+}  
+
+div.uploadMsg{  
+	color:#6ea1fa;  
+	float:left;  
+	padding:30px 2px 2px 2px;  
+	font-size:13px;
+}
+
+div.uploadStatus{  
+ 	color:#6ea1fa;  
+	float:right;  
+	padding:30px 2px 2px 2px; 
+	font-size:13px; 
+}  
+
+div.uploadInfo{  
+	padding:10px;  
+	color:#b9b9b9;  
+	font-size:10px;  
+}
+
+.ignoreError {
+	color: red;
+}
+
+div.imgPreview {
+	position: absolute;
+	z-index: 990;
+}
+
+div.filterElement {
+	float: left;
+	margin-right: 5px;
+}
+
+li.main_childs {
+	font-weight: bold;
+	list-style-image: url("../img/bullet_down.png");
+}
+
+li.main_nochilds {
+	font-weight: bold;
+	list-style-image: url("../img/bullet_dot.png");
+}
+
+li.second_childs {
+	font-size: 13px;
+	list-style-image: url("../img/morearrow_down.png");
+}
+
+li.second_nochilds {
+	font-size: 13px;
+	list-style-image: url("../img/morearrow_dot.png");
+}
+
+.nav_row input {padding:0 3px;}
+.nav_row legend {padding:0.5em;}
+.nav_row img {vertical-align:middle;}
+
+#view_similar_modal{
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 60%;
+    z-index: 1200;
+    background: #eee;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10px;
+    box-shadow: 10px 10px 15px rgba(80, 80, 80, 0.3);
+    -webkit-box-shadow: 10px 10px 15px rgba(80, 80, 80, 0.3);
+	-moz-box-shadow: 10px 10px 15px rgba(80, 80, 80, 0.3);    
+	border: 2px solid #aaa;
+}

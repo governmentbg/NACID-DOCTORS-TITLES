@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TextReport" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="net.sf.jasperreports.export.text.character.width" value="7.238"/>
+	<property name="net.sf.jasperreports.export.text.character.height" value="13.948"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="207"/>
+	<import value="net.duosoft.nacid.jpa.data.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/Projects/NACID/trunk/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/Projects/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LETTER_RECIPIENT" class="java.lang.String"/>
+	<parameter name="SALUTATION" class="java.lang.String"/>
+	<parameter name="nacidDirectorPosition" class="java.lang.String"/>
+	<parameter name="nacidDirectorName" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="allUniversitiesCountries" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesCountries]]></fieldDescription>
+	</field>
+	<field name="applicationNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[applicationNumber]]></fieldDescription>
+	</field>
+	<field name="trainingDuration" class="java.lang.String">
+		<fieldDescription><![CDATA[trainingDuration]]></fieldDescription>
+	</field>
+	<field name="bolognaCycle" class="java.lang.String">
+		<fieldDescription><![CDATA[bolognaCycle]]></fieldDescription>
+	</field>
+	<field name="europeanQualificationsFramework" class="java.lang.String">
+		<fieldDescription><![CDATA[europeanQualificationsFramework]]></fieldDescription>
+	</field>
+	<field name="nationalQualificationsFramework" class="java.lang.String">
+		<fieldDescription><![CDATA[nationalQualificationsFramework]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="today" class="java.lang.String">
+		<fieldDescription><![CDATA[today]]></fieldDescription>
+	</field>
+	<field name="ownerName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerName]]></fieldDescription>
+	</field>
+	<field name="ownerCivilId" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerCivilId]]></fieldDescription>
+	</field>
+	<field name="diplomaNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaNumber]]></fieldDescription>
+	</field>
+	<field name="diplomaDate" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaDate]]></fieldDescription>
+	</field>
+	<field name="ownerDiplomaName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerDiplomaName]]></fieldDescription>
+	</field>
+	<field name="allUniversitiesNamesAndLocations" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesNamesAndLocations]]></fieldDescription>
+	</field>
+	<field name="diplomaSpecialityNames" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaSpecialityNames]]></fieldDescription>
+	</field>
+	<field name="diplomaEducationLevel" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaEducationLevel]]></fieldDescription>
+	</field>
+	<field name="docFlowNumber" class="java.lang.String"/>
+	<field name="statuteAuthenticityRecommendationLetterNumber" class="java.lang.String"/>
+	<field name="allUniversitiesFullNames" class="java.lang.String"/>
+	<field name="allUniversitiesBgNames" class="java.lang.String"/>
+	<field name="diplomaOriginalEducationLevel" class="java.lang.String"/>
+	<field name="expertLegalReason" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<pageHeader>
+		<band height="165">
+			<printWhenExpression><![CDATA[($V{PAGE_NUMBER} == 1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="160"/>
+				<subreportParameter name="PARAM_DOC_FLOW_NUMBER">
+					<subreportParameterExpression><![CDATA[$F{applicationNumber}+"/"+$F{today}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DATE">
+					<subreportParameterExpression><![CDATA[$F{today}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IMAGE_DIR">
+					<subreportParameterExpression><![CDATA[$P{IMAGE_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "nacid_BG_header.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="505">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="212" width="483" height="193"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="styled">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["    " + $F{allUniversitiesFullNames} + " принадлежи към националната система за "
++ "висше образование на " + $F{allUniversitiesCountries}
++ " и има правото да провежда обучение както по академични програми за придобиване "
++ "на степени на висше образование, така и по програми за продължаващо обучение, "
++ "които не водят до придобиване на висше образование."
++ "<br />"
++ "    В резултат на направеното проучване бе установено, че приложеният документ "
++ $F{diplomaOriginalEducationLevel} + ", издаден на името на "
++ $F{ownerDiplomaName} + ", удостоверява успешното завършване на "
++ $F{trainingDuration} + " за продължаващо обучение с професионална "
++ "насоченост. Този документ не представлява висше образование по смисъла на "
++ "Болонския процес на територията на "
++ $F{allUniversitiesCountries} + " и не дава достъп до продължаване на "
++ "образованието в .............. (не е държавен образец по смисъла на "
++ "законодателството на " + $F{allUniversitiesCountries} + " и не гарантира академични <style forecolor='blue'> и професионални "
++ "права</style> на притежателя си на територията на " + $F{allUniversitiesCountries} + ")."
++ "<br />"
++"    Поради цитираните обстоятелства документът " + $F{diplomaOriginalEducationLevel}
++ ", издаден от "
++ $F{allUniversitiesNamesAndLocations} + " не попада в обхвата на "
++ "Наредбата за държавните изисквания за признаване на придобито "
++ "висше образование и завършени периоди на обучение в "
++ "чуждестранни висши училища и не подлежи на признаване по "
++ "предвидения в нея ред заради наличието на обстоятелствата, "
++ "регламентирани в " + $F{expertLegalReason} + " от Наредбата, а именно- "
++ "представеният за признаване документ не е диплома за висше "
++ "образование."
++ "<br /> <br />"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="112" width="483" height="30"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Относно</u>:</b>    Ваше писмо с "  + $F{statuteAuthenticityRecommendationLetterNumber} + "<br> <br>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="176" width="483" height="24"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Във връзка с Ваше писмо "
++ $F{statuteAuthenticityRecommendationLetterNumber} + ", "
++ " Ви уведомяваме следното:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="405" width="100" height="30"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[С уважение, <br>]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="471" width="307" height="24"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nacidDirectorPosition}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="449" width="246" height="22"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nacidDirectorName} + "<br>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="0" y="11" width="483" height="75"/>
+				<textElement markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{LETTER_RECIPIENT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="142" width="483" height="34"/>
+				<textElement lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SALUTATION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="86" width="247" height="26"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br> <br>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="34">
+			<staticText>
+				<reportElement x="363" y="0" width="120" height="30"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[http://www.nacid.bg]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

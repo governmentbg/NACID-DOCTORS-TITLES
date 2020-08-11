@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reshenie_otkaz" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" whenResourceMissingType="Error">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/WebContent/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ministryRepresentativeName" class="java.lang.String">
+		<parameterDescription><![CDATA[ministryRepresentativeName]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Петя Евтимова "]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ministryRepresentativePosition" class="java.lang.String">
+		<parameterDescription><![CDATA[ministryRepresentativePosition]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Заместник-министър на образованието,  младежта и науката"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sofiaPublicProsecutorName" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Г-Н НИКОЛАЙ КОКИНОВ"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sofiaPublicProsecutorPosition" class="java.lang.String">
+		<defaultValueExpression><![CDATA["СОФИЙСКИ ГРАДСКИ ПРОКУРОР"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sofiaPublicProsecutorShortName" class="java.lang.String">
+		<defaultValueExpression><![CDATA["ГОСПОДИН КОКИНОВ"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="applicationNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[applicationNumber]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="ownerName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerName]]></fieldDescription>
+	</field>
+	<field name="ownerCivilId" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerCivilId]]></fieldDescription>
+	</field>
+	<field name="diplomaNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaNumber]]></fieldDescription>
+	</field>
+	<field name="diplomaDate" class="java.lang.String">
+		<fieldDescription><![CDATA[diplomaDate]]></fieldDescription>
+	</field>
+	<field name="ownerDiplomaName" class="java.lang.String">
+		<fieldDescription><![CDATA[ownerDiplomaName]]></fieldDescription>
+	</field>
+	<field name="allUniversitiesNamesAndLocations" class="java.lang.String">
+		<fieldDescription><![CDATA[allUniversitiesNamesAndLocations]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="130">
+			<printWhenExpression><![CDATA[($V{PAGE_NUMBER} == 1)]]></printWhenExpression>
+			<subreport>
+				<reportElement key="TEST" isPrintRepeatedValues="false" x="0" y="0" width="483" height="130"/>
+				<subreportParameter name="IMAGE_DIR">
+					<subreportParameterExpression><![CDATA[$P{IMAGE_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "ministry_header.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="600" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="517" width="483" height="83"/>
+				<textElement verticalAlignment="Bottom" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["С уважение,<br/>"+
+"<b>"+$P{ministryRepresentativeName}+"</b><br/>"+
+"<i>"+$P{ministryRepresentativePosition}+"</i>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="483" height="474"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>ДО</b> <br />"+
+"<b>" + $P{sofiaPublicProsecutorName} + "</b><br />"+
+"<b>" + $P{sofiaPublicProsecutorPosition} + "</b>" +
+"<br/><br/><u><b>Относно:</b></u> Сигнал за неавтентична диплома за висше образование, внесена за признаване в Министерството на образованието, младежта и науката"+
+"<br/><br/><b>УВАЖАЕМИ " + $P{sofiaPublicProsecutorShortName} +"</b><br/><br/>"+
+"&nbsp;&nbsp;&nbsp;&nbsp;В Министерството на образованието, младежта и науката със заявление с входящ № "+
+$F{applicationNumber} + " от " + $F{date} + " г-н/жа " + $F{ownerName} + "," + $F{ownerCivilId} +
+", внесе диплома за висше образование № " + $F{diplomaNumber} + " от " + $F{diplomaDate} + ", издадена на " +
+"<b>" + $F{ownerDiplomaName} + "</b> от " + $F{allUniversitiesNamesAndLocations} + ". <br />"+
+"&nbsp;&nbsp;&nbsp;&nbsp;При извършената проверка за автентичност на дипломата с писмо № " + $F{applicationNumber} + " от &lt;дата&gt; е получен отговор от " +
+$F{allUniversitiesNamesAndLocations} + ", че това лице не е провеждало обучение във висшето училище." +
+"<br />&nbsp;&nbsp;&nbsp;&nbsp;Във връзка с това приложено Ви предоставям по компетентност следните документи:"+
+"<br />&nbsp;&nbsp;&nbsp;&nbsp;1. Копие от заявлението на <b>" + $F{ownerName} + "</b> за признаване на висше образование, придобито в чуждестранно висше училище с входящ № " + $F{applicationNumber} + " от " + $F{date} + ", подадено в Министерство на образованието, младежта и науката." +
+"<br />&nbsp;&nbsp;&nbsp;&nbsp;2. Копие от лична карта, издадена на името на <b>" + $F{ownerName} + "</b>." +
+"<br />&nbsp;&nbsp;&nbsp;&nbsp;3. Копие от удостоверение за идентичност на имената." +
+"<br />&nbsp;&nbsp;&nbsp;&nbsp;4. Копие на диплома за висше образование и приложението към нея № " + $F{diplomaNumber} + " от " + $F{diplomaDate} + ", издадена на <b>" + $F{ownerDiplomaName} + "</b> от " + $F{allUniversitiesNamesAndLocations} + "."+
+"<br />&nbsp;&nbsp;&nbsp;&nbsp;5. Копие от превода на дипломата за висше образование и приложението към нея, заверен и легализиран от &lt;свободен текст&gt;" +
+"<br />&nbsp;&nbsp;&nbsp;&nbsp;6. Копие от писмо на НАЦИД с изх. № " + $F{applicationNumber} + " от " + $F{date} + " до " + $F{allUniversitiesNamesAndLocations} + ", със запитване дали <b>" + $F{ownerDiplomaName} + "</b> е провеждал обучение във висшето училище." +
+"<br />&nbsp;&nbsp;&nbsp;&nbsp;7. Копие на отговор с вх. № " + $F{applicationNumber} + " от &lt;дата&gt; от " + $F{allUniversitiesNamesAndLocations} + ", че лицето не е провеждало обучение във висшето училище."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

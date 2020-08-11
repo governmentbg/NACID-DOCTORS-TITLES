@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="protokol" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" whenResourceMissingType="Error">
+	<property name="ireport.zoom" value="1.9487171000000045"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="288"/>
+	<property name="ireport.callouts" value="##Fri Jun 25 16:34:09 EEST 2010"/>
+	<property name="isIgnorePagination" value="true"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/build/classes/com/nacid/report/reportfiles/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/ggeorgiev/gravis projects/NACID/WebContent/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="orderLetterAuthor" class="java.lang.String">
+		<parameterDescription><![CDATA[orderLetterAuthor]]></parameterDescription>
+		<defaultValueExpression><![CDATA["test order"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_MEMBERS" class="java.lang.String">
+		<parameterDescription><![CDATA[PARAM_TITLE_MEMBERS]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Членове:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_CONSULTANTS" class="java.lang.String">
+		<parameterDescription><![CDATA[PARAM_TITLE_CONSULTANTS]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Консултанти:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_MISSING" class="java.lang.String">
+		<parameterDescription><![CDATA[PARAM_TITLE_MISSING]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Отсъстват:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_SUB_1" class="java.lang.String">
+		<parameterDescription><![CDATA[PARAM_TITLE_SUB_1]]></parameterDescription>
+		<defaultValueExpression><![CDATA["I.    Да се признае придобито висше образование в чуждестранни висши на основание чл. 11 от Наредбата за държавните изисквания за признаване на придобито висше образование и завършени периоди на обучение в чуждестранни висши училища на:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_SUB_2" class="java.lang.String">
+		<parameterDescription><![CDATA[PARAM_TITLE_SUB_2]]></parameterDescription>
+		<defaultValueExpression><![CDATA["II.    Да се отложи на основание чл. 14, ал. 2, т. 2 от Правилника за устройството и дейността на Националния център за информация и документация (ДВ, бр. 25 от 2012 г.) разглеждането на документите за представяне на допълнителна информация от следните заявители:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_SUB_7" class="java.lang.String">
+		<parameterDescription><![CDATA[PARAM_TITLE_SUB_3]]></parameterDescription>
+		<defaultValueExpression><![CDATA["VII.    Не се допуска до оценяване за съответствие с държавните изисквания за придобиване на висше образование в Р България на основание чл. 7а, ал. 1, т. 2 от Наредбата за държавните изисквания за признаване на придобито висше образование и завършени периоди на обучение в чуждестранни висши училища заявленията на:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_SUB_5" class="java.lang.String">
+		<parameterDescription><![CDATA[PARAM_TITLE_SUB_6]]></parameterDescription>
+		<defaultValueExpression><![CDATA["V.    Да се прекрати на основание чл. 16, ал. 1, т. 2 и ал. 2 от Правилника за устройството и дейността на НАЦИД процедурата по признаване на висше образование поради непредставяне в определения срок на изискуемите допълнителни документите на:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_SUB_6" class="java.lang.String">
+		<parameterDescription><![CDATA[PARAM_TITLE_SUB_7]]></parameterDescription>
+		<defaultValueExpression><![CDATA["VI.    Да се откаже признаване на основание чл. 12, ал. 1 във връзка с чл. 11, ал. 2 от Наредбата за държавните изисквания за признаване на придобито висше образование и завършени периоди на обучение в чуждестранни висши училища поради:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_SUB_3" class="java.lang.String">
+		<defaultValueExpression><![CDATA["III.    Да се отложи на основание чл. 14, ал. 2, т. 3 от Правилника за устройството и дейността на Националния център за информация и документация за извършване на допълнителна експертна оценка разглеждането на документите на:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_TITLE_SUB_4" class="java.lang.String">
+		<defaultValueExpression><![CDATA["IV.    Да се отложи на основание чл. 14, ал. 2, т. 4 от Правилника за устройството и дейността на Националния център за информация и документация за извършване на допълнителна експертна оценка разглеждането на документите на:"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="reportNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[reportNumber]]></fieldDescription>
+	</field>
+	<field name="commissionSessionDate" class="java.lang.String">
+		<fieldDescription><![CDATA[commissionSessionDate]]></fieldDescription>
+	</field>
+	<field name="commissionSessionTime" class="java.lang.String">
+		<fieldDescription><![CDATA[commissionSessionTime]]></fieldDescription>
+	</field>
+	<field name="commissionChairman" class="com.nacid.bl.comision.CommissionMemberForReport">
+		<fieldDescription><![CDATA[commissionChairman]]></fieldDescription>
+	</field>
+	<field name="commissionSecretary" class="com.nacid.bl.comision.CommissionMemberForReport">
+		<fieldDescription><![CDATA[commissionSecretary]]></fieldDescription>
+	</field>
+	<field name="commissionMembers" class="java.util.List">
+		<fieldDescription><![CDATA[commissionMembers]]></fieldDescription>
+	</field>
+	<field name="commissionConsultants" class="java.util.List">
+		<fieldDescription><![CDATA[commissionConsultants]]></fieldDescription>
+	</field>
+	<field name="missingCommissionMembers" class="java.util.List">
+		<fieldDescription><![CDATA[missingCommissionMembers]]></fieldDescription>
+	</field>
+	<field name="recognizedApplications" class="java.util.List">
+		<fieldDescription><![CDATA[recognizedApplications]]></fieldDescription>
+	</field>
+	<field name="postponedApplications" class="java.util.Map">
+		<fieldDescription><![CDATA[postponedApplications]]></fieldDescription>
+	</field>
+	<field name="terminatedApplications" class="java.util.Map">
+		<fieldDescription><![CDATA[terminatedApplications]]></fieldDescription>
+	</field>
+	<field name="refusedApplications" class="java.util.Map">
+		<fieldDescription><![CDATA[refusedApplications]]></fieldDescription>
+	</field>
+	<field name="applicationsMap" class="java.util.Map"/>
+	<detail>
+		<band height="292" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="0" width="483" height="34"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Протокол № "+$F{reportNumber}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="34" width="483" height="85"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\n    Настоящият протокол е изготвен след проведено на " +
+$F{commissionSessionDate} +
+" заседание на Съвета по академично признаване на основание на чл. 7, ал. 2 от Наредбата за държавните изисквания за признаване на придобито висше образование и завършени периоди на обучение в чуждестранни висши училища (ДВ, бр. 69 от 2000 г., изм. ДВ, бр. 25 и бр. 79 от 2009 г., изм. ДВ, бр. 59 от 2010 г., изм. ДВ, бр. 102 от 2011 г.), назначен със заповед " +
+" № <номер>/<дата> на " + $P{orderLetterAuthor} ]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="2" y="144" width="481" height="39"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\n    Начало на заседанието – "
++$F{commissionSessionTime}+".\n\n"+
+"    В заседанието участваха следните членове на Съвета по академично признаване:"+
+"\n    Председател: "+
+$F{commissionChairman}.getDegreeAndName()+", "+
+$F{commissionChairman}.getInstitutionAndPosition()]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="2" y="183" width="481" height="12" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="PARAM_TITLE">
+					<subreportParameterExpression><![CDATA[$P{PARAM_TITLE_MEMBERS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{commissionMembers})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "protokol_sub_members.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="205" width="481" height="61"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\n    Членовете на Съвета изслушаха и обсъдиха експертните становища на консултантите по представените документи за признаване на придобито висше образование в чуждестранни висши училища и взеха следните  "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="1" y="266" width="481" height="26"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["РЕШЕНИЯ:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="500">
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="2" y="11" width="483" height="12" isPrintInFirstWholeBand="true"/>
+				<subreportParameter name="PARAM_TITLE">
+					<subreportParameterExpression><![CDATA[$P{PARAM_TITLE_SUB_1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{recognizedApplications})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "protokol_sub_parts.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="2" y="23" width="483" height="12"/>
+				<subreportParameter name="PARAM_TITLE">
+					<subreportParameterExpression><![CDATA[$P{PARAM_TITLE_SUB_2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{postponedApplications}.get(20))]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "protokol_sub_refused_parts.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="2" y="85" width="484" height="12"/>
+				<subreportParameter name="PARAM_TITLE">
+					<subreportParameterExpression><![CDATA[$P{PARAM_TITLE_SUB_7}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{applicationsMap}.get(19) == null ? null : $F{applicationsMap}.get(19).get(9))]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "protokol_sub_refused_parts.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="2" y="73" width="484" height="12"/>
+				<subreportParameter name="PARAM_TITLE">
+					<subreportParameterExpression><![CDATA[$P{PARAM_TITLE_SUB_6}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{refusedApplications}.get(18))]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "protokol_sub_refused_parts.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="2" y="61" width="483" height="12"/>
+				<subreportParameter name="PARAM_TITLE">
+					<subreportParameterExpression><![CDATA[$P{PARAM_TITLE_SUB_5}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(com.nacid.bl.impl.comission.CommissionProtocolImpl.joinList($F{terminatedApplications}.get(14), $F{terminatedApplications}.get(15)))]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "protokol_sub_refused_parts.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="165" width="484" height="29"/>
+				<textElement lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\nVIII.    Други решения на Съвета"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="196" width="483" height="29"/>
+				<textElement lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["    Край на заседанието на Съвета: <час> \n\n"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="1" y="229" width="481" height="172"/>
+				<textElement lineSpacing="1_1_2">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["За председател:\n"+
+"...............\n"+
+$F{commissionChairman}.getDegreeAndName()+"\n\n"+
+"Секретар:\n"+
+"...............\n"+
+$F{commissionSecretary}.getDegreeAndName()]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="2" y="37" width="484" height="12"/>
+				<subreportParameter name="PARAM_TITLE">
+					<subreportParameterExpression><![CDATA[$P{PARAM_TITLE_SUB_3}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{postponedApplications}.get(21))]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "protokol_sub_refused_parts.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="2" y="49" width="484" height="12"/>
+				<subreportParameter name="PARAM_TITLE">
+					<subreportParameterExpression><![CDATA[$P{PARAM_TITLE_SUB_4}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{postponedApplications}.get(22))]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "protokol_sub_refused_parts.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

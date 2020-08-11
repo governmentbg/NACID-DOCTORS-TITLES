@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="otkaz_t2" language="groovy" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="28">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="27"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\rayawork\\NACID\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nacidDirectorName" class="java.lang.String"/>
+	<parameter name="nacidDirectorPosition" class="java.lang.String"/>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:/rayawork/NACID/images/"]]></defaultValueExpression>
+	</parameter>
+	<field name="certificateProfQualification" class="java.lang.String"/>
+	<field name="applicantName" class="java.lang.String"/>
+	<field name="applicationNumber" class="java.lang.String"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="documentType" class="java.lang.String"/>
+	<field name="documentSeries" class="java.lang.String"/>
+	<field name="documentNumber" class="java.lang.String"/>
+	<field name="documentRegNumber" class="java.lang.String"/>
+	<field name="documentDate" class="java.lang.String"/>
+	<field name="profQualification" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="733" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="160"/>
+				<subreportParameter name="IMAGE_DIR">
+					<subreportParameterExpression><![CDATA[$P{IMAGE_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "nacid_BG_header.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="278" width="483" height="55"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br><t><t><t><t><t><t><t><t>На основание чл. 10, т. 2 и чл. 11"+
+" от Наредбата за условията и реда за издаване"+
+" на удостоверения, свързани с придобита професионална "+
+"квалификация на територията на Република България,"+
+" необходими за достъп или за упражняване на регулирана"+
+" професия на територията на друга държава членка "+
+"(обн., ДВ, бр. 28 от 5 април 2011 г., изм. и доп., ДВ, бр.9 от 1 февруари 2013 г.)."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" mode="Transparent" x="0" y="234" width="483" height="44"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["РЕШЕНИЕ"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="333" width="483" height="25"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/>ОТКАЗВАМ"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="358" width="483" height="375"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/><t><t><t><t><t><t><t><t>ИЗДАВАНЕ на удостоверение за професионална квалификация "+
+$F{certificateProfQualification}+" на "+$F{applicantName}+
+".<br/><t><t><t><t><t><t><t><t>След разглеждане на документите по реда на чл. 8, ал. 2 "+
+"от Наредбата за условията и реда за издаване на удостоверения, свързани с "+
+"придобита професионална квалификация на"+
+" територията на Република България, необходими за достъп или за "+
+"упражняване на регулирана професия на територията"+
+" на друга държава членка, се установи, че представените документи от "+
+$F{applicantName}+
+" за придобита професионална квалификация не съответстват на"+
+" професионалната квалификация, за която се иска "+
+"издаване на удостоверение."+
+".<br/><t><t><t><t><t><t><t><t>Представените документи от заявителя за придобита професионална квалификация "+
+$F{certificateProfQualification} +" не са издадени съгласно изискванията на "+
+"българското законодателство, а именно......................................................."+
+"<br/><t><t><t><t><t><t><t><t>Настоящото решение може да се обжалва "+
+"в 14-дневен срок пред Административен съд София - град.<br/><br/><b>"+
+$P{nacidDirectorName}+
+"</b><br/><i>"+$P{nacidDirectorPosition}+"</i>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="22"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "nacid_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

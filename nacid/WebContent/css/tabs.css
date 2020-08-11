@@ -1,0 +1,72 @@
+
+/* ------------------------------------------- styles for TABS-menu */
+.tabs {
+  background:url('../img/tabs/back_line.png') repeat-x;
+  list-style:none;
+  padding:11px 0 0 10px;
+  margin:30px 10px 50px 0;
+  height:29px;}
+.tabs li {
+  display:block;
+  float:left;
+  margin:0 -29px -1px 0;}
+.tabs li a {
+  display:block;
+  text-decoration:none;
+  position:relative;}
+
+.tabs li a b.p1,
+.tabs li a b.p2,
+.tabs li a b.p3 {display:block;float:left;height:29px;}
+
+.tabs li a b.p1 {width:28px;background:url('../img/tabs/normal_l.png');}
+.tabs li a b.p2 {
+  background:url('../img/tabs/normal_m.png') repeat-x;
+  padding:0 10px;
+  text-align:center;
+  font: bold 14px/28px Verdana;
+  color:#00f;}
+
+.tabs li a b.p3 {width:28px;background:url('../img/tabs/normal_r.png');
+  position:relative;z-index:100;}
+.tabs li a.m1 {z-index:600;}
+.tabs li a.m2 {z-index:500;}
+.tabs li a.m3 {z-index:400;}
+.tabs li a.m4 {z-index:300;}
+.tabs li a.m5 {z-index:200;}
+.tabs li a.m6 {z-index:100;}
+
+.tabs li a:hover,
+.tabs li a:focus,
+.tabs li a:active {border:0;z-index:700;}
+
+.tabs li a:hover b.p1, .tabs li a:focus b.p1, .tabs li a:active b.p1,
+.tabs li a:hover b.p2, .tabs li a:focus b.p2, .tabs li a:active b.p2,
+.tabs li a:hover b.p3, .tabs li a:focus b.p3, .tabs li a:active b.p3 {
+  position:relative;cursor:pointer;z-index:100;}
+
+.tabs li a:hover b.p1,
+.tabs li a:focus b.p1,
+.tabs li a:active b.p1 {background:url('../img/tabs/hover_l.png');}
+.tabs li a:hover b.p2,
+.tabs li a:focus b.p2,
+.tabs li a:active b.p2 {background:url('../img/tabs/hover_m.png') repeat-x;color:#00f;}
+.tabs li a:hover b.p3,
+.tabs li a:focus b.p3,
+.tabs li a:active b.p3 {background:url('../img/tabs/hover_r.png');}
+
+.tabs li a.selected {z-index:800;}
+.tabs li a.selected b.p1, .tabs li a:hover.selected b.p1, .tabs li a:active.selected b.p1,
+.tabs li a.selected b.p2, .tabs li a:hover.selected b.p2, .tabs li a:active.selected b.p2,
+.tabs li a.selected b.p3, .tabs li a:hover.selected b.p3, .tabs li a:active.selected b.p3 {
+  position:relative;cursor:default;z-index:200;}
+
+.tabs li a.selected b.p1,
+.tabs li a:hover.selected b.p1,
+.tabs li a:active.selected b.p1 {background:url('../img/tabs/select_l.png');}
+.tabs li a.selected b.p2,
+.tabs li a:hover.selected b.p2,
+.tabs li a:active.selected b.p2 {background:url('../img/tabs/select_m.png') repeat-x;color:#000;}
+.tabs li a.selected b.p3,
+.tabs li a:hover.selected b.p3,
+.tabs li a:active.selected b.p3 {background:url('../img/tabs/select_r.png');}

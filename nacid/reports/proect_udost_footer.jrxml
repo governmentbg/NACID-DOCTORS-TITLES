@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="predlojenie_udost_footer" language="groovy" pageWidth="483" pageHeight="680" columnWidth="483" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_QRCODE" class="java.io.InputStream"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageFooter>
+		<band height="80">
+			<textField>
+				<reportElement x="0" y="27" width="483" height="23"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<i>Изпълнителен директор: ...........................</i>"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement mode="Opaque" x="0" y="0" width="80" height="80">
+					<property name="net.sf.jasperreports.export.shape.type" value="3"/>
+				</reportElement>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{P_QRCODE}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

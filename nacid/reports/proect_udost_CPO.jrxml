@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="proect_udost_CPO" language="groovy" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="35">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="448"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\rayawork\\NACID\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_QRCODE" class="java.io.InputStream"/>
+	<field name="responsibleUser" class="java.lang.String"/>
+	<field name="applicationNumber" class="java.lang.String"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="applicationCountry" class="java.lang.String"/>
+	<field name="applicantName" class="java.lang.String"/>
+	<field name="profQualification" class="java.lang.String"/>
+	<field name="documentType" class="java.lang.String"/>
+	<field name="documentNumber" class="java.lang.String"/>
+	<field name="documentDate" class="java.lang.String"/>
+	<field name="documentSeries" class="java.lang.String"/>
+	<field name="documentRegNumber" class="java.lang.String"/>
+	<field name="multipleDiplomaSpecialities" class="java.lang.String"/>
+	<field name="diplomaSpecialityNames" class="java.lang.String"/>
+	<field name="secondaryCaliber" class="java.lang.String"/>
+	<field name="profInstitutionOrgName" class="java.lang.String"/>
+	<field name="trainingInstitutionName" class="java.lang.String"/>
+	<field name="secQualificationDegree" class="java.lang.String"/>
+	<field name="articleDirective" class="java.lang.String"/>
+	<field name="articleItem" class="java.lang.String"/>
+	<field name="recognizedProfession" class="java.lang.String"/>
+	<field name="experiencePeriod" class="java.lang.String"/>
+	<field name="noQualificationExperienceStatus" class="java.lang.Boolean"/>
+	<field name="articleDirectiveId" class="java.lang.Integer"/>
+	<field name="applicantCivilId" class="java.lang.String"/>
+	<field name="applicantCivilIdType" class="java.lang.String"/>
+	<field name="applicantBirthDate" class="java.lang.String"/>
+	<field name="applicantBirthCity" class="java.lang.String"/>
+	<field name="exprArticleDirective" class="java.lang.String"/>
+	<field name="exprArticleItem" class="java.lang.String"/>
+	<field name="exprArticleDirectiveId" class="java.lang.Integer"/>
+	<field name="applicantDocumentName" class="java.lang.String"/>
+	<field name="applicantBirthCountry" class="java.lang.String"/>
+	<field name="partOfProfession" class="java.lang.Boolean"/>
+	<field name="certificateNumber" class="java.lang.String"/>
+	<field name="recognizedQualificationTeacher" class="java.lang.Boolean"/>
+	<field name="ageRange" class="java.lang.String"/>
+	<field name="schoolType" class="java.lang.String"/>
+	<field name="grade" class="java.lang.String"/>
+	<field name="regulatedEducationTraining" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="671" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="73" width="483" height="150"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="certificateNumber">
+					<subreportParameterExpression><![CDATA[$F{certificateNumber}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantCivilId">
+					<subreportParameterExpression><![CDATA[$F{applicantCivilId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicationDate">
+					<subreportParameterExpression><![CDATA[$F{applicationDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicationNumber">
+					<subreportParameterExpression><![CDATA[$F{applicationNumber}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantBirthCountry">
+					<subreportParameterExpression><![CDATA[$F{applicantBirthCountry}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantDocumentName">
+					<subreportParameterExpression><![CDATA[$F{applicantDocumentName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantBirthCity">
+					<subreportParameterExpression><![CDATA[$F{applicantBirthCity}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantBirthDate">
+					<subreportParameterExpression><![CDATA[$F{applicantBirthDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantName">
+					<subreportParameterExpression><![CDATA[$F{applicantName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="applicantCivilIdType">
+					<subreportParameterExpression><![CDATA[$F{applicantCivilIdType}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "proect_udost_header.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="223" width="483" height="65"/>
+				<textElement textAlignment="Center" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{profQualification}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="273" width="483" height="63"/>
+				<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/>придобита с " + $F{documentType} + " " +
+($F{documentSeries} == "" ? "" : $F{documentSeries}+", ")+
+($F{documentNumber} == "" ? "" : $F{documentNumber}+", ")+
+($F{documentRegNumber} == "" ? "" : $F{documentRegNumber} + ", ")+
+"изд. "+
+($F{documentDate} == "" ? "" : "на " + $F{documentDate}+" ")+
+"от " + $F{profInstitutionOrgName}+($F{profInstitutionOrgName}.equals("") ? $F{trainingInstitutionName} :
+    " (понастоящем "+$F{trainingInstitutionName}+")") +
+" по " + ($F{multipleDiplomaSpecialities} == true ? "" : "специалност ") +
+$F{diplomaSpecialityNames} +
+($F{exprArticleDirectiveId} == 2 || $F{exprArticleDirectiveId} == 3 || $F{exprArticleDirectiveId} == 4 ?
+    (" и съответства квалификационно ниво "+$F{articleItem}+
+    " съгласно "+$F{articleDirective}+
+    " на Директива 2005/36/ЕО относно признаването на професионални квалификации.<br/>"
+    )
+    :
+    (
+        ".<br/>"
+    )
+)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="483" height="136"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2" markup="styled">
+					<font fontName="Times New Roman" size="70"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="356" width="483" height="72"/>
+				<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{exprArticleDirectiveId} == 2 || $F{exprArticleDirectiveId} == 3 || $F{exprArticleDirectiveId} == 4 ?
+    ("&lt;cust-li&gt;Лицето е упражнявало дейности по професията, отговарящи на изискванията на "+
+    $F{exprArticleDirective}+" "+$F{exprArticleItem}+
+    " на Директива 2005/36/ЕО относно признаването на професионалните квалификации.&lt;/cust-li&gt;")
+    :
+    (
+        "&lt;cust-li&gt;Професионалната квалификация съответства квалификационно ниво "+
+        $F{articleItem}+" съгласно "+$F{articleDirective}+
+        " на Директива 2005/36/ЕО относно признаването на професионални квалификации.&lt;/cust-li&gt;" )
+)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="336" width="483" height="20"/>
+				<textElement markup="html"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["&lt;cust-ol&gt;"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="428" width="483" height="42"/>
+				<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{partOfProfession} == false ?
+("&lt;cust-li&gt;Притежателят на квалификацията има право да упражнява професията " + $F{recognizedProfession} +
+
+($F{recognizedQualificationTeacher} ?
+    (($F{grade} == null ? "" : " " + $F{grade}) +
+    ($F{schoolType} == null ? "" : " в " +  $F{schoolType}) +
+    ($F{ageRange} == null ? "" : " (на възраст " + $F{ageRange} + ")"))
+    : "") +
+
+" на територията на Република България.&lt;/cust-li&gt;") :
+"&lt;cust-li&gt;Притежателят на квалификацията има право да упражнява частта от професията " +
+$F{recognizedProfession} + ($F{recognizedQualificationTeacher} ?
+    (($F{grade} == null ? "" : " " + $F{grade}) +
+    ($F{schoolType} == null ? "" : " в " +  $F{schoolType}) +
+    ($F{ageRange} == null ? "" : " (на възраст " + $F{ageRange} + ")"))
+    : "") + " съгласно справката за изучаваните учебни предмети " +
+"към удостоверението за професионално обучение на територията на Република България.&lt;/cust-li&gt; "
+)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="470" width="483" height="35"/>
+				<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["&lt;cust-li&gt;Професията не е регулирана на територията на Република България.&lt;/cust-li&gt; "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="505" width="483" height="62"/>
+				<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{regulatedEducationTraining} ?
+"&lt;cust-li&gt;Образованието и обучението, изисквано за упражняване на професията, е регулирано в Република България.&lt;/cust-li&gt;"
+:
+(($F{noQualificationExperienceStatus} == false ?
+($F{exprArticleDirectiveId} == 1 ?
+"&lt;cust-li&gt;Притежателят на квалификацията е упражнявал професията повече от " +
+"две години през последните десет години при пълно работно време в продължение на " +
+$F{experiencePeriod} + ".&lt;/cust-li&gt;" : "") +
+(($F{exprArticleDirectiveId} == 2 || $F{exprArticleDirectiveId} == 3 ||
+$F{exprArticleDirectiveId} == 4) ?
+"&lt;cust-li&gt;Притежателят на квалификацията е упражнявал дейности по професията като самоосигуряващо/наето се "+
+"лице и/или ръководител на предприятие в продължение на " +
+$F{experiencePeriod}+ ".&lt;/cust-li&gt;" : "") : "") +
+($F{noQualificationExperienceStatus} == true ?
+"&lt;cust-li&gt;Притежателят на квалификацията не е упражнявал професията през последните десет години.&lt;/cust-li&gt;" : ""))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="567" width="483" height="37"/>
+				<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["&lt;cust-li&gt;Притежателят на квалификацията декларира, че към момента на издаване на удостоверението няма " +
+"наложени административни наказания, свързани с правото да упражнява професията.&lt;/cust-li&gt;"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="604" width="483" height="17"/>
+				<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["&lt;/cust-ol&gt;"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="621" width="483" height="50"/>
+				<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/>" +
+"Удостоверението се издава, за да послужи за достъп или за упражняване на професия в "+
+$F{applicationCountry} + "."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="80">
+			<subreport>
+				<reportElement x="0" y="0" width="483" height="80"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="P_QRCODE">
+					<subreportParameterExpression><![CDATA[$P{P_QRCODE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "proect_udost_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

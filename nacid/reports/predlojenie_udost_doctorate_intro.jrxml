@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="predlojenie_udost_intro" language="groovy" pageWidth="453" pageHeight="680" columnWidth="453" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="108"/>
+	<parameter name="nacidDirectorName" class="java.lang.String"/>
+	<parameter name="nacidDirectorLastName" class="java.lang.String"/>
+	<parameter name="responsibleUser" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{responsibleUser}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="diplomaName" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="applicationNumber" class="java.lang.String"/>
+	<parameter name="recognizedEducationLevel" class="java.lang.String"/>
+	<parameter name="recognizedProfessionGroup" class="java.lang.String"/>
+	<parameter name="regulationPublications" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="607" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="0" width="425" height="30"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["НАЦИОНАЛЕН ЦЕНТЪР ЗА ИНФОРМАЦИЯ И ДОКУМЕНТАЦИЯ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="30" width="205" height="172"/>
+				<textElement textAlignment="Left" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<br/><br/><br/>ДО<br/>"+
+$P{nacidDirectorName}+"<br/>"+
+"ИЗПЪЛНИТЕЛЕН ДИРЕКТОР<br/><br/><br/><br/>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="167" width="453" height="58"/>
+				<textElement textAlignment="Center" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>П Р Е Д Л О Ж Е Н И Е</b>"+"<br/><br/>от "+$P{responsibleUser}+"<br/>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="202" width="453" height="405"/>
+				<textElement textAlignment="Justified" lineSpacing="1_1_2" markup="html">
+					<font fontName="Times New Roman" size="12" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Главен експерт, дирекция „АПРП” и длъжностно лице по чл. 32 от Правилника за "+
+"устройството и дейността на Националния център за информация и документация (" + $P{regulationPublications} +
+") и съгласно Заповед РД-19-58 от 03.08.2018 г., свързано с "+
+"признаване на придобита в чужбина научна степен, съгласно чл. 5, ал. 5 от Закона за "+
+"развитието на академичния състав в Република България (изм. и доп., бр. 30 от 03.04.2018 "+
+"г., изм. ДВ. бр.17 от 26.02.2019 г.) и Раздел IV от Правилника за устройството и дейността "+
+"на Националния център за информация и документация.  <br/><br/><br/>"+
+"<b><u>Относно:</u></b> Заявление с вх. № "+
+$P{applicationNumber}+"/"+$P{date}+
+" за издаване на удостоверение.<br/><br/><br/>"+
+"<b>УВАЖАЕМА ГОСПОЖО "+$P{nacidDirectorLastName}+",</b><br/>"+
+"<PRE>      Във връзка с постъпило заявление с вх. № "+
+$P{applicationNumber}+"/"+$P{date}+
+" за издаване на удостоверение за признаване на придобита в чужбина научна стeпен на територията на Република България, на основание чл. 5, ал. 5 от Закона за развитието на академичния състав предлагам да се издаде удостоверение на "+
+" <b>"+$P{diplomaName}+
+"</b> за призната научна степен <b>„"+$P{recognizedEducationLevel}+ "”</b> по професионално направление <b>" + $P{recognizedProfessionGroup} + "</b>" +
+" въз основа на следната информация:</PRE>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

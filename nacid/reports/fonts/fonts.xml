@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fontFamilies>
+
+    <fontFamily name="Arial">
+        <normal>fonts/arial.ttf</normal>
+        <bold>fonts/arialbd.ttf</bold>
+        <italic>fonts/ariali.ttf</italic>
+        <boldItalic>fonts/arialbi.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">Arial, Helvetica, sans-serif</export>
+        </exportFonts>
+    </fontFamily>
+
+     <fontFamily name="Times New Roman">
+        <normal>fonts/times.ttf</normal>
+        <bold>fonts/timesbd.ttf</bold>
+        <italic>fonts/timesi.ttf</italic>
+        <boldItalic>fonts/timesbi.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'Times New Roman', Times, serif</export>
+            <export key="net.sf.jasperreports.xhtml">'Times New Roman', Times, serif</export>
+        </exportFonts>
+    </fontFamily>
+
+    <fontFamily name="Tahoma">
+        <normal>fonts/tahoma.ttf</normal>
+        <bold>fonts/tahomabd.ttf</bold>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">Tahoma, serifSansSerifMonospace</export>
+            <export key="net.sf.jasperreports.xhtml">Tahoma, serifSansSerifMonospace</export>
+        </exportFonts>
+    </fontFamily>
+
+
+</fontFamilies>

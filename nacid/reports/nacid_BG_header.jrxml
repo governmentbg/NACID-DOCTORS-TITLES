@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nacid_BG_header" language="groovy" pageWidth="483" pageHeight="160" columnWidth="483" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.3579476910000046"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IMAGE_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[IMAGE_DIR]]></parameterDescription>
+		<defaultValueExpression><![CDATA["D:/rayawork/NACID/images/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_DOC_FLOW_NUMBER" class="java.lang.String"/>
+	<parameter name="PARAM_DATE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="160" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="483" height="73"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<image scaleImage="RetainShape">
+					<reportElement x="0" y="0" width="67" height="73"/>
+					<imageExpression class="java.lang.String"><![CDATA[$P{IMAGE_DIR}+"nacid_logo.jpg"]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="true">
+					<reportElement mode="Transparent" x="67" y="0" width="416" height="73"/>
+					<textElement markup="html">
+						<font fontName="Tahoma" size="30" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["НАЦИД<br />" +
+"<font size=\"3\"><b>НАЦИОНАЛЕН ЦЕНТЪР ЗА ИНФОРМАЦИЯ И ДОКУМЕНТАЦИЯ</b></font>"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="73" width="483" height="10"/>
+				<textField>
+					<reportElement x="0" y="0" width="483" height="10"/>
+					<box>
+						<topPen lineWidth="2.0"/>
+					</box>
+					<textElement markup="html">
+						<font fontName="Arial" size="6" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="83" width="483" height="68" isPrintWhenDetailOverflows="true"/>
+				<box topPadding="0">
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textField>
+					<reportElement mode="Opaque" x="0" y="0" width="338" height="68"/>
+					<box topPadding="10"/>
+					<textElement lineSpacing="1_1_2" markup="html">
+						<font fontName="Arial" size="10" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["1125 София, бул. „Д-р Г.М.Димитров” 52А" +
+"<br />Наш знак " + ($P{PARAM_DOC_FLOW_NUMBER} == null ? "" : $P{PARAM_DOC_FLOW_NUMBER}) +
+"<br />София " + ($P{PARAM_DATE} == null ? "" : $P{PARAM_DATE})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="338" y="0" width="145" height="68"/>
+					<box topPadding="10"/>
+					<textElement lineSpacing="1_1_2" markup="html">
+						<font fontName="Arial" size="10" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Тел:&#09;(02) 817 38 24<br>"+
+"Факс:&#09;(02) 971 31 20<br>"+
+"E-mail:&#09;nacid@nacid.bg"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="0" y="151" width="483" height="3"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="html"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="154" width="483" height="3"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="html"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="157" width="483" height="3"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="html"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>
