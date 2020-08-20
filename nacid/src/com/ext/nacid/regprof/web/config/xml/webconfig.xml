@@ -4,6 +4,7 @@
 		<group handler="com.ext.nacid.regprof.web.handlers.impl.admin.ApplicantChangePassHandler" groupid="1" />
 		<group handler="com.ext.nacid.regprof.web.handlers.impl.mail.MailApplicantHandler" groupid="1" />
 		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationsHandler" groupid="1" />
+		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofSuccessSignHandler" groupid="1" />
 		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofTrainingCourseHandler" groupid="1" />
 		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationAttachmentHandler" groupid="1" />
 		<group handler="com.ext.nacid.regprof.web.handlers.impl.applications.RegprofApplicantReportExternalAttachmentsHandler" groupid="1" />
@@ -20,6 +21,7 @@
 		<mapping url="/change_pass_appl" handler="com.ext.nacid.regprof.web.handlers.impl.admin.ApplicantChangePassHandler"/>
 		<mapping url="/mail_appl" handler="com.ext.nacid.regprof.web.handlers.impl.mail.MailApplicantHandler"/>
 		<mapping url="/applications" handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationsHandler" />
+		<mapping url="/successSign" handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofSuccessSignHandler" />
 		<mapping url="/training_course" handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofTrainingCourseHandler" />
 		<mapping url="/application_attachment" handler="com.ext.nacid.regprof.web.handlers.impl.applications.ExtRegprofApplicationAttachmentHandler" />
 		<mapping url="/menu" handler="com.ext.nacid.web.handlers.impl.ajax.MenuAjaxHandler" />

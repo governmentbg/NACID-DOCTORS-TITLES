@@ -27,6 +27,8 @@ import com.nacid.bl.regprof.external.ExtRegprofApplicationAttachmentDataProvider
 import com.nacid.bl.regprof.external.ExtRegprofApplicationForList;
 import com.nacid.bl.regprof.external.ExtRegprofApplicationsDataProvider;
 import com.nacid.bl.regprof.external.ExtRegprofTrainingCourse;
+import com.nacid.bl.signature.SignatureParams;
+import com.nacid.bl.signature.SuccessSign;
 import com.nacid.bl.table.*;
 import com.nacid.bl.utils.UtilsDataProvider;
 import com.nacid.data.DataConverter;
@@ -34,6 +36,7 @@ import com.nacid.data.external.applications.ExtPersonRecord;
 import com.nacid.data.regprof.applications.RegprofCertificateNumberToAttachedDocRecord;
 import com.nacid.data.regprof.external.*;
 import com.nacid.data.regprof.external.applications.ExtRegprofDocumentRecipientRecord;
+import com.nacid.utils.SignUtils;
 import com.nacid.web.MessagesBundle;
 import com.nacid.web.ValidationStrings;
 import com.nacid.web.WebKeys;
@@ -332,8 +335,8 @@ public class ExtRegprofApplicationsHandler extends NacidExtBaseRequestHandler {
         }
         //Zapisvaneto na signed xml-a trqbva da stane zadyljitelno predi zapisvaneto na novite danni za application-a v bazata,
         //zashtoto sled prezapisvaneto na application-a, toi shte ima nov status i nov timeOfCreation!!!
-        String signedXml = request.getParameter("signedXml");
-        if (!StringUtils.isEmpty(signedXml)) {
+        SuccessSign signedXml = (SuccessSign) request.getSession().getAttribute("signedXml-" + applicationId);
+        if (signedXml != null && !StringUtils.isEmpty(signedXml.getXmlSigned())) {
             try {
                 eaDP.saveSignedApplicationXml(getLoggedUser(request, response).getUserId(), applicationId, signedXml);
             } catch (SignedXmlException e) {
@@ -657,7 +660,26 @@ public class ExtRegprofApplicationsHandler extends NacidExtBaseRequestHandler {
         request.setAttribute("hideApplyButton", hideApplyButton);
                 
         if (!hideApplyButton) {
-            request.setAttribute("applicationXml", extRegprofApplicationsDataProvider.getExtRegprofApplicationXml(rec.getApplicationDetails().getId()));
+
+            Integer applId = rec.getApplicationDetails().getId();
+            if (request.getSession().getAttribute("signedXml-" + applId) == null) {
+                String docXml = extRegprofApplicationsDataProvider.getExtRegprofApplicationXml(applId);
+                String successUrl = SignUtils.generateContextUrl(request) + "/control/successSign?activeForm=" + FORM_ID_APPLYING + "&id=" + applId;
+                String cancelUrl = SignUtils.generateContextUrl(request) + "control/application/edit?activeForm=" + FORM_ID_APPLYING + "&id=" + + applId;
+                UtilsDataProvider utilsDataProvider = nacidDataProvider.getUtilsDataProvider();
+
+
+                SignatureParams signatureParams = new SignatureParams(docXml, utilsDataProvider.getCommonVariableValue(UtilsDataProvider.REGPROF_APPLICATION_TYPE) + " : " + applId, successUrl, cancelUrl);//TODO
+
+                String signRequestUrl = utilsDataProvider.getCommonVariableValue("signatureRequestUrl");
+                String signSecretKey = utilsDataProvider.getCommonVariableValue("signatureSecretKey");
+                String requestJson = SignUtils.createRequestJson(signatureParams, signSecretKey);
+                request.setAttribute("requestJson", requestJson);
+                request.setAttribute("signRequestUrl", signRequestUrl);
+                request.setAttribute("hideSignButton", false);
+            } else {
+                request.setAttribute("hideSignButton", true);
+            }
             request.setAttribute("host", request.getRequestURL().toString().split(request.getContextPath())[0]);
 
             //generating serviceType's combobox

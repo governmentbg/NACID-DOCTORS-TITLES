@@ -9,6 +9,7 @@ import com.nacid.bl.exceptions.NotAuthorizedException;
 import com.nacid.bl.external.applications.SignedXmlException;
 import com.nacid.bl.impl.regprof.external.applications.ExtRegprofApplicationDetailsImpl;
 import com.nacid.bl.impl.regprof.external.applications.ExtRegprofApplicationImpl;
+import com.nacid.bl.signature.SuccessSign;
 
 public interface ExtRegprofApplicationsDataProvider {
      
@@ -46,7 +47,7 @@ public interface ExtRegprofApplicationsDataProvider {
      */
     public void checkApplicationAccess(int applicationId, int userId, int operationType) throws NotAuthorizedException;
     
-    public void saveSignedApplicationXml(int userId, int applicationId,  String signedXmlContent) throws SignedXmlException;
+    public void saveSignedApplicationXml(int userId, int applicationId,  SuccessSign signedXmlContent) throws SignedXmlException;
     
     public void submitExtRegprofApplication(int applicationId, Date dateSubmitted, Integer status, Integer serviceType, Integer paymentType);
     

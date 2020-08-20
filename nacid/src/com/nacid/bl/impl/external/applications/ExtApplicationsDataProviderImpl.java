@@ -18,6 +18,7 @@ import com.nacid.bl.nomenclatures.ApplicationDocflowStatus;
 import com.nacid.bl.nomenclatures.ApplicationStatus;
 import com.nacid.bl.nomenclatures.Country;
 import com.nacid.bl.numgenerator.NumgeneratorDataProvider;
+import com.nacid.bl.signature.SuccessSign;
 import com.nacid.bl.users.User;
 import com.nacid.bl.utils.UtilsDataProvider;
 import com.nacid.data.DataConverter;
@@ -26,7 +27,6 @@ import com.nacid.data.external.applications.xml.ExtApplicationsXml;
 import com.nacid.data.external.applications.xml.ObjectFactory;
 import com.nacid.db.external.applications.ExtApplicationsDB;
 import com.nacid.db.utils.StandAloneDataSource;
-import com.nacid.esign.SignatureUtils;
 import com.nacid.web.exceptions.UnknownRecordException;
 
 import javax.xml.bind.JAXBContext;
@@ -330,30 +330,21 @@ public class ExtApplicationsDataProviderImpl implements ExtApplicationsDataProvi
 		}
     	
     }
-    public void saveSignedApplicationXml(int userId, int applicationId,  String signedXmlContent) throws SignedXmlException {
-    	if (!isExternalApplicationSignedXmlCorrect(applicationId, signedXmlContent)) {
+    public void saveSignedApplicationXml(int userId, int applicationId,  SuccessSign successSign) throws SignedXmlException {
+    	if (!isExternalApplicationSignedXmlCorrect(applicationId, successSign.getXmlSigned())) {
     		throw new SignedXmlException("Има разлика между подписания xml и данните в базата!");
     	}
     	//TODO:Ne znam kakvo da pravq ako ima problemi s elektronnoto podpisvane - zasega hvyrlqm exception
-    	ExtESignedInformationRecord record = new ExtESignedInformationRecord(0,userId, applicationId, signedXmlContent);
+    	ExtESignedInformationRecord record = new ExtESignedInformationRecord(0,userId, applicationId, successSign.getXmlSigned());
     	try {
-    		UtilsDataProvider utilsDataProvider = nacidDataProvider.getUtilsDataProvider();
-    		try {
-				SignatureUtils.configure(utilsDataProvider.getCommonVariableValue("pathToTrustedIssuersFile"), utilsDataProvider.getCommonVariableValue("trustedIssuersFilePass"));
-			} catch (Exception e) {
-				throw Utils.logException(new Exception("Системата не може да прочете файла с издателите на сертификати ", e));
-			}
-			
 			try {
-				X509Certificate cert = SignatureUtils.verifyXMLSignature(new ByteArrayInputStream(signedXmlContent.getBytes()), null);
-				record.setIssuer(SignatureUtils.getIssuerName(cert));
-				record.setName(SignatureUtils.getCommonName(cert));
-				record.setEmail(SignatureUtils.getEmail(cert));
-				record.setCivilId(SignatureUtils.getEgn(cert));
-				record.setUnifiedIdCode(SignatureUtils.getBulstat(cert));
-				Date validityFrom = cert.getNotBefore();
+				record.setIssuer(successSign.getCertificateInfo().getIssuer());
+				record.setName(successSign.getCertificateInfo().getName());
+				record.setEmail(successSign.getCertificateInfo().getEmail());
+				record.setCivilId(successSign.getCertificateInfo().getCivilId());
+				Date validityFrom = successSign.getCertificateInfo().getValidFrom();
 				record.setValidityFrom(validityFrom == null ? null : new Timestamp(validityFrom.getTime()));
-				Date validityTo = cert.getNotAfter();
+				Date validityTo = successSign.getCertificateInfo().getValidTo();
 				record.setValidityTo(validityTo == null ? null : new Timestamp(validityTo.getTime()));
 			} catch (Exception e) {
 				throw new SignedXmlException("Проблем при опит за прочитане на електронно подписаните данни!", e);

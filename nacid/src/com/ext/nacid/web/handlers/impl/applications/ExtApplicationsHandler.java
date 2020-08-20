@@ -21,11 +21,14 @@ import com.nacid.bl.impl.external.ExtPersonImpl;
 import com.nacid.bl.impl.external.applications.ExtUniversityIdWithFacultyId;
 import com.nacid.bl.mail.MailDataProvider;
 import com.nacid.bl.nomenclatures.*;
+import com.nacid.bl.signature.SignatureParams;
+import com.nacid.bl.signature.SuccessSign;
 import com.nacid.bl.table.*;
 import com.nacid.bl.users.User;
 import com.nacid.bl.utils.UtilsDataProvider;
 import com.nacid.data.DataConverter;
 import com.nacid.data.external.applications.ExtTrainingCourseSpecialityRecord;
+import com.nacid.utils.SignUtils;
 import com.nacid.web.MessagesBundle;
 import com.nacid.web.ValidationStrings;
 import com.nacid.web.WebKeys;
@@ -56,6 +59,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -219,10 +223,24 @@ public class ExtApplicationsHandler extends NacidExtBaseRequestHandler {
         request.setAttribute("smList", listSM);
         request.setAttribute("hideApplyButton", hideApplyButton);
         if (!hideApplyButton) {
-        	request.setAttribute("applicationXml", getNacidDataProvider().getExtApplicationsDataProvider().getApplicationXml(appl.getId()));
-        }
+            if (request.getSession().getAttribute("signedXml-" + appl.getId()) == null) {
+                String docXml = getNacidDataProvider().getExtApplicationsDataProvider().getApplicationXml(appl.getId());
+                String successUrl = SignUtils.generateContextUrl(request) + "/control/successSign?activeForm=" + FORM_ID_APPLYING + "&id=" + appl.getId();
+                String cancelUrl = SignUtils.generateContextUrl(request) + "/control/application/edit?activeForm=" + FORM_ID_APPLYING + "&id=" + + appl.getId();
+                UtilsDataProvider utilsDataProvider = getNacidDataProvider().getUtilsDataProvider();
+                SignatureParams signatureParams = new SignatureParams(docXml, utilsDataProvider.getCommonVariableValue(UtilsDataProvider.RUDI_APPLICATION_TYPE) + " : " + appl.getId(), successUrl, cancelUrl);//TODO
 
-        
+                String signRequestUrl = utilsDataProvider.getCommonVariableValue("signatureRequestUrl");
+                String signSecretKey = utilsDataProvider.getCommonVariableValue("signatureSecretKey");
+                String requestJson = SignUtils.createRequestJson(signatureParams, signSecretKey);
+                request.setAttribute("requestJson", requestJson);
+                request.setAttribute("signRequestUrl", signRequestUrl);
+                request.setAttribute("hideSignButton", false);
+            } else {
+                request.setAttribute("hideSignButton", true);
+            }
+
+        }
     }
 
     public static final String generateAttachmentLabel(NacidDataProvider nacidDataProvider, int attType, Integer copyType) {
@@ -391,10 +409,10 @@ public class ExtApplicationsHandler extends NacidExtBaseRequestHandler {
         
         //Zapisvaneto na signed xml-a trqbva da stane zadyljitelno predi zapisvaneto na novite danni za application-a v bazata,
         //zashtoto sled prezapisvaneto na application-a, toi shte ima nov status i nov timeOfCreation!!!
-        String signedXml = request.getParameter("signedXml");
+        SuccessSign signedXml = (SuccessSign) request.getSession().getAttribute("signedXml-" + applicationId);
         //ExtESignedInformation esignedInformation = eaDP.getApplication(18).getESignedInformation();
         //String signedXml = esignedInformation.getSignedXmlContent();
-        if (!StringUtils.isEmpty(signedXml)) {
+        if (signedXml != null && !StringUtils.isEmpty(signedXml.getXmlSigned())) {
         	try {
 				eaDP.saveSignedApplicationXml(getLoggedUser(request, response).getUserId(), applicationId, signedXml);
 			} catch (SignedXmlException e) {

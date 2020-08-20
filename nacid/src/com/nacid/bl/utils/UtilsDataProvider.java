@@ -70,8 +70,10 @@ public interface UtilsDataProvider {
     public static final String REGPROF_ESERVICES_ÄPPLICATION_EDUCATION_COMMENT = "regprofEservicesEduComment";
     public static final String NACID_ATTACHMENTS_URL = "nacidAttachmentsUrl";
     public static final String RUDI_QRCODE_URL = "rudiQrCodeUrl";
-    public static final String REGPROF_QRCODE_URL = "norqQrCodeUrl";
 
+    public static final String REGPROF_QRCODE_URL = "norqQrCodeUrl";
+    public static final String RUDI_APPLICATION_TYPE = "rudiApplicationType";
+    public static final String REGPROF_APPLICATION_TYPE = "regprofApplicationType";
     
     
     

@@ -9,11 +9,12 @@ function changeSubmitClass() {
 	});
 }
 </script>
+<c:if test="${!operationView && !hideApplyButton}">
+	<form style="display: none" id="request-form" method="post" action="${signRequestUrl}">
+		<input type="hidden" name="requestSignature" value="<c:out value="${requestJson}"/>" />
+	</form>
+</c:if>
 <v:form name="appform4" action="${pathPrefix }/control/application/save" method="post" skipsubmitbuttons="true">
-	  <c:if test="${!operationView && !hideApplyButton}">
-	  	 <input name="xmlContent" value="<c:out value="${applicationXml}"/>" type="hidden" />
-         <input name="signedXml" value="" type="hidden" />
-	  </c:if>
 	  	<%@include file="apply_submit_buttons.jsp" %>
         <nacid:systemmessage name="applyingStatusMessage"/>	  	
 	  	<input name="activeForm" value="4" type="hidden" />

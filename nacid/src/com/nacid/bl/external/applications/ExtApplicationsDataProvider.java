@@ -2,6 +2,7 @@ package com.nacid.bl.external.applications;
 
 import com.nacid.bl.external.ExtApplicationKind;
 import com.nacid.bl.external.ExtDocumentRecipient;
+import com.nacid.bl.signature.SuccessSign;
 import com.nacid.data.external.applications.ExtApplicationCommentRecord;
 
 import java.util.Date;
@@ -51,7 +52,7 @@ public interface ExtApplicationsDataProvider {
    * @throws SignedXmlException - ako ima razminavane mejdu podpisaniq xml i dannite v bazata. Ako se hvyrli exception v message-a mu e text-a kojto trqbva da se izvede kato greshka na potrebitelq
    */
 
-  public void saveSignedApplicationXml(int userId, int applicationId,  String signedXmlContent) throws SignedXmlException;
+  public void saveSignedApplicationXml(int userId, int applicationId,  SuccessSign successSign) throws SignedXmlException;
   /**
    * 
    * @param applicationId

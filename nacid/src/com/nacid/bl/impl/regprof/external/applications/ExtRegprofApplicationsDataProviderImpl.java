@@ -18,6 +18,8 @@ import com.nacid.bl.nomenclatures.*;
 import com.nacid.bl.nomenclatures.regprof.ServiceType;
 import com.nacid.bl.payments.Liability;
 import com.nacid.bl.regprof.external.*;
+import com.nacid.bl.signature.CertificateInfo;
+import com.nacid.bl.signature.SuccessSign;
 import com.nacid.bl.utils.UtilsDataProvider;
 import com.nacid.data.applications.PersonDocumentRecord;
 import com.nacid.data.applications.PersonRecord;
@@ -39,7 +41,6 @@ import com.nacid.data.regprof.external.applications.xml.ExtRegprofApplicationsXm
 import com.nacid.db.external.ExtPersonDB;
 import com.nacid.db.regprof.external.ExtRegprofApplicationsDB;
 import com.nacid.db.utils.StandAloneDataSource;
-import com.nacid.esign.SignatureUtils;
 import com.nacid.web.exceptions.UnknownRecordException;
 import org.apache.commons.lang.StringUtils;
 import org.w3c.dom.Document;
@@ -465,7 +466,8 @@ public class ExtRegprofApplicationsDataProviderImpl implements ExtRegprofApplica
         
         return result;
     }
-    public void saveSignedApplicationXml(int userId, int applicationId, String signedXmlContent) throws SignedXmlException {
+    public void saveSignedApplicationXml(int userId, int applicationId, SuccessSign successSign) throws SignedXmlException {
+        String signedXmlContent = successSign.getXmlSigned();
         String unsidnedContent = getExtRegprofApplicationXml(applicationId);
         boolean notEqual; 
         try {
@@ -481,23 +483,16 @@ public class ExtRegprofApplicationsDataProviderImpl implements ExtRegprofApplica
         
         ExtRegprofESignedInformationRecord record = new ExtRegprofESignedInformationRecord(0,userId, applicationId, signedXmlContent);
         try {
-            UtilsDataProvider utilsDataProvider = nacidDataProvider.getUtilsDataProvider();
+
             try {
-                SignatureUtils.configure(utilsDataProvider.getCommonVariableValue("pathToTrustedIssuersFile"), utilsDataProvider.getCommonVariableValue("trustedIssuersFilePass"));
-            } catch (Exception e) {
-                throw Utils.logException(new Exception("Системата не може да прочете файла с издателите на сертификати ", e));
-            }
-            
-            try {
-                X509Certificate cert = SignatureUtils.verifyXMLSignature(new ByteArrayInputStream(signedXmlContent.getBytes()), null);
-                record.setIssuer(SignatureUtils.getIssuerName(cert));
-                record.setName(SignatureUtils.getCommonName(cert));
-                record.setEmail(SignatureUtils.getEmail(cert));
-                record.setCivilId(SignatureUtils.getEgn(cert));
-                record.setUnifiedIdCode(SignatureUtils.getBulstat(cert));
-                Date validityFrom = cert.getNotBefore();
+                CertificateInfo certInfo = successSign.getCertificateInfo();
+                record.setIssuer(certInfo.getIssuer());
+                record.setName(certInfo.getName());
+                record.setEmail(certInfo.getEmail());
+                record.setCivilId(certInfo.getCivilId());
+                Date validityFrom = certInfo.getValidFrom();
                 record.setValidityFrom(validityFrom == null ? null : new Timestamp(validityFrom.getTime()));
-                Date validityTo = cert.getNotAfter();
+                Date validityTo = certInfo.getValidTo();
                 record.setValidityTo(validityTo == null ? null : new Timestamp(validityTo.getTime()));
             } catch (Exception e) {
                 throw new SignedXmlException("Проблем при опит за прочитане на електронно подписаните данни!", e);
