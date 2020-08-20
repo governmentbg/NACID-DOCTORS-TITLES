@@ -46,7 +46,10 @@ public class MenuDB extends DatabaseService {
 		return selectRecords(getMenuRecord().getClass(), sql, params.size() == 0 ? null : params.toArray());
 		
 	}
-	
+	public List<? extends MenuRecord> getMenuRecords(int webApplication) throws SQLException {
+		return selectRecords(getMenuRecord().getClass(), "web_app = ?", webApplication);
+	}
+
 	public int saveMenu(Integer id, Integer parentId, Integer ordNum, String name, String longName, 
 			boolean active) throws SQLException {
 		List<? extends MenuRecord> siblings2 = getChildMenus(parentId, false);

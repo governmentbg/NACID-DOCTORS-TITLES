@@ -58,6 +58,7 @@ public class WebKeys {
 	public static final String COMISSION_MEMBER_WEB_MODEL = "comissionMemberWebModel";
 	public static final String TABLE_PERSON = "tablePerson";
 	public static final String TABLE_UNIVERSITY = "tableUniversity";
+	public static final String TABLE_SYSLOG = "tableSysLog";
 	public static final String TABLE_DIPLOMA_TYPE = "tableDiplomaType";
 	public static final String TABLE_DIPLOMA_TYPE_ATTCH = "tableDiplomaTypeAttch";
 	public static final String TABLE_UNI_EXAM_ATTCH = "tableUniExamAttch";

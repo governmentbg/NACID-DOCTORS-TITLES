@@ -68,4 +68,7 @@ public interface UsersDataProvider {
   public void changeUserStatus(int userId, int status);
   public void changeUserPassword(int userId, String newPassword);
 
+	public int countUserSysLogOperations(Integer userId, Date dateFrom, Date dateTo, Integer webAppId, String groupName, String operationName, String queryString, String sessionId );
+	public List<UserSysLogOperationExtended> getUserSysLogOperations(Integer userId, Date dateFrom, Date dateTo, Integer webAppId, String groupName, String operationName, String queryString, String sessionId );
+	public UserSysLogOperationExtended getUserSysLogOperationExtended(Integer id);
 }

@@ -10,8 +10,10 @@ import com.nacid.bl.impl.NacidDataProviderImpl;
 import com.nacid.bl.impl.Utils;
 import com.nacid.bl.users.UserGroupMembership;
 import com.nacid.bl.users.UserSysLogOperation;
+import com.nacid.bl.users.UserSysLogOperationExtended;
 import com.nacid.bl.users.UsersDataProvider;
 import com.nacid.data.users.*;
+import com.nacid.db.syslog.SyslogDb;
 import com.nacid.db.users.UsersDB;
 import com.nacid.db.utils.StandAloneDataSource;
 import org.apache.commons.lang.StringUtils;
@@ -20,12 +22,14 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.*;
+import java.util.stream.Collectors;
 
 //import com.nacid.bl.external.users.ExtUsersDataProvider;
 
 public class UsersDataProviderImpl implements UsersDataProvider/*, ExtUsersDataProvider*/ {
 	private NacidDataProviderImpl nacidDataProvider = null;
 	private UsersDB db;
+	private SyslogDb syslogDb;
 	/**
 	 * shte opredelq dali stava vypros za users ili external users...
 	 */
@@ -36,6 +40,7 @@ public class UsersDataProviderImpl implements UsersDataProvider/*, ExtUsersDataP
 		this.nacidDataProvider = nacidDataProvider;
 		//this.webApplication = webApplication;
 		this.db = new UsersDB(nacidDataProvider.getDataSource()/*, webApplication*/);
+		syslogDb = new SyslogDb(nacidDataProvider.getDataSource());
 	}
 
 	public UserImpl getUser(int userId/*, boolean generateMenu*/) {
@@ -453,8 +458,30 @@ public class UsersDataProviderImpl implements UsersDataProvider/*, ExtUsersDataP
         }
         else return true;
 	}
- 	
-	
+	public int countUserSysLogOperations(Integer userId, Date dateFrom, Date dateTo, Integer webAppId, String groupName, String operationName, String queryString, String sessionId ) {
+		try {
+			return syslogDb.countUserSysLogOperationRecords(userId, Utils.getTimestamp(dateFrom), Utils.getTimestamp(dateTo), webAppId, groupName, operationName, queryString, sessionId);
+		} catch (SQLException throwables) {
+			throw Utils.logException(throwables);
+		}
+	}
+	public List<UserSysLogOperationExtended> getUserSysLogOperations(Integer userId, Date dateFrom, Date dateTo, Integer webAppId, String groupName, String operationName, String queryString, String sessionId ) {
+		try {
+			return syslogDb.getUserSysLogOperationRecordsExtended(userId, Utils.getTimestamp(dateFrom), Utils.getTimestamp(dateTo), webAppId, groupName, operationName, queryString, sessionId).stream().collect(Collectors.toList());
+		} catch (SQLException throwables) {
+			throw Utils.logException(throwables);
+		}
+	}
+
+	@Override
+	public UserSysLogOperationExtended getUserSysLogOperationExtended(Integer id) {
+		try {
+			return syslogDb.getUserSysLogOperationRecordExtended(id);
+		} catch (SQLException throwables) {
+			throw Utils.logException(throwables);
+		}
+	}
+
 	public static void main(String[] args) throws ExtUserAlreadyExistsException {
 		NacidDataProvider nacidDataProvider = NacidDataProvider.getNacidDataProvider(new StandAloneDataSource());
 		UsersDataProvider usersDataProvider = nacidDataProvider.getUsersDataProvider();

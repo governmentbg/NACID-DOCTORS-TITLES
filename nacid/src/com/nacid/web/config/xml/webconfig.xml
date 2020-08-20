@@ -9,7 +9,8 @@
         <group handler="com.nacid.web.handlers.impl.nomenclatures.UniversityDetailsHandler" groupid="1" />
         <group handler="com.nacid.web.handlers.impl.menu.MenuEditHandler" groupid="1" />
         <group handler="com.nacid.web.handlers.impl.mail.MailAdminHandler" groupid="1" />
-		
+        <group handler="com.nacid.web.handlers.impl.users.SyslogHandler" groupid="1" />
+
 		<group handler="com.nacid.web.handlers.impl.nomenclatures.ProfessionGroupHandler" groupid="2" />
 		<group handler="com.nacid.web.handlers.impl.nomenclatures.SpecialityHandler" groupid="2" />
 		<group handler="com.nacid.web.handlers.impl.nomenclatures.CountryHandler" groupid="2" />
@@ -100,6 +101,7 @@
 		<mapping url="/home" handler="com.nacid.web.handlers.impl.HomePageHandler" />
 		<!--<mapping url="/login" handler="com.nacid.web.handlers.impl.LoginHandler" />-->
 		<!--<mapping url="/logout" handler="com.nacid.web.handlers.impl.LogoutHandler" />-->
+		<mapping url="/syslog" handler="com.nacid.web.handlers.impl.users.SyslogHandler" />
 		<mapping url="/users" handler="com.nacid.web.handlers.impl.users.UsersHandler" />
 		<mapping url="/ext_users" handler="com.nacid.web.handlers.impl.users.ExtUsersHandler" />
 		
@@ -248,7 +250,8 @@
 		<screen name="login" jspTemplate="/screens/login.jsp" />
 		<screen name="user_edit" jspTemplate="/screens/users/edit.jsp" />
 		<screen name="ext_user_edit" jspTemplate="/screens/users/ext_user_edit.jsp" />
-		
+		<screen name="syslog_view" jspTemplate="/screens/users/syslog_view.jsp" />
+
 		<screen name="table_list" jspTemplate="/screens/table/list.jsp" />
 		<screen name="list_inner_table" jspTemplate="/screens/table/list_inner_table.jsp" />
 		<screen name="testcombo" jspTemplate="/screens/tests/comboboxtest.jsp" />

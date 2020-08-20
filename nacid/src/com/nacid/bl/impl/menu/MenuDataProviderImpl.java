@@ -2,6 +2,7 @@ package com.nacid.bl.impl.menu;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.nacid.bl.NacidDataProvider;
 /*import com.nacid.bl.external.menu.ExtMenu;
@@ -11,6 +12,7 @@ import com.nacid.bl.impl.NacidDataProviderImpl;
 import com.nacid.bl.impl.Utils;
 import com.nacid.bl.menu.Menu;
 import com.nacid.bl.menu.MenuDataProvider;
+import com.nacid.bl.menu.MenuItem;
 import com.nacid.bl.users.User;
 import com.nacid.bl.users.UsersDataProvider;
 import com.nacid.data.menu.MenuRecord;
@@ -21,6 +23,7 @@ public class MenuDataProviderImpl implements MenuDataProvider /*, ExtMenuDataPro
 
 	private MenuDB db;
 	private int webApplication;
+	private List<MenuItem> records;
 	//private boolean externalUsers;
 	/**
 	 * 
@@ -31,6 +34,14 @@ public class MenuDataProviderImpl implements MenuDataProvider /*, ExtMenuDataPro
 	public MenuDataProviderImpl(NacidDataProviderImpl nacidDataProvider, int webApplication) {
 		this.db = new MenuDB(nacidDataProvider.getDataSource(), webApplication);
 		this.webApplication = webApplication;
+		initCache();
+	}
+	private void initCache() {
+		try {
+			records = db.getMenuRecords(webApplication).stream().map(r -> new MenuItemImpl(r.getId(),r.getUrl(), r.getName(), r.getLongName(), null, r.getActive() == 1, r.getOrdNum())).collect(Collectors.toList());
+		} catch (SQLException throwables) {
+			throw Utils.logException(throwables);
+		}
 	}
 
 	//Polzva se v MenuDataProvider
@@ -117,7 +128,9 @@ public class MenuDataProviderImpl implements MenuDataProvider /*, ExtMenuDataPro
 	@Override
 	public int saveMenu(int id, int parentId, String name, String longName, int ordNum, boolean active) {
 		try {
-			return db.saveMenu(id, parentId, ordNum, name, longName, active);
+			int res = db.saveMenu(id, parentId, ordNum, name, longName, active);
+			initCache();
+			return res;
 		} catch (SQLException e) {
 			throw Utils.logException(this, e);
 		}
@@ -127,11 +140,17 @@ public class MenuDataProviderImpl implements MenuDataProvider /*, ExtMenuDataPro
 	public void deleteMenu(int id) {
 		try {
 			db.deleteMenu(id);
+			initCache();
 		} catch (SQLException e) {
 			throw Utils.logException(this, e);
 		}
 	}
-	
+
+	@Override
+	public List<MenuItem> getMenuItemsByPartOfUrl(String partOfUrl) {
+		return records.stream().filter(r -> r.getUrl() != null && r.getUrl().contains(partOfUrl)).collect(Collectors.toList());
+	}
+
 	public static void main(String[] args) {
 		NacidDataProvider nacidDataProvider = NacidDataProvider.getNacidDataProvider(new StandAloneDataSource());
 		MenuDataProvider menuDataProvider = nacidDataProvider.getMenuDataProvider(NacidDataProvider.APP_NACID_REGPROF_ID);
