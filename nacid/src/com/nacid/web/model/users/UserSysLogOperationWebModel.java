@@ -47,32 +47,11 @@ public class UserSysLogOperationWebModel {
         timeLogout = DataConverter.formatDateTime(rec.getTimeLogout(), false);
         groupName = SyslogHandler.getGroupName(nacidDataProvider, rec.getGroupName());
         operationName = SyslogHandler.getOperationName(rec.getOperationName());
-        queryString = splitQuery(rec.getQueryString()).entrySet().stream().map(r -> r.getKey() + "=" + StringUtils.join(r.getValue(), "&")).collect(Collectors.joining("<br />"));
+        queryString = rec.getQueryParams().entrySet().stream().map(r -> r.getKey() + "=" + StringUtils.join(r.getValue(), "&")).collect(Collectors.joining("<br />"));
         dateCreated = DataConverter.formatDateTime(rec.getDateCreated(), false);
-        description = null;
+        description = rec.getDescription();
     }
 
-    public Map<String, List<String>> splitQuery(String queryString) {
-        if (StringUtils.isEmpty(queryString)) {
-            return new HashMap<>();
-        }
-        return Arrays.stream(queryString.split("&"))
-                .map(this::splitQueryParameter)
-                .collect(Collectors.groupingBy(AbstractMap.SimpleImmutableEntry::getKey, LinkedHashMap::new, mapping(Map.Entry::getValue, toList())));
-    }
 
-    public AbstractMap.SimpleImmutableEntry<String, String> splitQueryParameter(String it) {
-        try {
-            final int idx = it.indexOf("=");
-            final String key = idx > 0 ? it.substring(0, idx) : it;
-            final String value = idx > 0 && it.length() > idx + 1 ? it.substring(idx + 1) : null;
-            return new AbstractMap.SimpleImmutableEntry<>(
-                    key == null ? "" : URLDecoder.decode(key, "UTF-8"),
-                    value == null ? "" : URLDecoder.decode(value, "UTF-8")
-            );
-        } catch (UnsupportedEncodingException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 }

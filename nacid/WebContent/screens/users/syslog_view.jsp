@@ -9,6 +9,9 @@
         method="post"
         skipSubmit="true"
         backurl="${pathPrefix }/control/syslog/list?getLastTableState=1">
+    <c:if test="${not empty syslog.description}">
+        <b>${syslog.description}</b><br />
+    </c:if>
     Потребителско име&nbsp;:&nbsp;${syslog.username}<br />
     Имена&nbsp;:&nbsp;${syslog.userFullName}<br />
     ID на сесия&nbsp;:&nbsp;${syslog.sessionId}<br />

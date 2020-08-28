@@ -12,6 +12,9 @@ import com.nacid.bl.users.UserGroupMembership;
 import com.nacid.bl.users.UserSysLogOperation;
 import com.nacid.bl.users.UserSysLogOperationExtended;
 import com.nacid.bl.users.UsersDataProvider;
+import com.nacid.data.DataConverter;
+import com.nacid.data.common.IntegerValue;
+import com.nacid.data.common.StringValue;
 import com.nacid.data.users.*;
 import com.nacid.db.syslog.SyslogDb;
 import com.nacid.db.users.UsersDB;
@@ -467,7 +470,7 @@ public class UsersDataProviderImpl implements UsersDataProvider/*, ExtUsersDataP
 	}
 	public List<UserSysLogOperationExtended> getUserSysLogOperations(Integer userId, Date dateFrom, Date dateTo, Integer webAppId, String groupName, String operationName, String queryString, String sessionId ) {
 		try {
-			return syslogDb.getUserSysLogOperationRecordsExtended(userId, Utils.getTimestamp(dateFrom), Utils.getTimestamp(dateTo), webAppId, groupName, operationName, queryString, sessionId).stream().collect(Collectors.toList());
+			return syslogDb.getUserSysLogOperationRecordsExtended(userId, Utils.getTimestamp(dateFrom), Utils.getTimestamp(dateTo), webAppId, groupName, operationName, queryString, sessionId).stream().map(UserSysLogOperationExtendedImpl::new).collect(Collectors.toList());
 		} catch (SQLException throwables) {
 			throw Utils.logException(throwables);
 		}
@@ -476,10 +479,45 @@ public class UsersDataProviderImpl implements UsersDataProvider/*, ExtUsersDataP
 	@Override
 	public UserSysLogOperationExtended getUserSysLogOperationExtended(Integer id) {
 		try {
-			return syslogDb.getUserSysLogOperationRecordExtended(id);
+			UserSysLogOperationRecordExtended rec = syslogDb.getUserSysLogOperationRecordExtended(id);
+			if (rec == null) {
+				return null;
+			}
+			UserSysLogOperationExtendedImpl res = new UserSysLogOperationExtendedImpl(rec);
+			res.setDescription(generateSysLogDescription(res));
+			return res;
 		} catch (SQLException throwables) {
 			throw Utils.logException(throwables);
 		}
+	}
+	private String generateSysLogDescription(UserSysLogOperationExtendedImpl res) throws SQLException {
+
+		Integer applicationId = null;
+
+		if (res.getParamValue("applID") != null) {
+			applicationId = DataConverter.parseInteger(res.getParamValue("applID"), null);
+		} else if (res.getParamValue("application_id") != null) {
+			applicationId = DataConverter.parseInteger(res.getParamValue("application_id"), null);
+		} else if ("applications".equals(res.getGroupName()) && res.getParamValue("id") != null) {
+			applicationId = DataConverter.parseInteger(res.getParamValue("id"), null);
+		} else if ("application_attachment".equals(res.getGroupName())) {
+			if (res.getParamValue("id") != null) {
+				List<IntegerValue> appId = syslogDb.selectRecords("select parent_id as value from attached_docs  where id = ?", IntegerValue.class, DataConverter.parseInteger(res.getParamValue("id"), null));
+				applicationId = appId.size() == 0 ? null : appId.get(0).getValue();
+			}
+		} else if ("expert_statement_attachment".equals(res.getGroupName())) {
+			if (res.getParamValue("id") != null) {
+				List<IntegerValue> applId = syslogDb.selectRecords("select application_id from expert_statement  where id = ?", IntegerValue.class, DataConverter.parseInteger(res.getParamValue("id"), null));
+				applicationId = applId.size() == 0 ? null : applId.get(0).getValue();
+			}
+		}
+		if (applicationId != null) {
+			List<StringValue> appNum = syslogDb.selectRecords("SELECT (app_num::text || '/'::text) || to_char(app_date::timestamp with time zone, 'dd.MM.yyyy'::text) as value from application where id = ?", StringValue.class, applicationId);
+			if (appNum.size() != 0) {
+				return "Заявление: " + appNum.get(0).getValue();
+			}
+		}
+		return null;
 	}
 
 	public static void main(String[] args) throws ExtUserAlreadyExistsException {

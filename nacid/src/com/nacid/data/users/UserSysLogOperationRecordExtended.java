@@ -12,7 +12,7 @@ import java.sql.Timestamp;
  */
 @Data
 @NoArgsConstructor
-public class UserSysLogOperationRecordExtended implements com.nacid.bl.users.UserSysLogOperationExtended {
+public class UserSysLogOperationRecordExtended {
     private int id;
     private int userId;
     private String username;

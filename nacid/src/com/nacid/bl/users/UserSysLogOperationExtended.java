@@ -1,6 +1,8 @@
 package com.nacid.bl.users;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * User: Georgi
@@ -37,4 +39,6 @@ public interface UserSysLogOperationExtended {
     Date getDateCreated();
 
     String getDescription();
+
+    Map<String, List<String>> getQueryParams();
 }

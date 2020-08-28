@@ -665,7 +665,7 @@ public class ExtRegprofApplicationsHandler extends NacidExtBaseRequestHandler {
             if (request.getSession().getAttribute("signedXml-" + applId) == null) {
                 String docXml = extRegprofApplicationsDataProvider.getExtRegprofApplicationXml(applId);
                 String successUrl = SignUtils.generateContextUrl(request) + "/control/successSign?activeForm=" + FORM_ID_APPLYING + "&id=" + applId;
-                String cancelUrl = SignUtils.generateContextUrl(request) + "control/application/edit?activeForm=" + FORM_ID_APPLYING + "&id=" + + applId;
+                String cancelUrl = SignUtils.generateContextUrl(request) + "/control/application/edit?activeForm=" + FORM_ID_APPLYING + "&id=" + + applId;
                 UtilsDataProvider utilsDataProvider = nacidDataProvider.getUtilsDataProvider();
 
 
